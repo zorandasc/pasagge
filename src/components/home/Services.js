@@ -11,7 +11,7 @@ const Services = ({ className }) => {
   const data = useStaticQuery(
     graphql`
       query {
-        bgImage: file(name: { eq: "services-bg" }) {
+        bgImage: file(name: { eq: "servicesBg" }) {
           childImageSharp {
             gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
           }
