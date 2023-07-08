@@ -1,0 +1,594 @@
+import React from "react";
+import { styled } from "styled-components";
+
+import socialLinks from "../constants/social_links";
+//import logo from "../images/logo-nobg.png";
+import { AiOutlineMail, AiFillPhone, AiFillPushpin } from "react-icons/ai";
+import { IoIosArrowForward } from "react-icons/io";
+import { FaCalendarAlt } from "react-icons/fa";
+
+const Footer = () => {
+  return (
+    <Wrapper>
+      <section className="header">
+        <div className="headerInner">
+          <div className="first">
+            <div className="socialWrapper">
+              <ul>
+                {socialLinks.map((link) => {
+                  return (
+                    <li key={link.id}>
+                      <a
+                        href={link.url}
+                        className="social-link"
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label="socials links"
+                      >
+                        {link.icon}
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </div>
+          <div className="second">
+            <div className="headerLogo">
+              <img
+                src="https://wordpress.vecurosoft.com/wellnez/wp-content/uploads/2023/03/logo-2.svg"
+                alt="Wellnez"
+                className="white-logo"
+              />
+            </div>
+          </div>
+          <div className="third">
+            <div className="newsLetter">
+              <form>
+                <h3>NAŠ NEWSLETTER</h3>
+                <div className="form-group">
+                  <input
+                    placeholder="Unesite vaš email"
+                    type="text"
+                    name="email"
+                    id="email"
+                    required
+                  ></input>
+                  <button className="btn">PRETPLATA</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="body">
+        <div className="bodyInner">
+          <div className="column about">
+            <div className="title">
+              <h5>O NAMA PASAGGE</h5>
+            </div>
+            <div className="divider">
+              <span></span>
+            </div>
+            <ul>
+              <li>
+                <AiFillPushpin className="icon"></AiFillPushpin>
+                <p>Donje Šiprage, New York</p>
+              </li>
+              <li>
+                <AiFillPhone className="icon"></AiFillPhone>
+                <p>+01234567890</p>
+              </li>
+              <li>
+                <AiOutlineMail className="icon"></AiOutlineMail>
+                <p>info@example.com</p>
+              </li>
+            </ul>
+            <div className="satnica">
+              <h4>Otvoreni Smo</h4>
+              <h5>Ponedeljak do Petak</h5>
+              <p>08:00 - 20:00</p>
+            </div>
+          </div>
+          <div className="column important">
+            <div className="title">
+              <h5>VAŽNI LINKOVI</h5>
+            </div>
+            <div className="divider">
+              <span></span>
+            </div>
+            <ul>
+              <li>
+                <IoIosArrowForward className="icon"></IoIosArrowForward>
+                <p>SERVISI</p>
+              </li>
+              <li>
+                <IoIosArrowForward className="icon"></IoIosArrowForward>
+                <p>O NAMA</p>
+              </li>
+              <li>
+                <IoIosArrowForward className="icon"></IoIosArrowForward>
+                <p>CIJENOVNI PLAN</p>
+              </li>
+              <li>
+                <IoIosArrowForward className="icon"></IoIosArrowForward>
+                <p>KONTAKT</p>
+              </li>
+              <li>
+                <IoIosArrowForward className="icon"></IoIosArrowForward>
+                <p>NAŠ BLOG</p>
+              </li>
+            </ul>
+          </div>
+          <div className="column important">
+            <div className="title">
+              <h5>KATEGORIJE</h5>
+            </div>
+            <div className="divider">
+              <span></span>
+            </div>
+            <ul>
+              <li>
+                <IoIosArrowForward className="icon"></IoIosArrowForward>
+                <p>NJEGA LICA</p>
+              </li>
+              <li>
+                <IoIosArrowForward className="icon"></IoIosArrowForward>
+                <p>MAKEUP</p>
+              </li>
+              <li>
+                <IoIosArrowForward className="icon"></IoIosArrowForward>
+                <p>FRAGRANCE</p>
+              </li>
+              <li>
+                <IoIosArrowForward className="icon"></IoIosArrowForward>
+                <p>NJEGA KOSE</p>
+              </li>
+              <li>
+                <IoIosArrowForward className="icon"></IoIosArrowForward>
+                <p>TIJELO & KUPANJE</p>
+              </li>
+            </ul>
+          </div>
+          <div className="column post">
+            <div className="title">
+              <h5>NAJNOVIJI POSTOVI</h5>
+            </div>
+            <div className="divider">
+              <span></span>
+            </div>
+            <div className="postlist">
+              <div className="postWrapper">
+                <div className="imageWrapper">
+                  <img
+                    width="100"
+                    height="100"
+                    src="https://wordpress.vecurosoft.com/wellnez/wp-content/uploads/2023/03/blog-3-100x100.jpg"
+                    alt=""
+                    decoding="async"
+                    loading="lazy"
+                    srcSet="https://wordpress.vecurosoft.com/wellnez/wp-content/uploads/2023/03/blog-3-100x100.jpg 100w, https://wordpress.vecurosoft.com/wellnez/wp-content/uploads/2023/03/blog-3-150x150.jpg 150w, https://wordpress.vecurosoft.com/wellnez/wp-content/uploads/2023/03/blog-3-70x70.jpg 70w, https://wordpress.vecurosoft.com/wellnez/wp-content/uploads/2023/03/blog-3-300x300.jpg 300w, https://wordpress.vecurosoft.com/wellnez/wp-content/uploads/2023/03/blog-3-460x460.jpg 460w"
+                    sizes="(max-width: 100px) 100vw, 100px"
+                  ></img>
+                </div>
+                <div className="postBody">
+                  <h4>Zdravlje Kroz Vodenu Terapiju</h4>
+                  <p>
+                    <FaCalendarAlt className="icon"></FaCalendarAlt>16 MART 2023
+                  </p>
+                </div>
+              </div>
+              <div className="postWrapper">
+                <div className="imageWrapper">
+                  <img
+                    width="100"
+                    height="100"
+                    src="https://wordpress.vecurosoft.com/wellnez/wp-content/uploads/2023/03/blog-4-100x100.jpg"
+                    alt=""
+                    decoding="async"
+                    loading="lazy"
+                    srcSet="https://wordpress.vecurosoft.com/wellnez/wp-content/uploads/2023/03/blog-4-100x100.jpg 100w, https://wordpress.vecurosoft.com/wellnez/wp-content/uploads/2023/03/blog-4-150x150.jpg 150w, https://wordpress.vecurosoft.com/wellnez/wp-content/uploads/2023/03/blog-4-70x70.jpg 70w, https://wordpress.vecurosoft.com/wellnez/wp-content/uploads/2023/03/blog-4-300x300.jpg 300w, https://wordpress.vecurosoft.com/wellnez/wp-content/uploads/2023/03/blog-4-460x460.jpg 460w"
+                    sizes="(max-width: 100px) 100vw, 100px"
+                  ></img>
+                </div>
+                <div className="postBody">
+                  <h4>Umirite Svoj Um I Tijelo</h4>
+                  <p>
+                    <FaCalendarAlt className="icon"></FaCalendarAlt>16 JANUAR
+                    2023
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="foot">
+        <div className="footInner">
+          <p>Copyright 2023 Pasagge. All Rights Reserved By Nazor</p>
+          <div>
+            <img
+              width="188"
+              height="25"
+              src="https://wordpress.vecurosoft.com/wellnez/wp-content/uploads/2023/03/card.png"
+              alt=""
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+    </Wrapper>
+  );
+};
+
+const Wrapper = styled.footer`
+  background-color: #232b31;
+  --body-color: #bebebe;
+  --title-color: #ffffff;
+  .header {
+    background-color: #232b31;
+    position: relative;
+    .headerInner {
+      display: flex;
+      margin-right: auto;
+      margin-left: auto;
+      position: relative;
+      width: 100%;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      border-style: solid;
+      border-width: 0px 0px 2px 0px;
+      border-color: var(--theme-color);
+      @media (max-width: 1024px) {
+        flex-wrap: wrap;
+      }
+      .first,
+      .second,
+      .third {
+        width: 100%;
+        @media (min-width: 768px) {
+          width: 33.333%;
+        }
+      }
+      .first {
+        .socialWrapper {
+          align-content: center;
+          align-items: center;
+          padding: 40px 15px 40px 15px;
+          width: 100%;
+          ul {
+            justify-content: space-evenly;
+            text-align: left;
+            display: flex;
+            flex-direction: row;
+            li {
+              position: relative;
+              justify-content: flex-start;
+              text-align: left;
+              padding: 0px 8px 0px 0px;
+              align-items: flex-start;
+              width: 55px;
+              height: 55px;
+              border-style: solid;
+              border-width: 1px 1px 1px 1px;
+              border-color: #bebebe;
+              border-radius: 59px 59px 59px 59px;
+              a {
+                font-size: 18px;
+                color: #bebebe;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+              }
+            }
+          }
+        }
+      }
+      .second {
+        border-style: solid;
+        border-width: 0px 1px 0px 1px;
+        border-color: var(--theme-color);
+        padding: 40px 15px 40px 15px;
+        @media (max-width: 767px) {
+          border-width: 0px 0px 0px 0px;
+          padding: 0px 15px 20px 10px;
+        }
+        .headerLogo {
+          width: 100%;
+          position: relative;
+          text-align: center;
+          max-width: 100%;
+          padding: 0px 0px 0px 0px;
+          color: #bebebe;
+          img {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+            margin: auto;
+          }
+        }
+      }
+      .third {
+        .newsLetter {
+          align-content: center;
+          align-items: center;
+          padding: 40px 15px 40px 15px;
+          width: 100%;
+          form {
+            padding-left: 40px;
+            h3 {
+              font-size: 20px;
+              text-transform: uppercase;
+              margin-bottom: 19px;
+              margin-top: -0.2em;
+              color: var(--white-color);
+            }
+            .form-group {
+              display: flex;
+              position: relative;
+              input {
+                background-color: transparent;
+                border: none;
+                border-bottom: 1px solid rgba(253, 230, 216, 0.3);
+                padding: 0 20px 0 0;
+                height: 40px;
+                color: var(--white-color);
+                font-size: 14px;
+                font-weight: 500;
+                font-family: var(--body-font);
+                margin: 0;
+                &:focus {
+                  outline: none;
+                }
+              }
+              .btn {
+                background-color: var(--theme-color);
+                color: var(--white-color);
+                font-size: 14px;
+                font-weight: 700;
+                letter-spacing: 0.1em;
+                line-height: 1;
+                text-transform: uppercase;
+                display: inline-block;
+                padding: 17px 28px;
+                border: none;
+                position: relative;
+                z-index: 1;
+                text-align: center;
+                @media (max-width: 1199px) {
+                  font-size: 12px;
+                  letter-spacing: 0;
+                  padding: 10px 15px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .body {
+    background-color: #232b31;
+    padding: 70px 0px 0px 0px;
+
+    .bodyInner {
+      padding: 26px 0px 26px 0px;
+      display: flex;
+      margin: auto;
+      position: relative;
+      flex-wrap: wrap;
+      max-width: 1300px;
+      @media (min-width: 768px) {
+        width: 100%;
+      }
+
+      .column {
+        width: 100%;
+
+        @media (min-width: 468px) {
+          width: 50%;
+        }
+        //If screen size is more than 700px wide
+        @media (min-width: 768px) {
+          width: 25%;
+        }
+        @media (max-width: 1024px) {
+          margin: 0px 0px 25px 0px;
+        }
+
+        .title {
+          margin-bottom: 20px;
+          line-height: 1;
+          h5 {
+            font-size: 1.25rem;
+            font-family: var(--title-font);
+            color: var(--smoke-color);
+            text-transform: none;
+            font-weight: 400;
+          }
+        }
+        .divider {
+          margin: -20px 0px 5px 0px;
+          padding-top: 15px;
+          padding-bottom: 15px;
+          margin-bottom: 20px;
+          span {
+            display: flex;
+            margin: 0;
+            direction: ltr;
+            width: 50px;
+            border-top: 2px solid var(--theme-color);
+          }
+        }
+      }
+      .about {
+        padding: 0px 015px 0px 15px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        ul {
+          justify-content: flex-start;
+          text-align: left;
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 20px;
+          li {
+            display: flex;
+            justify-content: flex-start;
+            text-align: left;
+            padding: 0px 0px 5px 0px;
+            align-items: flex-start;
+            .icon {
+              font-size: 16px;
+              color: var(--theme-color);
+            }
+            p {
+              padding-left: 10px;
+              font-family: "DM Sans", Sans-serif;
+              font-size: 16px;
+              font-weight: 500;
+              line-height: 16px;
+              color: #a3a2a2;
+            }
+            &::after {
+              position: absolute;
+              bottom: 0;
+              width: 100%;
+              content: "";
+              left: 0;
+            }
+          }
+        }
+        .satnica {
+          h4 {
+            color: #ffffff;
+            font-family: "Marcellus", Sans-serif;
+            font-size: 22px;
+            font-weight: 400;
+          }
+          h5 {
+            color: #a3a2a2;
+            font-family: "DM Sans", Sans-serif;
+            font-size: 18px;
+            font-weight: 500;
+          }
+          p {
+            color: #ffffff;
+            font-family: "DM Sans", Sans-serif;
+            font-size: 18px;
+            font-weight: 500;
+          }
+        }
+      }
+      .important {
+        padding: 0px 015px 0px 15px;
+        ul {
+          li {
+            display: flex;
+            justify-content: flex-start;
+            text-align: left;
+            padding: 0px 0px 13px 0px;
+            align-items: flex-start;
+            position: relative;
+            line-height: 1;
+            color: var(--body-color);
+
+            .icon {
+              font-size: 16px;
+              color: var(--theme-color);
+            }
+            p {
+              font-size: 14px;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+      .categories {
+      }
+      .post {
+        padding: 0px 015px 0px 15px;
+        .postlist {
+          width: 100%;
+          @media (max-width: 1399px) {
+            margin-bottom: 60px;
+          }
+          .postWrapper {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            .imageWrapper {
+              width: 80px;
+              height: 80px;
+              border-radius: 0;
+              overflow: hidden;
+              margin-right: 15px;
+              transition: all ease 0.4s;
+              transform: scale(1);
+              &:hover img {
+                transition: all ease 0.4s;
+                transform: scale(1.2);
+              }
+            }
+            .postBody {
+              h4 {
+                font-weight: 400;
+                letter-spacing: 0;
+                padding-top: 0.3em;
+                font-family: var(--title-font);
+                color: var(--title-color);
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 26px;
+                letter-spacing: -0.03em;
+                margin: -0.25em 0 3px 0;
+                text-transform: capitalize;
+              }
+              p {
+                color: var(--body-color);
+                font-weight: 500;
+                font-size: 12px;
+                .icon {
+                  margin-right: 8px;
+                  vertical-align: center;
+                  color: var(--theme-color);
+                  font-size: 0.9em;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .foot {
+    background-color: #1d2429;
+    color: var(--body-color);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    //
+    .footInner {
+      display: flex;
+      margin-right: auto;
+      margin-left: auto;
+      position: relative;
+      width: 100%;
+      max-width: 1300px;
+      justify-content: space-between;
+      padding: 26px 0px 26px 0px;
+      @media (max-width: 1024px) {
+        flex-wrap: wrap;
+        padding: 26px;
+        padding-top: 0;
+        justify-content: space-around;
+      }
+    }
+  }
+`;
+
+export default Footer;

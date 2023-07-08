@@ -16,6 +16,7 @@
   "dependencies": {
     "babel-plugin-styled-components": "^2.1.4",
     "gatsby": "^5.11.0",
+    "gatsby-background-image": "^1.6.0",
     "gatsby-plugin-image": "^3.11.0",
     "gatsby-plugin-manifest": "^5.11.0",
     "gatsby-plugin-sharp": "^5.11.0",
@@ -23,8 +24,10 @@
     "gatsby-plugin-styled-components": "^6.11.0",
     "gatsby-source-filesystem": "^5.11.0",
     "gatsby-transformer-sharp": "^5.11.0",
+    "gbimage-bridge": "^0.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.10.1",
     "styled-components": "^6.0.2"
   }
 }
