@@ -1,27 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import { graphql, useStaticQuery } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 import { convertToBgImage } from "gbimage-bridge";
 import BackgroundImage from "gatsby-background-image";
 
 import services from "../../constants/services";
 
-const Services = ({ className }) => {
-  const data = useStaticQuery(
-    graphql`
-      query {
-        bgImage: file(name: { eq: "servicesBg" }) {
-          childImageSharp {
-            gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
-          }
-        }
-      }
-    `
-  );
-
-  const image = getImage(data.bgImage);
-  const bgImage = convertToBgImage(image);
+const Services = ({ className, image }) => {
+ 
+  const bgImage = convertToBgImage(getImage(image));
 
   return (
     <BackgroundImage Tag="section" {...bgImage} className={className}>

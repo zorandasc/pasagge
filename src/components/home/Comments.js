@@ -1,5 +1,4 @@
 import React from "react";
-import { graphql, useStaticQuery } from "gatsby";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 import { FaQuoteRight } from "react-icons/fa";
@@ -7,84 +6,35 @@ import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 import { convertToBgImage } from "gbimage-bridge";
 import BackgroundImage from "gatsby-background-image";
 
-const Comments = ({ className }) => {
-  const [index, setIndex] = React.useState(0);
-  const [customers, setCustomers] = React.useState([]);
+const Comments = ({ className, images }) => {
+ const [index, setIndex] = React.useState(0);
 
-  const data = useStaticQuery(
-    graphql`
-      query {
-        bgImage: file(name: { eq: "commentBg" }) {
-          childImageSharp {
-            gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
-          }
-        }
-        prImage1: file(name: { eq: "person1" }) {
-          childImageSharp {
-            gatsbyImageData(
-              width: 150
-              height: 150
-              placeholder: BLURRED
-              formats: [AUTO, WEBP, AVIF]
-            )
-          }
-        }
-        prImage2: file(name: { eq: "person2" }) {
-          childImageSharp {
-            gatsbyImageData(
-              width: 150
-              height: 150
-              placeholder: BLURRED
-              formats: [AUTO, WEBP, AVIF]
-            )
-          }
-        }
-        prImage3: file(name: { eq: "person3" }) {
-          childImageSharp {
-            gatsbyImageData(
-              width: 150
-              height: 150
-              placeholder: BLURRED
-              formats: [AUTO, WEBP, AVIF]
-            )
-          }
-        }
-      }
-    `
-  );
+ const bgImage = convertToBgImage(getImage(images[0]));
 
-  const image = getImage(data.bgImage);
-  const bgImage = convertToBgImage(image);
+  const customers = [
+    {
+      image: getImage(images[1]),
+      name: "Mario",
+      title: "Frizer",
+      quote:
+        "I'm baby roof party iceland tilde try-hard adaptogen shaman pabst offal truffaut edison bulb organic mumblecore mixtape pitchfork.",
+    },
+    {
+      image: getImage(images[2]),
+      name: "Alisa",
+      title: "Dizajner",
+      quote:
+        "I'm baby roof party iceland tilde try-hard adaptogen shaman pabst offal truffaut edison bulb organic mumblecore mixtape pitchfork.",
+    },
+    {
+      image: getImage(images[3]),
+      name: "Milan",
+      title: "Korisnik",
+      quote:
+        "I'm baby roof party iceland tilde try-hard adaptogen shaman pabst offal truffaut edison bulb organic mumblecore mixtape pitchfork.",
+    },
+  ];
 
-  const image1 = getImage(data.prImage1);
-  const image2 = getImage(data.prImage2);
-  const image3 = getImage(data.prImage3);
-
-  React.useEffect(() => {
-    setCustomers([
-      {
-        image: image1,
-        name: "Mario",
-        title: "Frizer",
-        quote:
-          "I'm baby roof party iceland tilde try-hard adaptogen shaman pabst offal truffaut edison bulb organic mumblecore mixtape pitchfork.",
-      },
-      {
-        image: image2,
-        name: "Alisa",
-        title: "Dizajner",
-        quote:
-          "I'm baby roof party iceland tilde try-hard adaptogen shaman pabst offal truffaut edison bulb organic mumblecore mixtape pitchfork.",
-      },
-      {
-        image: image3,
-        name: "Milan",
-        title: "Korisnik",
-        quote:
-          "I'm baby roof party iceland tilde try-hard adaptogen shaman pabst offal truffaut edison bulb organic mumblecore mixtape pitchfork.",
-      },
-    ]);
-  }, [image1, image2, image3]);
 
   React.useEffect(() => {
     const lastIndex = customers.length - 1;
@@ -94,57 +44,58 @@ const Comments = ({ className }) => {
     if (index > lastIndex) {
       setIndex(0);
     }
-  }, [index, customers]);
+  }, [index, customers.length]);
 
-  
-  return <BackgroundImage Tag="section" {...bgImage} className={className}>
-  <div className="section-center">
-    {customers.map((customer, customerIndex) => {
-      const { image, name, title, quote } = customer;
-      let position = "nextSlide"; //na pocetku ovo ce btit sa drugi u nizu pomjeri desno
-      if (customerIndex === index) {
-        position = "activeSlide"; //za prvi u nizu centriraj
-      }
+  return (
+    <BackgroundImage Tag="section" {...bgImage} className={className}>
+      <div className="section-center">
+        {customers.map((customer, customerIndex) => {
+          const { image, name, title, quote } = customer;
+          let position = "nextSlide"; //na pocetku ovo ce btit sa drugi u nizu pomjeri desno
+          if (customerIndex === index) {
+            position = "activeSlide"; //za prvi u nizu centriraj
+          }
 
-      if (
-        customerIndex === index - 1 ||
-        (index === 0 && customerIndex === customers.length - 1)
-      ) {
-        position = "lastSlide"; // svaki prethodni ||  na pocetku za zadnjeg u nizu pomjeri lijevo
-      }
+          if (
+            customerIndex === index - 1 ||
+            (index === 0 && customerIndex === customers.length - 1)
+          ) {
+            position = "lastSlide"; // svaki prethodni ||  na pocetku za zadnjeg u nizu pomjeri lijevo
+          }
 
-      return (
-        <article key={customerIndex} className={position}>
-          <GatsbyImage
-            image={image}
-            className="img"
-            alt="rewiver"
-          ></GatsbyImage>
-          <h4>{name}</h4>
-          <p className="title">{title}</p>
-          <p className="text">{quote}</p>
-          <FaQuoteRight className="icon" />
-        </article>
-      );
-    })}
-    <button
-      className="prev"
-      onClick={() => {
-        setIndex(index - 1);
-      }}
-    >
-      <FiChevronLeft />
-    </button>
-    <button
-      className="next"
-      onClick={() => {
-        setIndex(index + 1);
-      }}
-    >
-      <FiChevronRight />
-    </button>
-  </div>
-</BackgroundImage>;
+          return (
+            <article key={customerIndex} className={position}>
+              <GatsbyImage
+                image={image}
+                className="img"
+                alt="rewiver"
+              ></GatsbyImage>
+              <h4>{name}</h4>
+              <p className="title">{title}</p>
+              <p className="text">{quote}</p>
+              <FaQuoteRight className="icon" />
+            </article>
+          );
+        })}
+        <button
+          className="prev"
+          onClick={() => {
+            setIndex(index - 1);
+          }}
+        >
+          <FiChevronLeft />
+        </button>
+        <button
+          className="next"
+          onClick={() => {
+            setIndex(index + 1);
+          }}
+        >
+          <FiChevronRight />
+        </button>
+      </div>
+    </BackgroundImage>
+  );
 };
 
 export default styled(Comments)`

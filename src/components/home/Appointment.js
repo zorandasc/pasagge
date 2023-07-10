@@ -1,27 +1,13 @@
 import React from "react";
 import { styled } from "styled-components";
-import { graphql, useStaticQuery } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 import { convertToBgImage } from "gbimage-bridge";
 import BackgroundImage from "gatsby-background-image";
 import { FaRegCalendarDays } from "react-icons/fa6";
 import services from "../../constants/services";
 
-const Appointment = ({ className }) => {
-  const data = useStaticQuery(
-    graphql`
-      query {
-        bgImage: file(name: { eq: "appointBg" }) {
-          childImageSharp {
-            gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
-          }
-        }
-      }
-    `
-  );
-
-  const image = getImage(data.bgImage);
-  const bgImage = convertToBgImage(image);
+const Appointment = ({ className, image }) => {
+  const bgImage = convertToBgImage(getImage(image));
 
   return (
     <BackgroundImage Tag="section" {...bgImage} className={className}>
@@ -101,7 +87,6 @@ const Appointment = ({ className }) => {
               {services.map((service) => (
                 <option key={service.id}>{service.title}</option>
               ))}
-              
             </select>
           </div>
           <div className="form-group">

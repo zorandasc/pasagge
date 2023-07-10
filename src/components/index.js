@@ -9,7 +9,6 @@ import TwoButtons from "./TwoButtons";
 import Background from "./Background";
 import Seo from "./Seo";
 
-
 export {
   Layout,
   Navbar,

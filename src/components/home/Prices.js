@@ -1,108 +1,47 @@
 import React from "react";
 import { styled } from "styled-components";
-import { graphql, useStaticQuery } from "gatsby";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
 import { convertToBgImage } from "gbimage-bridge";
 import BackgroundImage from "gatsby-background-image";
 import { AiFillCheckCircle } from "react-icons/ai";
 import { MdOutlineCancel } from "react-icons/md";
 
-const Prices = ({ className }) => {
-  const [massages, setMassages] = React.useState([]);
+const Prices = ({ className, images }) => {
+  
   const [pricePlan, setPricePlan] = React.useState("basic");
 
-  const data = useStaticQuery(
-    graphql`
-      query {
-        bgImage: file(name: { eq: "priceBg" }) {
-          childImageSharp {
-            gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
-          }
-        }
-        msImage1: file(name: { eq: "massage1" }) {
-          childImageSharp {
-            gatsbyImageData(
-              width: 150
-              height: 150
-              placeholder: BLURRED
-              formats: [AUTO, WEBP, AVIF]
-            )
-          }
-        }
-        msImage2: file(name: { eq: "massage2" }) {
-          childImageSharp {
-            gatsbyImageData(
-              width: 150
-              height: 150
-              placeholder: BLURRED
-              formats: [AUTO, WEBP, AVIF]
-            )
-          }
-        }
-        msImage3: file(name: { eq: "massage3" }) {
-          childImageSharp {
-            gatsbyImageData(
-              width: 150
-              height: 150
-              placeholder: BLURRED
-              formats: [AUTO, WEBP, AVIF]
-            )
-          }
-        }
-        msImage4: file(name: { eq: "massage4" }) {
-          childImageSharp {
-            gatsbyImageData(
-              width: 150
-              height: 150
-              placeholder: BLURRED
-              formats: [AUTO, WEBP, AVIF]
-            )
-          }
-        }
-      }
-    `
-  );
+  const bgImage = convertToBgImage(getImage(images[0]));
 
-  const image = getImage(data.bgImage);
-  const bgImage = convertToBgImage(image);
-
-  const image1 = getImage(data.msImage1);
-  const image2 = getImage(data.msImage2);
-  const image3 = getImage(data.msImage3);
-  const image4 = getImage(data.msImage4);
-
-  React.useEffect(() => {
-    setMassages([
-      {
-        id: 1,
-        image: image1,
-        title: "Personalizovana Masaža",
-        times: ["60 minuta", "90 minuta"],
-        prices: ["100km", "150km"],
-      },
-      {
-        id: 2,
-        image: image2,
-        title: "Masaža Parova",
-        times: ["60 minuta", "90 minuta"],
-        prices: ["100km", "150km"],
-      },
-      {
-        id: 3,
-        image: image3,
-        title: "Vruća Kamena Masaža",
-        times: ["60 minuta", "90 minuta"],
-        prices: ["100km", "150km"],
-      },
-      {
-        id: 4,
-        image: image4,
-        title: "Čista Masaža Cijelog Tijela",
-        times: ["60 minuta", "90 minuta"],
-        prices: ["100km", "150km"],
-      },
-    ]);
-  }, [image1, image2, image3, image4]);
+  const massages = [
+    {
+      id: 1,
+      image: getImage(images[1]),
+      title: "Personalizovana Masaža",
+      times: ["60 minuta", "90 minuta"],
+      prices: ["100km", "150km"],
+    },
+    {
+      id: 2,
+      image: getImage(images[2]),
+      title: "Masaža Parova",
+      times: ["60 minuta", "90 minuta"],
+      prices: ["100km", "150km"],
+    },
+    {
+      id: 3,
+      image: getImage(images[3]),
+      title: "Vruća Kamena Masaža",
+      times: ["60 minuta", "90 minuta"],
+      prices: ["100km", "150km"],
+    },
+    {
+      id: 4,
+      image: getImage(images[4]),
+      title: "Čista Masaža Cijelog Tijela",
+      times: ["60 minuta", "90 minuta"],
+      prices: ["100km", "150km"],
+    },
+  ];
 
   const pricePlanHandler = (plan) => {
     if (
@@ -276,11 +215,7 @@ export default styled(Prices)`
     position: relative;
     flex-wrap: wrap;
     max-width: 1200px;
-
-    padding: 0px 15px 0px 15px;
-    @media (min-width: 768px) {
-      padding: 50px 0px 100px 0px;
-    }
+    padding: 60px 15px 80px 15px;
 
     .left-column {
       width: 100%;

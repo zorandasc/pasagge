@@ -1,64 +1,27 @@
 import React from "react";
 import { styled } from "styled-components";
-import { graphql, useStaticQuery } from "gatsby";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
 
 import Button1 from "../Button1";
-import Button2 from "../Button2";
 
-const About = () => {
-  const data = useStaticQuery(
-    graphql`
-      query {
-        abImage1: file(name: { eq: "about1" }) {
-          childImageSharp {
-            gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
-          }
-        }
-        abImage2: file(name: { eq: "about2" }) {
-          childImageSharp {
-            gatsbyImageData(
-              width: 200
-              height: 200
-              placeholder: BLURRED
-              formats: [AUTO, WEBP, AVIF]
-            )
-          }
-        }
-        abImage3: file(name: { eq: "about3" }) {
-          childImageSharp {
-            gatsbyImageData(
-              width: 250
-              height: 250
-              placeholder: BLURRED
-              formats: [AUTO, WEBP, AVIF]
-            )
-          }
-        }
-      }
-    `
-  );
-
-  const image1 = getImage(data.abImage1);
-  const image2 = getImage(data.abImage2);
-  const image3 = getImage(data.abImage3);
+const About = ({image1,image2,image3}) => {
 
   return (
     <Wrapper>
       <div className="inner">
         <div className="about-image">
           <GatsbyImage
-            image={image1}
+            image={getImage(image1)}
             className="img1"
             alt="about"
           ></GatsbyImage>
           <GatsbyImage
-            image={image2}
+            image={getImage(image2)}
             className="img2"
             alt="about"
           ></GatsbyImage>
           <GatsbyImage
-            image={image3}
+            image={getImage(image3)}
             className="img3"
             alt="about"
           ></GatsbyImage>
@@ -91,8 +54,7 @@ const About = () => {
             </p>
           </div>
           <div className="btn-wrapper">
-            <Button1>Naši Servisi</Button1>
-            <Button2></Button2>
+            <Button1>Kontaktirajte nas</Button1>
           </div>
         </div>
       </div>

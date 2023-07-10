@@ -1,42 +1,18 @@
 import React from "react";
-import { graphql, useStaticQuery } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 
 import { Background, Button1 } from "../index";
 
-const Hero = () => {
+const Hero = ({ image1, image2, image3 }) => {
   const [index, setIndex] = React.useState(0);
-  const [images, setImages]=React.useState([])
+  const [images] = React.useState([
+    getImage(image1),
+    getImage(image2),
+    getImage(image3),
+  ]);
 
-  const data = useStaticQuery(
-    graphql`
-      query {
-        bgImage1: file(name: { eq: "hero1" }) {
-          childImageSharp {
-            gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
-          }
-        }
-        bgImage2: file(name: { eq: "hero2" }) {
-          childImageSharp {
-            gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
-          }
-        }
-        bgImage3: file(name: { eq: "hero3" }) {
-          childImageSharp {
-            gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
-          }
-        }
-      }
-    `
-  );
-
-  const image1 = getImage(data.bgImage1);
-  const image2 = getImage(data.bgImage2);
-  const image3 = getImage(data.bgImage3);
-
-  
   //AUTOMATIZACIJA
   /*
   React.useEffect(() => {
@@ -52,11 +28,6 @@ const Hero = () => {
     };
   },[]);
 */
-
-React.useEffect(()=>{
-  setImages([image1, image2, image3])
-},[image1,image2,image3])
-
   React.useEffect(() => {
     const lastIndex = images.length - 1;
     if (index < 0) {
@@ -71,9 +42,9 @@ React.useEffect(()=>{
     <Wrapper>
       <Background image={images[index]}>
         <article>
-          <h3>Lijecenje Tijela Uma I Duha</h3>
-          <h1>RELAX I SPA CENTAR</h1>
-          <Button1>ZAKAŽITE SASTANAK</Button1>
+          <h3>Relax i spa centar</h3>
+          <h1>Liječenje Tijela Uma I Duha</h1>
+          <Button1>NAŠI SERVISI</Button1>
         </article>
         <button className="prev-btn" onClick={() => setIndex(index - 1)}>
           <FiChevronLeft></FiChevronLeft>
@@ -110,13 +81,14 @@ const Wrapper = styled.section`
       margin-right: 22rem;
     }
     h1 {
-      text-transform: uppercase;
+      text-transform:capitalize;
       font-weight: 500;
       line-height: 1.25;
       margin: 2rem 0 3rem 0;
       letter-spacing: 3px;
     }
     h3 {
+      text-transform:capitalize;
       font-weight: 400;
       font-family: "Caveat", cursive;
     }
