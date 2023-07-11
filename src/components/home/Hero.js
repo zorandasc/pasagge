@@ -42,7 +42,7 @@ const Hero = ({ image1, image2, image3 }) => {
     <Wrapper>
       <Background image={images[index]}>
         <article>
-          <h3>Relax i spa centar</h3>
+          <p>Relax i spa centar</p>
           <h1>Liječenje Tijela Uma I Duha</h1>
           <Button1>NAŠI SERVISI</Button1>
         </article>
@@ -87,10 +87,11 @@ const Wrapper = styled.section`
       margin: 2rem 0 3rem 0;
       letter-spacing: 3px;
     }
-    h3 {
+    p {
       text-transform:capitalize;
       font-weight: 400;
       font-family: "Caveat", cursive;
+      font-size: 1.25rem;
     }
     a {
       background: transparent;

@@ -157,7 +157,7 @@ const Wrapper = styled.div`
         text-align: left;
         align-items: flex-start;
         .icon {
-          font-size: 18px;
+          font-size: 22px;
           color: var(--theme-color);
         }
         p {
@@ -232,12 +232,12 @@ const Wrapper = styled.div`
           height: 55px;
           border-style: solid;
           border-width: 1px 1px 1px 1px;
-          border-color: #bebebe;
-          background-color: var(--theme-color);
+          border-color: var(--smoke-color);
+        background-color: var(--theme-color);
           border-radius: 59px 59px 59px 59px;
           a {
             font-size: 18px;
-            color: #bebebe;
+            color: var(--smoke-color);
             position: absolute;
             top: 50%;
             left: 50%;
