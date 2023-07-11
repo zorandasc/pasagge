@@ -22,6 +22,7 @@ const Wrapper = styled.div`
     width: initial;
   }
   .btn {
+    cursor: pointer;
     letter-spacing: 2px;
     font-size: 16px;
     background-color: var(--smoke-color);

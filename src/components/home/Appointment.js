@@ -17,7 +17,7 @@ const Appointment = ({ className, image }) => {
             <FaRegCalendarDays className="icon"></FaRegCalendarDays>
           </div>
           <div className="title-body">
-            <span>Realksirajte se svaki dan u svako vrijeme</span>
+            <span>Relaksirajte se svaki dan u svako vrijeme</span>
             <p>ZAKAŽITE SASTANAK</p>
           </div>
         </div>

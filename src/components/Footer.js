@@ -5,7 +5,6 @@ import socialLinks from "../constants/social_links";
 //import logo from "../images/logo-nobg.png";
 import { AiOutlineMail, AiFillPhone, AiFillPushpin } from "react-icons/ai";
 import { IoIosArrowForward } from "react-icons/io";
-import { FaCalendarAlt } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -152,53 +151,22 @@ const Footer = () => {
           </div>
           <div className="column post">
             <div className="title">
-              <h5>NAJNOVIJI POSTOVI</h5>
+              <h5>NAŠA LOKACIJA</h5>
             </div>
             <div className="divider">
               <span></span>
             </div>
             <div className="postlist">
-              <div className="postWrapper">
-                <div className="imageWrapper">
-                  <img
-                    width="100"
-                    height="100"
-                    src="https://wordpress.vecurosoft.com/wellnez/wp-content/uploads/2023/03/blog-3-100x100.jpg"
-                    alt=""
-                    decoding="async"
-                    loading="lazy"
-                    srcSet="https://wordpress.vecurosoft.com/wellnez/wp-content/uploads/2023/03/blog-3-100x100.jpg 100w, https://wordpress.vecurosoft.com/wellnez/wp-content/uploads/2023/03/blog-3-150x150.jpg 150w, https://wordpress.vecurosoft.com/wellnez/wp-content/uploads/2023/03/blog-3-70x70.jpg 70w, https://wordpress.vecurosoft.com/wellnez/wp-content/uploads/2023/03/blog-3-300x300.jpg 300w, https://wordpress.vecurosoft.com/wellnez/wp-content/uploads/2023/03/blog-3-460x460.jpg 460w"
-                    sizes="(max-width: 100px) 100vw, 100px"
-                  ></img>
-                </div>
-                <div className="postBody">
-                  <h4>Zdravlje Kroz Vodenu Terapiju</h4>
-                  <p>
-                    <FaCalendarAlt className="icon"></FaCalendarAlt>16 MART 2023
-                  </p>
-                </div>
-              </div>
-              <div className="postWrapper">
-                <div className="imageWrapper">
-                  <img
-                    width="100"
-                    height="100"
-                    src="https://wordpress.vecurosoft.com/wellnez/wp-content/uploads/2023/03/blog-4-100x100.jpg"
-                    alt=""
-                    decoding="async"
-                    loading="lazy"
-                    srcSet="https://wordpress.vecurosoft.com/wellnez/wp-content/uploads/2023/03/blog-4-100x100.jpg 100w, https://wordpress.vecurosoft.com/wellnez/wp-content/uploads/2023/03/blog-4-150x150.jpg 150w, https://wordpress.vecurosoft.com/wellnez/wp-content/uploads/2023/03/blog-4-70x70.jpg 70w, https://wordpress.vecurosoft.com/wellnez/wp-content/uploads/2023/03/blog-4-300x300.jpg 300w, https://wordpress.vecurosoft.com/wellnez/wp-content/uploads/2023/03/blog-4-460x460.jpg 460w"
-                    sizes="(max-width: 100px) 100vw, 100px"
-                  ></img>
-                </div>
-                <div className="postBody">
-                  <h4>Umirite Svoj Um I Tijelo</h4>
-                  <p>
-                    <FaCalendarAlt className="icon"></FaCalendarAlt>16 JANUAR
-                    2023
-                  </p>
-                </div>
-              </div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9248.22488290243!2d17.188337875480332!3d44.81992281325674!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475e0202d91271f3%3A0xc1292baf73bbb7cc!2z0KjQsNGA0LPQvtCy0LDRhg!5e0!3m2!1ssr!2sba!4v1689080769230!5m2!1ssr!2sba"
+                width="100%"
+                height="300"
+                style={{ border: "0", overflow: "hidden", margin: "0" }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="google map address"
+              ></iframe>
             </div>
           </div>
         </div>
@@ -271,11 +239,15 @@ const Wrapper = styled.footer`
               height: 55px;
               border-style: solid;
               border-width: 1px 1px 1px 1px;
-              border-color: #bebebe;
+              border-color: var(--theme-color);
               border-radius: 59px 59px 59px 59px;
+              transition: var(--transition);
+              &:hover {
+                transform: scale(1.2);
+              }
               a {
                 font-size: 18px;
-                color: #bebebe;
+                color: var(--theme-color);
                 position: absolute;
                 top: 50%;
                 left: 50%;
