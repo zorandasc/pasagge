@@ -1,29 +1,33 @@
 import React from "react";
 import styled from "styled-components";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
+import { convertToBgImage } from "gbimage-bridge";
+import BackgroundImage from "gatsby-background-image";
 
 import Button1 from "../Button1";
 
-const GridGalery = ({ images }) => {
+const GridGalery = ({ className,images }) => {
   const projects = [
-    { id: 1, image: getImage(images[0]), name: "mini val", type: "njega kose" },
+    { id: 1, image: getImage(images[1]), name: "mini val", type: "njega kose" },
     {
       id: 2,
-      image: getImage(images[1]),
-      name: "divlja sjena",
-      type: "sminkanje",
+      image: getImage(images[2]),
+      name: "maska od blata",
+      type: "njega lica",
     },
     {
       id: 3,
-      image: getImage(images[2]),
+      image: getImage(images[0]),
       name: "broncani majdan",
       type: "njega tijela",
     },
     { id: 4, image: getImage(images[3]), name: "relax", type: "relax" },
   ];
 
+  const bgImage = convertToBgImage(getImage(images[4]));
+
   return (
-    <Wrapper>
+    <BackgroundImage Tag="section" {...bgImage} className={className}>
       <div className="main-title">
         <h2>
           Istaknuti radovi<span>Naša Galerija</span>
@@ -55,17 +59,16 @@ const GridGalery = ({ images }) => {
       <div className="btn-wrapper">
         <Button1>Galerija</Button1>
       </div>
-    </Wrapper>
+    </BackgroundImage>
   );
 };
 
-const Wrapper = styled.section`
-  padding: 5rem 0;
 
+export default styled(GridGalery)`
+padding: 5rem 0;
   .main-title {
     padding: 20px;
     position: relative;
-
     max-width: 700px;
     margin-right: auto;
     margin-left: auto;
@@ -198,7 +201,4 @@ const Wrapper = styled.section`
       padding: 60px;
       text-align: center !important;
     }
-  }
-`;
-
-export default GridGalery;
+  }`

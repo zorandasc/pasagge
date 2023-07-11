@@ -215,7 +215,7 @@ export default styled(Prices)`
     position: relative;
     flex-wrap: wrap;
     max-width: 1200px;
-    padding: 60px 15px 80px 15px;
+    padding: 60px 25px 80px 25px;
 
     .left-column {
       width: 100%;
@@ -233,7 +233,7 @@ export default styled(Prices)`
         justify-content: center;
         .tab {
           padding: 12px 20px;
-          background-color: var(--theme-color);
+          //background-color: var(--theme-color);
           font-weight: 700;
           position: relative;
           display: inline-block;
@@ -241,6 +241,7 @@ export default styled(Prices)`
           cursor: pointer;
         }
         .activeTab {
+          background-color: var(--theme-color);
           color: white;
           border: none;
         }
@@ -285,6 +286,7 @@ export default styled(Prices)`
             }
           }
           .price-title {
+            margin-left: 0.4rem;
             @media (min-width: 768px) {
               font-size: 1.25rem;
             }

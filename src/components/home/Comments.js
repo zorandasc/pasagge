@@ -7,9 +7,9 @@ import { convertToBgImage } from "gbimage-bridge";
 import BackgroundImage from "gatsby-background-image";
 
 const Comments = ({ className, images }) => {
- const [index, setIndex] = React.useState(0);
+  const [index, setIndex] = React.useState(0);
 
- const bgImage = convertToBgImage(getImage(images[0]));
+  const bgImage = convertToBgImage(getImage(images[0]));
 
   const customers = [
     {
@@ -34,7 +34,6 @@ const Comments = ({ className, images }) => {
         "I'm baby roof party iceland tilde try-hard adaptogen shaman pabst offal truffaut edison bulb organic mumblecore mixtape pitchfork.",
     },
   ];
-
 
   React.useEffect(() => {
     const lastIndex = customers.length - 1;
@@ -105,7 +104,7 @@ export default styled(Comments)`
   background-size: cover;
   background-repeat: no-repeat;
   opacity: 1 !important;
-  padding: 5rem 0;
+  padding: 1rem 0;
 
   .section-center {
     margin-top: 4rem;

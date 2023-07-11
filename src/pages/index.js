@@ -165,6 +165,11 @@ export const query = graphql`
         gatsbyImageData(placeholder: BLURRED)
       }
     }
+    galleryBg: file(name: { eq: "galleryBg" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: BLURRED)
+      }
+    }
   }
 `;
 
@@ -197,9 +202,9 @@ const IndexPage = ({ data }) => {
         images={[
           data.commentImage,
           data.personImage1,
-          data.personImage1,
-          data.personImage1,
-          data.personImage1,
+          data.personImage2,
+          data.personImage3,
+          
         ]}
       ></Comments>
      { /*<Quote></Quote>*/}    
@@ -209,6 +214,7 @@ const IndexPage = ({ data }) => {
           data.gallImage2,
           data.gallImage3,
           data.gallImage4,
+          data.galleryBg
         ]}
       ></GridGalery>
      </Layout>
