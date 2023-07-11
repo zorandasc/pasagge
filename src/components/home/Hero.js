@@ -5,13 +5,8 @@ import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 
 import { Background, Button1 } from "../index";
 
-const Hero = ({ image1, image2, image3 }) => {
+const Hero = ({ images }) => {
   const [index, setIndex] = React.useState(0);
-  const [images] = React.useState([
-    getImage(image1),
-    getImage(image2),
-    getImage(image3),
-  ]);
 
   //AUTOMATIZACIJA
   /*
@@ -40,11 +35,11 @@ const Hero = ({ image1, image2, image3 }) => {
 
   return (
     <Wrapper>
-      <Background image={images[index]}>
+      <Background image={getImage(images[index])}>
         <article>
           <p>Relax i spa centar</p>
           <h1>Liječenje Tijela Uma I Duha</h1>
-          <Button1>NAŠI SERVISI</Button1>
+          <Button1>Naši Servisi</Button1>
         </article>
         <button className="prev-btn" onClick={() => setIndex(index - 1)}>
           <FiChevronLeft></FiChevronLeft>
@@ -81,14 +76,14 @@ const Wrapper = styled.section`
       margin-right: 22rem;
     }
     h1 {
-      text-transform:capitalize;
+      text-transform: capitalize;
       font-weight: 500;
       line-height: 1.25;
       margin: 2rem 0 3rem 0;
       letter-spacing: 3px;
     }
     p {
-      text-transform:capitalize;
+      text-transform: capitalize;
       font-weight: 400;
       font-family: "Caveat", cursive;
       font-size: 1.25rem;

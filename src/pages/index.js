@@ -176,11 +176,7 @@ export const query = graphql`
 const IndexPage = ({ data }) => {
   return (
     <Layout>
-      <Hero
-        image1={data.heroImage1}
-        image2={data.heroImage2}
-        image3={data.heroImage3}
-      ></Hero>
+      <Hero images={[data.heroImage1, data.heroImage2, data.heroImage3]}></Hero>
       <About
         image1={data.aboutImage1}
         image2={data.aboutImage2}
@@ -197,27 +193,26 @@ const IndexPage = ({ data }) => {
           data.massageImage4,
         ]}
       ></Prices>
-     
+
       <Comments
         images={[
           data.commentImage,
           data.personImage1,
           data.personImage2,
           data.personImage3,
-          
         ]}
       ></Comments>
-     { /*<Quote></Quote>*/}    
-     <GridGalery
+      {/*<Quote></Quote>*/}
+      <GridGalery
         images={[
           data.gallImage1,
           data.gallImage2,
           data.gallImage3,
           data.gallImage4,
-          data.galleryBg
+          data.galleryBg,
         ]}
       ></GridGalery>
-     </Layout>
+    </Layout>
   );
 };
 

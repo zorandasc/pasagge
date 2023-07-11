@@ -92,7 +92,6 @@ export default styled(GridGalery)`
       text-transform: capitalize;
       p {
         font-size: 18px;
-        font-family: var(--title-font);
         font-weight: 400;
         display: block;
         line-height: 1;

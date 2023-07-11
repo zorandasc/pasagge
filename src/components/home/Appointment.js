@@ -18,7 +18,7 @@ const Appointment = ({ className, image }) => {
           </div>
           <div className="title-body">
             <span>Relaksirajte se svaki dan u svako vrijeme</span>
-            <p>ZAKAŽITE SASTANAK</p>
+            <p>Zakažite Sastanak</p>
           </div>
         </div>
 

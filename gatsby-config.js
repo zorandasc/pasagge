@@ -39,12 +39,12 @@ module.exports = {
         ],
         web: [
           {
-            name: `Roboto`,
-            file: `https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap`,
+            name: `Josefin Sans`,
+            file: `https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&display=swap`,
           },
           {
-            name: `Italiana`,
-            file: `https://fonts.googleapis.com/css2?family=Italiana:wght@400;700&display=swap`,
+            name: `Dancing Script`,
+            file: `https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap`,
           },
         ],
       },

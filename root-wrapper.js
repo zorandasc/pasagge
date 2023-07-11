@@ -19,8 +19,8 @@ const GlobalStyle = createGlobalStyle`
   --theme-color-light:rgba(242,216,231,0.8);
 
   --drawer-width: 480px;
-  --title-font: 'Italiana', serif;
-  --body-font: "Roboto", sans-serif;
+  --title-font: 'Dancing Script', Georgia, Times, serif;
+  --body-font: 'Josefin Sans', Helvetica, Arial, sans-serif;
   --main-container: 1270px;
   --container-gutters: 30px;
   --section-space: 120px;
@@ -78,7 +78,7 @@ h4 {
   text-transform: capitalize;
   line-height: 1.25;
   margin-bottom: 0.75rem;
-  font-weight: 400;
+  font-weight: 700;
   font-family: var(--title-font);
 }
 h1 {

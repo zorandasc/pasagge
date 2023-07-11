@@ -28,7 +28,7 @@ const Wrapper = styled.div`
     background-color: var(--smoke-color);
     color: var(--title-color);
     line-height: 1;
-    text-transform: uppercase;
+    text-transform: capitalize;
     display: inline-block;
     border: none;
     position: relative;
