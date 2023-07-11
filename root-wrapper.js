@@ -5,8 +5,6 @@ import { GatsbyProvider } from "./src/context/context";
 const GlobalStyle = createGlobalStyle`
 
 :root{
- 
-
   --body-bg: #ffffff;
   --body-color: #555555;
   --title-color: #121f38;
@@ -21,8 +19,8 @@ const GlobalStyle = createGlobalStyle`
   --theme-color-light:rgba(242,216,231,0.8);
 
   --drawer-width: 480px;
-  --title-font: "Marcellus", serif;
-  --body-font: "DM Sans", sans-serif;
+  --title-font: 'Italiana', serif;
+  --body-font: "Roboto", sans-serif;
   --main-container: 1270px;
   --container-gutters: 30px;
   --section-space: 120px;
@@ -81,7 +79,7 @@ h4 {
   line-height: 1.25;
   margin-bottom: 0.75rem;
   font-weight: 400;
-  font-family: var(--ff-primary);
+  font-family: var(--title-font);
 }
 h1 {
   font-size: 3rem;

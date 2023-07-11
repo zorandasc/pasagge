@@ -125,7 +125,7 @@ export default styled(GridGalery)`
           display: inline-block;
           color: var(--theme-color);
           text-align: left;
-          margin-left: 5px;
+          //margin-left: 5px;
           font-size: 20px;
           font-weight: bold;
           max-width: 70px;
