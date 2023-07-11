@@ -6,7 +6,7 @@ import BackgroundImage from "gatsby-background-image";
 
 import Button1 from "../Button1";
 
-const GridGalery = ({ className,images }) => {
+const GridGalery = ({ className, images }) => {
   const projects = [
     { id: 1, image: getImage(images[1]), name: "mini val", type: "njega kose" },
     {
@@ -28,14 +28,21 @@ const GridGalery = ({ className,images }) => {
 
   return (
     <BackgroundImage Tag="section" {...bgImage} className={className}>
-      <div className="main-title">
-        <h2>
-          Istaknuti radovi<span>Naša Galerija</span>
-        </h2>
-        <p>
-          Iskusite metamorfozu od napetosti do spokoja u našem salonu uz veliki
-          izbor masaža i tretmana za lice, tijelo i kosu.
-        </p>
+      <div className="title-wrapper">
+        <div className="title">
+          <p>
+            Vaših <span className="label">50 % popusta</span> je ovdije
+          </p>
+          <h2>
+            Istaknuti Radovi <span className="title-label"> Naša Galerija</span>
+          </h2>
+        </div>
+        <div className="subText">
+          <p>
+            Iskusite metamorfozu od napetosti do spokoja u našem salonu uz
+            veliki izbor masaža i tretmana za lice, tijelo i kosu.
+          </p>
+        </div>
       </div>
       <div className="tile-layout">
         {projects.map((project, index) => {
@@ -63,46 +70,79 @@ const GridGalery = ({ className,images }) => {
   );
 };
 
-
 export default styled(GridGalery)`
-padding: 5rem 0;
-  .main-title {
-    padding: 20px;
-    position: relative;
+  padding: 5rem 0;
+  .title-wrapper {
     max-width: 700px;
-    margin-right: auto;
-    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    flex-wrap: wrap;
+    align-content: center;
+    padding: 30px;
+
     @media (min-width: 768px) {
       padding: 60px;
-      text-align: center !important;
+      width: 50%;
+      margin: auto;
     }
-    h2 {
-      margin-top: -0.13em;
-      line-height: 1;
-      font-size: 30px;
-      margin-bottom: 10px;
-      @media (min-width: 768px) {
-        font-size: 50px;
-        margin-bottom: 17px;
-      }
-      span {
-        font-size: 20px;
-        max-width: 70px;
-        display: inline-block;
-        color: var(--theme-color);
-        text-align: left;
-        margin-left: 5px;
-        font-weight: bold;
+    .title {
+      margin-bottom: 20px;
+      text-transform: capitalize;
+      p {
+        font-size: 18px;
+        font-family: var(--title-font);
+        font-weight: 400;
+        display: block;
+        line-height: 1;
+        margin-bottom: 30px;
         @media (min-width: 768px) {
-          font-size: 24px;
+          font-size: 20px;
+        }
+        .label {
+          color: var(--white-color);
+          background-color: var(--theme-color);
+          padding: 5px 8px;
+          border-radius: 4px;
+          display: inline-block;
+          font-size: 16px;
+          @media (min-width: 768px) {
+            font-size: 16px;
+          }
+        }
+      }
+      h2 {
+        margin-top: -0.13em;
+        line-height: 1;
+        font-size: 30px;
+        margin-bottom: 10px;
+        @media (min-width: 768px) {
+          font-size: 50px;
+          margin-bottom: 17px;
+        }
+        .title-label {
+          display: inline-block;
+          color: var(--theme-color);
+          text-align: left;
+          margin-left: 5px;
+          font-size: 20px;
+          font-weight: bold;
+          max-width: 70px;
+          @media (min-width: 768px) {
+            font-size: 24px;
+          }
         }
       }
     }
-    p {
-      font-size: 16px;
-      font-family: var(--title-font);
-      @media (min-width: 768px) {
-        font-size: 18px;
+    .subText {
+      margin-bottom: 20px;
+      padding: 15px 0px 15px 30px;
+      border-style: solid;
+      border-width: 0px 0px 0px 2px;
+      border-color: var(--theme-color);
+      p {
+        line-height: 1.63;
       }
     }
   }
@@ -201,4 +241,5 @@ padding: 5rem 0;
       padding: 60px;
       text-align: center !important;
     }
-  }`
+  }
+`;

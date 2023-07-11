@@ -7,7 +7,6 @@ import { AiFillCheckCircle } from "react-icons/ai";
 import { MdOutlineCancel } from "react-icons/md";
 
 const Prices = ({ className, images }) => {
-  
   const [pricePlan, setPricePlan] = React.useState("basic");
 
   const bgImage = convertToBgImage(getImage(images[0]));
@@ -54,13 +53,19 @@ const Prices = ({ className, images }) => {
 
   return (
     <BackgroundImage Tag="section" {...bgImage} className={className}>
-      <div className="main-title">
-        <h2>
-          Pronađite inspiraciju <span>Cijenovni Plan</span>
-        </h2>
-        <p>
-          Vaših <span className="year-label">50 % popusta</span> je ovdije
-        </p>
+      <div className="title-wrapper">
+        <div className="title">
+          <p>
+            Vaših <span className="label">50 % popusta</span> je ovdije
+          </p>
+          <h2>
+            Pronađite Inspiraciju{" "}
+            <span className="title-label"> Cijenovni Plan</span>
+          </h2>
+        </div>
+        <div className="subText">
+          <p>Izaberitie plan koji savršeno odgovara vama i vašoj porodici</p>
+        </div>
       </div>
       <div className="price-container">
         <div className="left-column">
@@ -156,55 +161,77 @@ const Prices = ({ className, images }) => {
 };
 
 export default styled(Prices)`
-  .main-title {
-    padding: 20px;
-    padding-top: 60px;
-    position: relative;
+  .title-wrapper {
     max-width: 700px;
-    margin-right: auto;
-    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    flex-wrap: wrap;
+    align-content: center;
+    padding: 30px;
+
     @media (min-width: 768px) {
       padding: 60px;
-      text-align: center !important;
+      width: 50%;
+      margin: auto;
     }
-    h2 {
-      margin-top: -0.13em;
-      line-height: 1;
-      font-size: 30px;
-      margin-bottom: 10px;
-      @media (min-width: 768px) {
-        font-size: 50px;
-        margin-bottom: 17px;
-      }
-      span {
-        font-size: 20px;
-        max-width: 70px;
-        display: inline-block;
-        color: var(--theme-color);
-        text-align: left;
-        font-weight: bold;
-        @media (min-width: 768px) {
-          font-size: 24px;
-          margin-left: 5px;
-        }
-      }
-    }
-    p {
-      font-size: 16px;
-      font-family: var(--title-font);
-      @media (min-width: 768px) {
+    .title {
+      margin-bottom: 20px;
+      text-transform: capitalize;
+      p {
         font-size: 18px;
-      }
-      .year-label {
-        color: var(--white-color);
-        background-color: var(--theme-color);
-        padding: 2px 8px;
-        border-radius: 4px;
-        display: inline-block;
-        font-size: 14px;
+        font-family: var(--title-font);
+        font-weight: 400;
+        display: block;
+        line-height: 1;
+        margin-bottom: 30px;
         @media (min-width: 768px) {
-          font-size: 16px;
+          font-size: 20px;
         }
+        .label {
+          color: var(--white-color);
+          background-color: var(--theme-color);
+          padding: 5px 8px;
+          border-radius: 4px;
+          display: inline-block;
+          font-size: 16px;
+          @media (min-width: 768px) {
+            font-size: 16px;
+          }
+        }
+      }
+      h2 {
+        margin-top: -0.13em;
+        line-height: 1;
+        font-size: 30px;
+        margin-bottom: 10px;
+        @media (min-width: 768px) {
+          font-size: 50px;
+          margin-bottom: 17px;
+        }
+        .title-label {
+          display: inline-block;
+          color: var(--theme-color);
+          text-align: left;
+          margin-left: 5px;
+          font-size: 20px;
+          font-weight: bold;
+          max-width: 70px;
+          @media (min-width: 768px) {
+            font-size: 24px;
+          }
+        }
+      }
+    }
+    .subText {
+      margin-bottom: 20px;
+      padding: 15px 0px 15px 30px;
+      border-style: solid;
+      border-width: 0px 0px 0px 2px;
+      border-color: var(--theme-color);
+      p {
+        line-height: 1.63;
       }
     }
   }
@@ -215,7 +242,7 @@ export default styled(Prices)`
     position: relative;
     flex-wrap: wrap;
     max-width: 1200px;
-    padding: 60px 25px 80px 25px;
+    padding: 40px 25px 80px 25px;
 
     .left-column {
       width: 100%;

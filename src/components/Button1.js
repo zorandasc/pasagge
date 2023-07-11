@@ -22,6 +22,7 @@ const Wrapper = styled.div`
     width: initial;
   }
   .btn {
+    letter-spacing: 2px;
     font-size: 16px;
     background-color: var(--smoke-color);
     color: var(--title-color);
@@ -35,7 +36,7 @@ const Wrapper = styled.div`
     margin: 0 auto;
     padding: 15px 18px;
     //width: 100%;
-    max-width: 260px;
+    //max-width: 260px;
     margin-bottom: 1rem;
     box-shadow: 0 5px 30px 0 rgba(223, 73, 124, 0.72);
 
