@@ -64,7 +64,10 @@ const Prices = ({ className, images }) => {
           </h2>
         </div>
         <div className="subText">
-          <p>Izaberitie plan koji savršeno odgovara vama i vašoj porodici</p>
+          <p>
+            Iskusite metamorfozu od napetosti do spokoja u našem salonu uz
+            veliki izbor masaža i tretmana za lice, tijelo i kosu.
+          </p>
         </div>
       </div>
       <div className="price-container">
@@ -161,6 +164,7 @@ const Prices = ({ className, images }) => {
 };
 
 export default styled(Prices)`
+  padding: 5rem 0;
   .title-wrapper {
     max-width: 700px;
     display: flex;
@@ -225,6 +229,7 @@ export default styled(Prices)`
       }
     }
     .subText {
+      max-width: 500px;
       margin-bottom: 20px;
       padding: 15px 0px 15px 30px;
       border-style: solid;

@@ -49,6 +49,7 @@ const Services = ({ className, image }) => {
 };
 
 export default styled(Services)`
+  padding: 5rem 0;
   .title-wrapper {
     max-width: 700px;
     display: flex;
@@ -113,6 +114,7 @@ export default styled(Services)`
       }
     }
     .subText {
+      max-width: 500px;
       margin-bottom: 20px;
       padding: 15px 0px 15px 30px;
       border-style: solid;

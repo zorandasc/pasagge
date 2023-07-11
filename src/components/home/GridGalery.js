@@ -31,7 +31,7 @@ const GridGalery = ({ className, images }) => {
       <div className="title-wrapper">
         <div className="title">
           <p>
-            Vaših <span className="label">50 % popusta</span> je ovdije
+            Sa <span className="label">99 % zadovoljnih</span> korisnika
           </p>
           <h2>
             Istaknuti Radovi <span className="title-label"> Naša Galerija</span>
@@ -136,6 +136,7 @@ export default styled(GridGalery)`
       }
     }
     .subText {
+      max-width: 500px;
       margin-bottom: 20px;
       padding: 15px 0px 15px 30px;
       border-style: solid;

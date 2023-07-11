@@ -4,8 +4,7 @@ import { getImage, GatsbyImage } from "gatsby-plugin-image";
 
 import Button1 from "../Button1";
 
-const About = ({image1,image2,image3}) => {
-
+const About = ({ image1, image2, image3 }) => {
   return (
     <Wrapper>
       <div className="inner">
@@ -63,7 +62,10 @@ const About = ({image1,image2,image3}) => {
 };
 
 const Wrapper = styled.section`
-  padding: 100px 0px 100px 0px;
+  padding: 5rem 0 1rem 0;
+  @media (min-width: 768px) {
+    padding: 5rem 0;
+  }
   width: 100%;
   .inner {
     max-width: 1200px;
