@@ -69,14 +69,16 @@ const Wrapper = styled.nav`
   transition: all 0.5s;
   ${({ height }) =>
     height > 80 &&
-    `position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4.5rem;
-    border-bottom: 0.1rem solid var(--theme-color);
-    box-shadow: var(--darkShadow);
-    background: var(--smoke-color);`}
+    ` position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4.5rem;
+      border-bottom: 0.1rem solid var(--theme-color);
+      box-shadow: var(--darkShadow);
+      background: var(--body-bg);
+    `
+  }
 
   .nav-center {
     width: 90vw;

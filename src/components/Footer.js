@@ -1,10 +1,11 @@
 import React from "react";
 import { styled } from "styled-components";
-
-import socialLinks from "../constants/social_links";
-//import logo from "../images/logo-nobg.png";
 import { AiOutlineMail, AiFillPhone, AiFillPushpin } from "react-icons/ai";
 import { IoIosArrowForward } from "react-icons/io";
+import { Link } from "gatsby";
+
+import logo from "../images/logo.svg";
+import socialLinks from "../constants/social_links";
 
 const Footer = () => {
   return (
@@ -34,11 +35,14 @@ const Footer = () => {
           </div>
           <div className="second">
             <div className="headerLogo">
-              <img
-                src="https://wordpress.vecurosoft.com/wellnez/wp-content/uploads/2023/03/logo-2.svg"
-                alt="Wellnez"
-                className="white-logo"
-              />
+              <Link to="/">
+                <img
+                  src={logo}
+                  alt="passage logo"
+                  width="261"
+                  height="60"
+                ></img>
+              </Link>
             </div>
           </div>
           <div className="third">
