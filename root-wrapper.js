@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
   --body-bg: #ffffff;
   --body-color: #555555;
   --title-color: #121f38;
-  --vs-secondary-color: #fde5d8;
+  --secondary-color: #fde5d8;
   --smoke-color: #eff1f5;
   --light-color: #f8f9fa;
   --black-color: #000000;
@@ -27,7 +27,7 @@ const GlobalStyle = createGlobalStyle`
   --transition: all 0.3s linear;
   --spacing: 0.1rem;
   --radius: 0.25rem;
-  --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);;
+  --lightShadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.5);;
   --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
   --primary-light-shadow: 0 10px 15px rgba(223,73,124, 0.2);
   --primary-dark-shadow: 0 10px 15px rgba(223,73,124, 0.6);

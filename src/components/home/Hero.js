@@ -86,7 +86,7 @@ const Wrapper = styled.section`
       text-transform: capitalize;
       font-weight: 400;
       font-family: "Caveat", cursive;
-      font-size: 1.25rem;
+      font-size: 1.5rem;
     }
     a {
       background: transparent;

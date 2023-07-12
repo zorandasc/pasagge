@@ -296,7 +296,7 @@ export default styled(Prices)`
           justify-content: space-between;
           align-items: flex-end;
           .price-number {
-            font-size: 42px;
+            font-size: 32px;
             bottom: -2px;
             font-family: var(--title-font);
             line-height: 1;
@@ -317,6 +317,7 @@ export default styled(Prices)`
             }
           }
           .price-title {
+            text-align: end;
             h3{
               font-family: var(--body-font);
             }

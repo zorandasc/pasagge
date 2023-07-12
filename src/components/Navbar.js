@@ -97,8 +97,8 @@ const Wrapper = styled.nav`
       //width: 100px;
       //transform: scale(1);
       //@media (min-width: 800px) {
-       // margin-top: 3rem;
-        //width: auto;
+      // margin-top: 3rem;
+      //width: auto;
       //  width: 150px;
       //  transform: scale(1.2);
       //}
@@ -114,6 +114,7 @@ const Wrapper = styled.nav`
       border: transparent;
       color: var(--smoke-color);
       background: var(--theme-color);
+      box-shadow: var(--lightShadow);
       cursor: pointer;
       transition: var(--transition);
       &:hover {
@@ -125,9 +126,10 @@ const Wrapper = styled.nav`
     display: none;
     a {
       transition: var(--transition);
+      font-size: 18px;
       &:hover {
         color: var(--theme-color);
-        font-size: 18px;
+        font-size: 20px;
       }
     }
   }
@@ -143,29 +145,27 @@ const Wrapper = styled.nav`
       display: flex;
       flex-direction: row;
       li {
-        position: relative;
-        justify-content: flex-start;
-        text-align: left;
-        padding: 0px 8px 0px 0px;
-        align-items: flex-start;
+        display: inline-block;
+        font-weight: bold;
+        line-height: 55px;
+        text-align: center;
+        vertical-align: middle;
         width: 55px;
         height: 55px;
         border-style: solid;
         border-width: 1px 1px 1px 1px;
-        border-color: var(--smoke-color);
-        background-color: var(--theme-color);
+        border-color: var(--theme-color);
         border-radius: 59px 59px 59px 59px;
+        background-color: var(--theme-color);
         transition: var(--transition);
+        box-shadow: var(--lightShadow);
         &:hover {
           transform: scale(1.2);
         }
         a {
-          font-size: 18px;
+          vertical-align: middle;
           color: var(--smoke-color);
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
+          font-size: 18px;
         }
       }
     }
@@ -197,7 +197,6 @@ const Wrapper = styled.nav`
       display: block;
     }
     li {
-      padding: 1rem 0;
       position: relative;
     }
     button {

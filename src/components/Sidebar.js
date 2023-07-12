@@ -98,7 +98,7 @@ const Wrapper = styled.div`
     left: 0;
     width: 90vw;
     bottom: 0;
-    background: var(--smoke-color);
+    background-color: var(--body-bg);
     z-index: 3;
     opacity: 1;
     transition: all 0.5s;
@@ -134,6 +134,7 @@ const Wrapper = styled.div`
       background: var(--theme-color);
       cursor: pointer;
       transition: var(--transition);
+      box-shadow: var(--lightShadow);
       &:hover {
         background: var(--theme-color);
       }
@@ -223,25 +224,27 @@ const Wrapper = styled.div`
         display: flex;
         flex-direction: row;
         li {
-          position: relative;
-          justify-content: flex-start;
-          text-align: left;
-          padding: 0px 8px 0px 0px;
-          align-items: flex-start;
+          display: inline-block;
+          font-weight: bold;
+          line-height: 55px;
+          text-align: center;
+          vertical-align: middle;
           width: 55px;
           height: 55px;
           border-style: solid;
           border-width: 1px 1px 1px 1px;
-          border-color: var(--smoke-color);
-        background-color: var(--theme-color);
+          border-color: var(--theme-color);
           border-radius: 59px 59px 59px 59px;
+          background-color: var(--theme-color);
+          transition: var(--transition);
+          box-shadow: var(--lightShadow);
+          &:hover {
+            transform: scale(1.2);
+          }
           a {
-            font-size: 18px;
+            vertical-align: middle;
             color: var(--smoke-color);
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            font-size: 18px;
           }
         }
       }

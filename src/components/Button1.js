@@ -7,10 +7,7 @@ const Button1 = ({ path, children }) => {
     <Wrapper>
       <button className="btn btn-app">
         {children}
-        <BsFillArrowRightSquareFill
-          className="icon"
-      
-        ></BsFillArrowRightSquareFill>
+        <BsFillArrowRightSquareFill className="icon"></BsFillArrowRightSquareFill>
       </button>
     </Wrapper>
   );
@@ -25,12 +22,13 @@ const Wrapper = styled.div`
     cursor: pointer;
     letter-spacing: 2px;
     font-size: 16px;
-    background-color: var(--smoke-color);
+    background-color: var(--body-bg);
     color: var(--title-color);
     line-height: 1;
     text-transform: capitalize;
     display: inline-block;
     border: none;
+    border-radius: 2rem;
     position: relative;
     z-index: 1;
     text-align: center;
@@ -40,7 +38,7 @@ const Wrapper = styled.div`
     //max-width: 260px;
     margin-bottom: 1rem;
     box-shadow: 0 5px 30px 0 rgba(223, 73, 124, 0.72);
-
+    overflow: hidden;
     .icon {
       color: var(--theme-color);
       width: var(--icon-size, 30px);
@@ -50,6 +48,7 @@ const Wrapper = styled.div`
       margin-left: 15px;
       font-size: 18px;
       vertical-align: middle;
+      //border-radius: 0.6rem;
     }
     &::before,
     &::after {

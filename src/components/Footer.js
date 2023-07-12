@@ -44,7 +44,7 @@ const Footer = () => {
           <div className="third">
             <div className="newsLetter">
               <form>
-                <h3>NAŠ NEWSLETTER</h3>
+                <h3>Naš Newsletter</h3>
                 <div className="form-group">
                   <input
                     placeholder="Unesite vaš email"
@@ -53,7 +53,7 @@ const Footer = () => {
                     id="email"
                     required
                   ></input>
-                  <button className="btn">PRETPLATA</button>
+                  <button className="btn">Pretplata</button>
                 </div>
               </form>
             </div>
@@ -64,7 +64,7 @@ const Footer = () => {
         <div className="bodyInner">
           <div className="column about">
             <div className="title">
-              <h5>O NAMA PASAGGE</h5>
+              <h5>O Nama Passage</h5>
             </div>
             <div className="divider">
               <span></span>
@@ -91,7 +91,7 @@ const Footer = () => {
           </div>
           <div className="column important">
             <div className="title">
-              <h5>VAŽNI LINKOVI</h5>
+              <h5>Važni Linkovi</h5>
             </div>
             <div className="divider">
               <span></span>
@@ -121,7 +121,7 @@ const Footer = () => {
           </div>
           <div className="column important">
             <div className="title">
-              <h5>KATEGORIJE</h5>
+              <h5>Kategorija</h5>
             </div>
             <div className="divider">
               <span></span>
@@ -151,7 +151,7 @@ const Footer = () => {
           </div>
           <div className="column post">
             <div className="title">
-              <h5>NAŠA LOKACIJA</h5>
+              <h5>Naša Lokacija</h5>
             </div>
             <div className="divider">
               <span></span>
@@ -230,11 +230,11 @@ const Wrapper = styled.footer`
             display: flex;
             flex-direction: row;
             li {
-              position: relative;
-              justify-content: flex-start;
-              text-align: left;
-              padding: 0px 8px 0px 0px;
-              align-items: flex-start;
+              display: inline-block;
+              font-weight: bold;
+              line-height: 55px;
+              text-align: center;
+              vertical-align: middle;
               width: 55px;
               height: 55px;
               border-style: solid;
@@ -246,12 +246,9 @@ const Wrapper = styled.footer`
                 transform: scale(1.2);
               }
               a {
-                font-size: 18px;
+                vertical-align: middle;
                 color: var(--theme-color);
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
+                font-size: 18px;
               }
             }
           }
@@ -291,7 +288,7 @@ const Wrapper = styled.footer`
             padding-left: 40px;
             h3 {
               font-size: 20px;
-              text-transform: uppercase;
+              font-family: var(--body-font);
               margin-bottom: 19px;
               margin-top: -0.2em;
               color: var(--white-color);
@@ -317,11 +314,10 @@ const Wrapper = styled.footer`
               .btn {
                 background-color: var(--theme-color);
                 color: var(--white-color);
-                font-size: 14px;
+                font-size: 16px;
                 font-weight: 700;
-                letter-spacing: 0.1em;
+                letter-spacing: 2px;
                 line-height: 1;
-                text-transform: uppercase;
                 display: inline-block;
                 padding: 17px 28px;
                 border: none;
@@ -329,8 +325,8 @@ const Wrapper = styled.footer`
                 z-index: 1;
                 text-align: center;
                 @media (max-width: 1199px) {
-                  font-size: 12px;
-                  letter-spacing: 0;
+                  font-size: 14px;
+                  letter-spacing: 2px;
                   padding: 10px 15px;
                 }
               }
@@ -374,9 +370,9 @@ const Wrapper = styled.footer`
           line-height: 1;
           h5 {
             font-size: 1.25rem;
-            font-family: var(--title-font);
+            font-family: var(--body-font);
             color: var(--smoke-color);
-            text-transform: none;
+            text-transform: capitalize;
             font-weight: 400;
           }
         }

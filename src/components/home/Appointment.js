@@ -84,6 +84,7 @@ const Appointment = ({ className, image }) => {
               placeholder="Izaberite uslugu"
               className="form-control"
             >
+              <option selected>Izaberite uslugu</option>
               {services.map((service) => (
                 <option key={service.id}>{service.title}</option>
               ))}
@@ -175,7 +176,7 @@ export default styled(Appointment)`
       }
       .title-body {
         span {
-          font-size: 14px;
+          font-size: 16px;
           margin: 0 0 13px 0;
           line-height: 1;
           display: block;
@@ -185,7 +186,7 @@ export default styled(Appointment)`
         }
         p {
           font-size: 22px;
-          font-family: var(--title-font);
+          font-family: var(--body-font);
           margin: 0;
           line-height: 1;
           color: var(--title-color);
@@ -229,6 +230,7 @@ export default styled(Appointment)`
         width: 100%;
       }
       .submit-btn {
+        letter-spacing: 2px;
         font-size: 16px;
         background-color: var(--theme-color);
         color: var(--white-color);

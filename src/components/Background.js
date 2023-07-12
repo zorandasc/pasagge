@@ -36,7 +36,7 @@ const Wrapper = styled.section`
   .bcg {
     /* MUST!!!!!! */
     min-height: 100vh;
-    //margin-top: -5rem;
+    margin-top: -5rem;
     display: grid;
     place-items: center;
     animation: ${fadeIn} 3s ease-in-out 1 forwards;
