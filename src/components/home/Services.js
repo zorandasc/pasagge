@@ -80,7 +80,7 @@ export default styled(Services)`
         .label {
           color: var(--white-color);
           background-color: var(--theme-color);
-          padding: 5px 8px;
+          padding: 6px 8px 1px 8px;
           border-radius: 4px;
           display: inline-block;
           font-size: 16px;
@@ -92,7 +92,7 @@ export default styled(Services)`
       h2 {
         margin-top: -0.13em;
         line-height: 1;
-        font-size: 30px;
+        font-size: 3rem;
         margin-bottom: 10px;
         @media (min-width: 768px) {
           font-size: 50px;
@@ -102,8 +102,7 @@ export default styled(Services)`
           display: inline-block;
           color: var(--theme-color);
           text-align: left;
-          //margin-left: 5px;
-          font-size: 20px;
+          font-size: 25px;
           font-weight: bold;
           max-width: 70px;
           @media (min-width: 768px) {

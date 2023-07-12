@@ -79,7 +79,7 @@ const Wrapper = styled.section`
       text-transform: capitalize;
       font-weight: 500;
       line-height: 1.25;
-      margin: 2rem 0 3rem 0;
+      margin: 1rem 0 3rem 0;
       letter-spacing: 3px;
     }
     p {

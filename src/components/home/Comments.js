@@ -149,8 +149,8 @@ export default styled(Comments)`
       transform: translateY(-50%);
       background: var(--body-color);
       color: var(--smoke-color);
-      width: 1.25rem;
-      height: 1.25rem;
+      width: 2.25rem;
+      height: 2.25rem;
       display: grid;
       place-items: center;
       border-color: transparent;

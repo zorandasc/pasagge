@@ -44,7 +44,7 @@ module.exports = {
           },
           {
             name: `Dancing Script`,
-            file: `https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap`,
+            file: `https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet`,
           },
         ],
       },
