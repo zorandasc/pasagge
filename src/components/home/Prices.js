@@ -249,7 +249,7 @@ export default styled(Prices)`
 
     .left-column {
       width: 100%;
-      background-color: var(--smoke-color);
+      background-color: var(--body-bg);
       margin-bottom: 2rem;
       box-shadow: var(--darkShadow);
 

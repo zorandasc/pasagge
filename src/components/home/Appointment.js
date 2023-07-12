@@ -112,7 +112,7 @@ const Appointment = ({ className, image }) => {
             ></textarea>
           </div>
           <button type="submit" className="submit-btn">
-            pošalji
+            Pošalji
           </button>
         </form>
       </div>
@@ -235,7 +235,7 @@ export default styled(Appointment)`
         background-color: var(--theme-color);
         color: var(--white-color);
         line-height: 1;
-        text-transform: uppercase;
+        text-transform: capitalize;
         display: inline-block;
         border: none;
         position: relative;
