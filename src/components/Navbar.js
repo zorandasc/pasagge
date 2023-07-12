@@ -16,7 +16,7 @@ const Navbar = () => {
       <div className="nav-center">
         <div className="nav-header">
           <Link to="/">
-            <img src={logo} alt="design"></img>
+            <img src={logo} alt="passage logo" width="261" height="60"></img>
           </Link>
           {!isSidebarOpen && (
             <button className="toggle-btn" onClick={showSidebar}>
