@@ -31,7 +31,7 @@ const GridGalery = ({ className, images }) => {
       <div className="title-wrapper">
         <div className="title">
           <p>
-            Sa <span className="label">99 % zadovoljnih</span> korisnika
+            Pridružite se <span className="label">99 % zadovoljnih</span> korisnika
           </p>
           <h2>
             Istaknuti Radovi <span className="title-label"> Naša Galerija</span>

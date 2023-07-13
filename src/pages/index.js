@@ -183,7 +183,14 @@ const IndexPage = ({ data }) => {
         image3={data.aboutImage3}
       ></About>
       <Services image={data.serviceImage}></Services>
-      <Appointment image={data.appointImage}></Appointment>
+      <Comments
+        images={[
+          data.commentImage,
+          data.personImage1,
+          data.personImage2,
+          data.personImage3,
+        ]}
+      ></Comments>
       <Prices
         images={[
           data.priceImage,
@@ -193,15 +200,8 @@ const IndexPage = ({ data }) => {
           data.massageImage4,
         ]}
       ></Prices>
+      <Appointment image={data.appointImage}></Appointment>
 
-      <Comments
-        images={[
-          data.commentImage,
-          data.personImage1,
-          data.personImage2,
-          data.personImage3,
-        ]}
-      ></Comments>
       {/*<Quote></Quote>*/}
       <GridGalery
         images={[
