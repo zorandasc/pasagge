@@ -157,7 +157,7 @@ export default styled(Services)`
         position: relative;
 
         h3 {
-          margin-bottom: 12px;
+          margin-bottom: 16px;
           font-size: 24px;
         }
         p {

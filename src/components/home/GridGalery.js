@@ -178,7 +178,7 @@ export default styled(GridGalery)`
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -1%);
         width: 100%;
         transition: var(--transition);
         color: var(--smoke-color);
@@ -192,6 +192,7 @@ export default styled(GridGalery)`
       }
       &:hover .info {
         opacity: 1;
+        transform: translate(-50%, -50%);
       }
     }
     @media (min-width: 768px) {
