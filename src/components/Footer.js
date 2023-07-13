@@ -5,6 +5,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import { Link } from "gatsby";
 
 import logo from "../images/logo.svg";
+import cards from "../images/card.png"
 import socialLinks from "../constants/social_links";
 
 const Footer = () => {
@@ -53,11 +54,11 @@ const Footer = () => {
                   <input
                     placeholder="Unesite vaš email"
                     type="text"
-                    name="email"
-                    id="email"
+                    name="email-news"
+                    id="email-news"
                     required
                   ></input>
-                  <button className="btn">Pretplata</button>
+                  <button className="btn" aria-label="newsletter">Pretplata</button>
                 </div>
               </form>
             </div>
@@ -68,7 +69,7 @@ const Footer = () => {
         <div className="bodyInner">
           <div className="column about">
             <div className="title">
-              <h5>O Nama Passage</h5>
+              <h4>O Nama Passage</h4>
             </div>
             <div className="divider">
               <span></span>
@@ -95,7 +96,7 @@ const Footer = () => {
           </div>
           <div className="column important">
             <div className="title">
-              <h5>Važni Linkovi</h5>
+              <h4>Važni Linkovi</h4>
             </div>
             <div className="divider">
               <span></span>
@@ -125,7 +126,7 @@ const Footer = () => {
           </div>
           <div className="column important">
             <div className="title">
-              <h5>Kategorija</h5>
+              <h4>Kategorija</h4>
             </div>
             <div className="divider">
               <span></span>
@@ -155,7 +156,7 @@ const Footer = () => {
           </div>
           <div className="column post">
             <div className="title">
-              <h5>Naša Lokacija</h5>
+              <h4>Naša Lokacija</h4>
             </div>
             <div className="divider">
               <span></span>
@@ -182,8 +183,8 @@ const Footer = () => {
             <img
               width="188"
               height="25"
-              src="https://wordpress.vecurosoft.com/wellnez/wp-content/uploads/2023/03/card.png"
-              alt=""
+              src={cards}
+              alt="visa and master cards"
               loading="lazy"
             />
           </div>
@@ -372,7 +373,7 @@ const Wrapper = styled.footer`
         .title {
           margin-bottom: 20px;
           line-height: 1;
-          h5 {
+          h4 {
             font-size: 1.25rem;
             font-family: var(--body-font);
             color: var(--smoke-color);
@@ -419,7 +420,7 @@ const Wrapper = styled.footer`
             }
             p {
               padding-left: 10px;
-              font-family: "DM Sans", Sans-serif;
+              //font-family: "DM Sans", Sans-serif;
               font-size: 16px;
               font-weight: 500;
               line-height: 16px;
@@ -437,19 +438,19 @@ const Wrapper = styled.footer`
         .satnica {
           h4 {
             color: #ffffff;
-            font-family: "Marcellus", Sans-serif;
+            font-family: var(--body-font);
             font-size: 22px;
             font-weight: 400;
           }
           h5 {
             color: #a3a2a2;
-            font-family: "DM Sans", Sans-serif;
+       
             font-size: 18px;
             font-weight: 500;
           }
           p {
             color: #ffffff;
-            font-family: "DM Sans", Sans-serif;
+          
             font-size: 18px;
             font-weight: 500;
           }

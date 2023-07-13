@@ -41,10 +41,18 @@ const Hero = ({ images }) => {
           <h1>Liječenje Tijela Uma I Duha</h1>
           <Button1>Naši Servisi</Button1>
         </article>
-        <button className="prev-btn" onClick={() => setIndex(index - 1)}>
+        <button
+          className="prev-btn"
+          onClick={() => setIndex(index - 1)}
+          aria-label="swipe-left"
+        >
           <FiChevronLeft></FiChevronLeft>
         </button>
-        <button className="next-btn" onClick={() => setIndex(index + 1)}>
+        <button
+          className="next-btn"
+          onClick={() => setIndex(index + 1)}
+          aria-label="swipe-right"
+        >
           <FiChevronRight></FiChevronRight>
         </button>
         <div className="dots">

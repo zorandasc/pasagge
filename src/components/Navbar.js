@@ -19,7 +19,11 @@ const Navbar = () => {
             <img src={logo} alt="passage logo" width="261" height="60"></img>
           </Link>
           {!isSidebarOpen && (
-            <button className="toggle-btn" onClick={showSidebar}>
+            <button
+              className="toggle-btn"
+              onClick={showSidebar}
+              aria-label="hamburger menu"
+            >
               <GiHamburgerMenu></GiHamburgerMenu>
             </button>
           )}
@@ -77,8 +81,7 @@ const Wrapper = styled.nav`
       border-bottom: 0.1rem solid var(--theme-color);
       box-shadow: var(--darkShadow);
       background: var(--body-bg);
-    `
-  }
+    `}
 
   .nav-center {
     width: 90vw;

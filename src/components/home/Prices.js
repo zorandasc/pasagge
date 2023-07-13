@@ -76,12 +76,14 @@ const Prices = ({ className, images }) => {
             <button
               onClick={() => pricePlanHandler("basic")}
               className={pricePlan === "basic" ? "tab activeTab" : "tab"}
+              aria-label="basic plan"
             >
               Osnovni Plan
             </button>
             <button
               onClick={() => pricePlanHandler("family")}
               className={pricePlan === "family" ? "tab activeTab" : "tab"}
+              aria-label="family plan"
             >
               Porodični Plan
             </button>

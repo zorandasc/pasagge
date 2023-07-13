@@ -81,6 +81,7 @@ const Comments = ({ className, images }) => {
           onClick={() => {
             setIndex(index - 1);
           }}
+          aria-label="swipe-left"
         >
           <FiChevronLeft />
         </button>
@@ -89,6 +90,7 @@ const Comments = ({ className, images }) => {
           onClick={() => {
             setIndex(index + 1);
           }}
+          aria-label="swipe-right"
         >
           <FiChevronRight />
         </button>

@@ -23,7 +23,7 @@ const Sidebar = () => {
           <Link to="/">
             <img src={logo} alt="design"></img>
           </Link>
-          <button onClick={hideSidebar} className="closeBtn">
+          <button onClick={hideSidebar} className="closeBtn" aria-label="close">
             <FaTimes className="closeIcon"></FaTimes>
           </button>
         </header>

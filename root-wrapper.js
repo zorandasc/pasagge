@@ -47,7 +47,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: var(--body-font);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   color: var(--body-color);
   line-height: 28px;

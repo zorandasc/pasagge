@@ -5,7 +5,7 @@ import { styled } from "styled-components";
 const Button1 = ({ path, children }) => {
   return (
     <Wrapper>
-      <button className="btn btn-app">
+      <button className="btn btn-app" aria-label={children}>
         {children}
         <BsFillArrowRightSquareFill className="icon"></BsFillArrowRightSquareFill>
       </button>

@@ -83,10 +83,11 @@ const Appointment = ({ className, image }) => {
               required
               placeholder="Izaberite uslugu"
               className="form-control"
+              defaultValue="Izaberite uslugu"
             >
-              <option selected>Izaberite uslugu</option>
+              <option disabled value="Izaberite uslugu">Izaberite uslugu</option>
               {services.map((service) => (
-                <option key={service.id}>{service.title}</option>
+                <option key={service.id} value={service.title}>{service.title}</option>
               ))}
             </select>
           </div>
@@ -111,7 +112,7 @@ const Appointment = ({ className, image }) => {
               className="form-control"
             ></textarea>
           </div>
-          <button type="submit" className="submit-btn">
+          <button type="submit" className="submit-btn" aria-label="send">
             Pošalji
           </button>
         </form>
