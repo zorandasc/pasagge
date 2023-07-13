@@ -37,19 +37,22 @@ const About = ({ image1, image2, image3 }) => {
           </div>
           <div className="subText">
             <p>
-              U okviru objekta dostupan je niz različitih tehnika masaže,
-              refleksologije, tretmana tela i lica koje će vam pomoći da se
-              opustite
+              Stručnost koju možete osjetiti, rezultati koje možete vidjeti.
+              Destilovanje nastalo godinama profesionalnog iskustva u primjeni tretman ljepote
+              kako bi se ponudili vidljivi rezultati upareni sa nenadmašnim
+              spa iskustvom.
             </p>
           </div>
           <div className="mainText">
             <p>
-              Naš Spa centar Sijam Tajland vodi nezavisna velnes kompanija iz
-              Banja Luke koja obezbeđuje beskompromisni kvalitet. Naš Spa centar
-              Sijam Tajland vodi nezavisna velnes kompanija iz Banja Luke koja
-              obezbeđuje beskompromisni kvalitet.Naš Spa centar Sijam Tajland
-              vodi nezavisna velnes kompanija iz Banja Luke koja obezbeđuje
-              beskompromisni kvalitet.
+              Naš Spa Beauty Salon je tim iskusnih i visoko obučenih kozmetičkih
+              terapeuta koji će rado sastaviti spa ili beauty tretman paket
+              dizajniran posebno za vaše potrebe i ponuditi vam savjete o
+              zahtjevima vaše kože. U okviru salona Spa Beauty nalazi se oaza
+              smirenosti i spokoja. Započnite svoje putovanje samootkrivanja
+              daleko od spoljašnjeg svijeta gde se tijelo, um i duša njeguju i
+              obnavljaju, ostavljajući vas energičnim iznutra i sjajno
+              izgledajućim spolja.
             </p>
           </div>
           <div className="btn-wrapper">
@@ -190,7 +193,6 @@ const Wrapper = styled.section`
       .mainText {
         margin-bottom: 20px;
         p {
-          font-size: 16px;
           line-height: 1.8em;
         }
       }

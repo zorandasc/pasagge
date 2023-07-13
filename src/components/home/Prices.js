@@ -56,7 +56,7 @@ const Prices = ({ className, images }) => {
       <div className="title-wrapper">
         <div className="title">
           <p>
-            Vaših <span className="label">50 % popusta</span> je ovdije
+            Vaših <span className="label">25 % popusta</span> je ovdije
           </p>
           <h2>
             Pronađite Inspiraciju{" "}
@@ -65,8 +65,8 @@ const Prices = ({ className, images }) => {
         </div>
         <div className="subText">
           <p>
-            Iskusite metamorfozu od napetosti do spokoja u našem salonu uz
-            veliki izbor masaža i tretmana za lice, tijelo i kosu.
+            Uzmite malo vremena za sebe. Počastite se. Zaslužili ste to. Rezervišite tretman
+            ovog mijeseca i dobićete 25% popusta na sve dalje tretmane.
           </p>
         </div>
       </div>
@@ -319,7 +319,7 @@ export default styled(Prices)`
           }
           .price-title {
             text-align: end;
-            h3{
+            h3 {
               font-family: var(--body-font);
             }
             margin-left: 0.4rem;

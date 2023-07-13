@@ -109,11 +109,9 @@ p {
     font-size: 1.75rem;
   }
   h4 {
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
-  body {
-    font-size: 1rem;
-  }
+ 
   h1,
   h2,
   h3,

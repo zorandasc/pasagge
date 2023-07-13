@@ -14,24 +14,24 @@ const Comments = ({ className, images }) => {
   const customers = [
     {
       image: getImage(images[1]),
-      name: "Mario",
-      title: "Frizer",
+      name: "Igor",
+      title: "Terapija kose",
       quote:
-        "I'm baby roof party iceland tilde try-hard adaptogen shaman pabst offal truffaut edison bulb organic mumblecore mixtape pitchfork.",
+        "OdličnI u pomaganju da popravim neke problematične urasle dlake. Problem riješen otkad sam slijedila njihove savjete. Bravo!",
     },
     {
       image: getImage(images[2]),
-      name: "Alisa",
-      title: "Dizajner",
+      name: "Jelena",
+      title: "Terapija Voska",
       quote:
-        "I'm baby roof party iceland tilde try-hard adaptogen shaman pabst offal truffaut edison bulb organic mumblecore mixtape pitchfork.",
+        "Praktično bez bola i odlični rezultati svaki put. Najbolje vaksiranje koje sam ikada imala.",
     },
     {
       image: getImage(images[3]),
       name: "Milan",
-      title: "Korisnik",
+      title: "Masaža",
       quote:
-        "I'm baby roof party iceland tilde try-hard adaptogen shaman pabst offal truffaut edison bulb organic mumblecore mixtape pitchfork.",
+        "Spa Beauty Salon je predivan salon sa veoma ljubaznim i prijatnim osobljem. Od prve sesije sa njima mogu da osetim promenu.",
     },
   ];
 
@@ -124,13 +124,13 @@ export default styled(Comments)`
     }
     h4 {
       text-transform: uppercase;
-      color: var(--theme-color);
+      color: var(--body-bg);
       margin-bottom: 0.25rem;
     }
     .title {
       text-transform: capitalize;
       margin-bottom: 0.75rem;
-      color: var(--smoke-color);
+      color: var(--theme-color);
       font-size: 18px;
     }
     .text {

@@ -85,9 +85,13 @@ const Appointment = ({ className, image }) => {
               className="form-control"
               defaultValue="Izaberite uslugu"
             >
-              <option disabled value="Izaberite uslugu">Izaberite uslugu</option>
+              <option disabled value="Izaberite uslugu">
+                Izaberite uslugu
+              </option>
               {services.map((service) => (
-                <option key={service.id} value={service.title}>{service.title}</option>
+                <option key={service.id} value={service.title}>
+                  {service.title}
+                </option>
               ))}
             </select>
           </div>
@@ -222,6 +226,9 @@ export default styled(Appointment)`
           border-radius: 0;
           font-size: 16px;
           width: 100%;
+        }
+        textarea {
+          border: 1em solid var(--body-bg);
         }
         @media (min-width: 768px) {
           width: 50%;

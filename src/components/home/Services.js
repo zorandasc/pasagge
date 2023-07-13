@@ -22,8 +22,10 @@ const Services = ({ className, image }) => {
         </div>
         <div className="subText">
           <p>
-            Iskusite metamorfozu od napetosti do spokoja u našem salonu uz
-            veliki izbor masaža i tretmana za lice, tijelo i kosu.
+            Naš kozmetički salon nudi zadivljujući komplementarni dodatak
+            terapeutskim i podmlađujućim tretmanima ljepote lica i tijela,
+            koristeći samo najbolje proizvode za njegu kože sa najfinijim
+            sastojcima.
           </p>
         </div>
       </div>
