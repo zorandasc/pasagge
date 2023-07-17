@@ -39,7 +39,7 @@ const Hero = ({ images }) => {
         <article>
           <p>Relax i spa centar</p>
           <h1>Liječenje Tijela Uma I Duha</h1>
-          <Button1>Naši Servisi</Button1>
+          <Button1>Naše Usluge</Button1>
         </article>
         <button
           className="prev-btn"
