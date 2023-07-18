@@ -35,7 +35,7 @@ const Hero = ({ images }) => {
 
   return (
     <Wrapper>
-      <Background image={getImage(images[index])}>
+      <Background image={getImage(images[index])} home="true">
         <article>
           <p>Relax i spa centar</p>
           <h1>Liječenje Tijela Uma I Duha</h1>

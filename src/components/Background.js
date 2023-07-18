@@ -3,12 +3,12 @@ import styled, { keyframes } from "styled-components";
 import { convertToBgImage } from "gbimage-bridge";
 import BackgroundImage from "gatsby-background-image";
 
-const Background = ({ children, image }) => {
+const Background = ({ children, image, home }) => {
   // Use like this:
   const bgImage = convertToBgImage(image);
 
   return (
-    <Wrapper>
+    <Wrapper home={home}>
       <BackgroundImage
         Tag="section"
         // Spread bgImage into BackgroundImage:
@@ -35,8 +35,10 @@ const fadeIn = keyframes`
 const Wrapper = styled.section`
   .bcg {
     /* MUST!!!!!! */
-    min-height: 100vh;
-    margin-top: -5rem;
+    //min-height: 100vh;
+    min-height: ${props => props.home ? "100vh" : "50vh"};
+    //margin-top: -5rem;
+    margin-top: ${props => props.home ? "-5rem" : "0"};
     display: grid;
     place-items: center;
     animation: ${fadeIn} 3s ease-in-out 1 forwards;
