@@ -32,11 +32,8 @@ const contact = ({ data }) => {
   return (
     <Layout>
       <Wrapper>
-        <Background
-          image={getImage(data.heroImage1)}
-          className="contact-header-container"
-        >
-          <div className="section-center contact-header-title ">
+        <Background image={getImage(data.heroImage1)}>
+          <div className="contact-header-title">
             <ul>
               <li>
                 <Link to="/">POČETNA</Link>
@@ -104,7 +101,6 @@ const contact = ({ data }) => {
         </div>
 
         <Slide right>
-        
           <div className="section-center form-container">
             <h2>Ostanite u Kontaktu, Pišite Nam.</h2>
 
@@ -161,7 +157,6 @@ const contact = ({ data }) => {
               </div>
             </form>
           </div>
-         
         </Slide>
 
         <div className="section-center map">
@@ -179,11 +174,11 @@ const contact = ({ data }) => {
       </Wrapper>
     </Layout>
   );
-}
+};
 
 export const query = graphql`
   query {
-    heroImage1: file(name: { eq: "massage1" }) {
+    heroImage1: file(name: { eq: "pageBg" }) {
       childImageSharp {
         gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
       }
@@ -197,45 +192,37 @@ export const query = graphql`
 `;
 
 const Wrapper = styled.section`
-  //padding: 8rem 0;
-  //background-color: var(--clr-black-3);
-  color: var(--body-bg);
-  /*  HEADER SECTION */
-  .contact-header-container {
-    text-align: left;
-    padding: 54px 0;
-    position: relative;
-    .contact-header-title {
-      width: 100%;
-      padding-right: 15px;
-      padding-left: 15px;
-      margin-right: auto;
-      margin-left: auto;
+  color: var(--title-color);
+  .contact-header-title {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 
-      ul {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        margin: 0 0 31px;
-        list-style: none;
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin: 0 0 31px;
+      list-style: none;
+      color: var(--theme-color);
+
+      li:first-child a {
+        color: var(--title-color);
+      }
+      li:first-child a:hover {
         color: var(--theme-color);
+      }
 
-        li:first-child a {
-          color: var(--body-bg);
-        }
-        li:first-child a:hover {
-          color: var(--theme-color);
-        }
-
-        li:not(:first-child)::before {
-          content: "•";
-          border-radius: 50%;
-          padding: 0 11px;
-          color: var(--theme-color);
-          font-size: 10px;
-          font-weight: 900;
-          display: inline-block;
-        }
+      li:not(:first-child)::before {
+        content: ">>";
+        border-radius: 50%;
+        padding: 0 11px;
+        color: var(--theme-color);
+        font-size: 20px;
+        font-weight: 900;
+        display: inline-block;
       }
     }
   }

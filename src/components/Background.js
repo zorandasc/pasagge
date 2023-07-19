@@ -22,6 +22,7 @@ const Background = ({ children, image, home }) => {
   );
 };
 
+/*
 const fadeIn = keyframes`
   from{
     background-color:rgb(0,0,0,0.5);
@@ -32,6 +33,9 @@ const fadeIn = keyframes`
 
 `;
 
+//animation: ${fadeIn} 3s ease-in-out 1 forwards;
+*/
+
 const Wrapper = styled.section`
   .bcg {
     /* MUST!!!!!! */
@@ -41,7 +45,9 @@ const Wrapper = styled.section`
     margin-top: ${props => props.home ? "-5rem" : "0"};
     display: grid;
     place-items: center;
-    animation: ${fadeIn} 3s ease-in-out 1 forwards;
+    
+    background-color:${props => props.home ? "rgba(0,0,0,0.2)" : "none"};
+
   }
 `;
 
