@@ -8,17 +8,17 @@ const links = [
   {
     id: 2,
     text: "O nama",
-    url: "/",
+    url: "/about",
   },
   {
     id: 3,
     text: "Galerija",
-    url: "/",
+    url: "/galery",
   },
   {
     id: 4,
     text: "Kontakt",
-    url: "/",
+    url: "/contact",
   },
 ];
 

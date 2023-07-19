@@ -37,7 +37,7 @@ const Hero = ({ images }) => {
     <Wrapper>
       <Background image={getImage(images[index])} home="true">
         <article>
-          <p>Relax i spa centar</p>
+          <p>Relax & spa centar</p>
           <h1>Liječenje Tijela Uma I Duha</h1>
           <Button1>Naše Usluge</Button1>
         </article>

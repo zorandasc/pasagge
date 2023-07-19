@@ -8,6 +8,7 @@ const GlobalStyle = createGlobalStyle`
   --body-bg: #ffffff;
   --body-color: #555555;
   --title-color: #121f38;
+  --title-color-second:#232b31;
   --secondary-color: #fde5d8;
   --smoke-color: #eff1f5;
   --light-color: #f8f9fa;

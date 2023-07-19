@@ -342,7 +342,7 @@ const Wrapper = styled.footer`
     }
   }
   .body {
-    background-color: #232b31;
+    background-color: var(--title-color-second);
     padding: 70px 0px 0px 0px;
 
     .bodyInner {

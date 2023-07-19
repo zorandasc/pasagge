@@ -38,9 +38,8 @@ const About = ({ image1, image2, image3 }) => {
           <div className="subText">
             <p>
               Stručnost koju možete osjetiti, rezultati koje možete vidjeti.
-              Destilovanje nastalo godinama profesionalnog iskustva u primjeni tretman ljepote
-              kako bi se ponudili vidljivi rezultati upareni sa nenadmašnim
-              spa iskustvom.
+              Destilovanje nastalo godinama profesionalnog iskustva u primjeni tretmana ljepote
+              pružiti će Vam nenadmašno spa iskustvo.
             </p>
           </div>
           <div className="mainText">
@@ -48,11 +47,10 @@ const About = ({ image1, image2, image3 }) => {
               Naš Spa Beauty Salon je tim iskusnih i visoko obučenih kozmetičkih
               terapeuta koji će rado sastaviti spa ili beauty tretman paket
               dizajniran posebno za vaše potrebe i ponuditi vam savjete o
-              zahtjevima vaše kože. U okviru salona Spa Beauty nalazi se oaza
+              njezi vašeg tijela. U okviru salona Spa Beauty nalazi se oaza
               smirenosti i spokoja. Započnite svoje putovanje samootkrivanja
               daleko od spoljašnjeg svijeta gde se tijelo, um i duša njeguju i
-              obnavljaju, ostavljajući vas energičnim iznutra i sjajno
-              izgledajućim spolja.
+              obnavljaju, ostavljajući vas energičnim iznutra i sjajnim spolja.
             </p>
           </div>
           <div className="btn-wrapper">

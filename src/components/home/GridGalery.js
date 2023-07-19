@@ -8,7 +8,12 @@ import Button1 from "../Button1";
 
 const GridGalery = ({ className, images }) => {
   const projects = [
-    { id: 1, image: getImage(images[1]), name: "mini val", type: "njega kose" },
+    {
+      id: 1,
+      image: getImage(images[1]),
+      name: "hidratantna terapija",
+      type: "njega kose",
+    },
     {
       id: 2,
       image: getImage(images[2]),
@@ -18,7 +23,7 @@ const GridGalery = ({ className, images }) => {
     {
       id: 3,
       image: getImage(images[0]),
-      name: "broncani majdan",
+      name: "sjajan ten",
       type: "njega tijela",
     },
     { id: 4, image: getImage(images[3]), name: "relax", type: "relax" },
@@ -31,7 +36,8 @@ const GridGalery = ({ className, images }) => {
       <div className="title-wrapper">
         <div className="title">
           <p>
-            Pridružite se <span className="label">99 % zadovoljnih</span> korisnika
+            Pridružite se Našim <span className="label">99 % zadovoljnih</span>{" "}
+            korisnika
           </p>
           <h2>
             Istaknuti Radovi <span className="title-label"> Naša Galerija</span>

@@ -22,10 +22,9 @@ const Services = ({ className, image }) => {
         </div>
         <div className="subText">
           <p>
-            Naš kozmetički salon nudi zadivljujući komplementarni dodatak
-            terapeutskim i podmlađujućim tretmanima ljepote lica i tijela,
-            koristeći samo najbolje proizvode za njegu kože sa najfinijim
-            sastojcima.
+            Naš kozmetički salon nudi kompletan spektar terapeutskih i
+            podmlađujućih tretmana ljepote, koristeći samo najbolje proizvode sa
+            najfinijim sastojcima za njegu lica, kože, kose i tijela.
           </p>
         </div>
       </div>

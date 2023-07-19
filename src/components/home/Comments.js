@@ -17,7 +17,7 @@ const Comments = ({ className, images }) => {
       name: "Igor",
       title: "Terapija kose",
       quote:
-        "OdličnI u pomaganju da popravim neke problematične urasle dlake. Problem riješen otkad sam slijedila njihove savjete. Bravo!",
+        "OdličnI u pomaganju da popravim neke problematične urasle dlake. Problem riješen otkad sam slijedio njihove savjete. Bravo!",
     },
     {
       image: getImage(images[2]),

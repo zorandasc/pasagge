@@ -1,14 +1,32 @@
 import React from "react";
 import styled from "styled-components";
 import { graphql, Link } from "gatsby";
-import { getImage } from "gatsby-plugin-image";
+import { getImage, StaticImage } from "gatsby-plugin-image";
 import { TfiEmail } from "react-icons/tfi";
 import { AiOutlinePhone } from "react-icons/ai";
-import { BsFillHouseDoorFill, BsFillClockFill } from "react-icons/bs";
+import {
+  BsFillHouseDoorFill,
+  BsFillClockFill,
+  BsFillInfoCircleFill,
+} from "react-icons/bs";
 import Slide from "react-reveal/Slide";
 import Zoom from "react-reveal/Zoom";
 
-import { Layout, Seo,Background } from "../components";
+import { Layout, Seo, Background } from "../components";
+
+const AddressWrapper = ({ children }) => {
+  return (
+    <div className="address">
+      {children}
+      <StaticImage
+        src="../images/laticeBg.jpg"
+        layout="constrained"
+        className="hero-img"
+        alt="Herro image"
+      ></StaticImage>
+    </div>
+  );
+};
 
 const contact = ({ data }) => {
   return (
@@ -32,22 +50,25 @@ const contact = ({ data }) => {
         </Background>
         <div className="section-center address-center">
           <Slide left>
-            <div className="address">
-              <h4>KORISNIČKA PODRŠKA</h4>
+            <AddressWrapper>
+              <h3>
+                Informacije i Podrška{" "}
+                <BsFillInfoCircleFill className="icon"></BsFillInfoCircleFill>
+              </h3>
               <div className="tel-email">
-                <AiOutlinePhone className="icon"></AiOutlinePhone>(+381) 656 838
-                126
+                <AiOutlinePhone className="icon"></AiOutlinePhone>065 842 979
               </div>
               <div className="tel-email">
-                <TfiEmail className="icon"></TfiEmail>turbotimservis@gmail.com
+                <TfiEmail className="icon"></TfiEmail>studiopasagge@gmail.com
               </div>
-            </div>
+            </AddressWrapper>
           </Slide>
           <Zoom>
-            <div className="address">
-              <h4>
-                RADNO VREME <BsFillClockFill className="icon"></BsFillClockFill>
-              </h4>
+            <AddressWrapper>
+              <h3>
+                Radno Vrijeme{" "}
+                <BsFillClockFill className="icon"></BsFillClockFill>
+              </h3>
               <div className="time">
                 <span>Ponedeljak - Četvrtak</span>
                 <span>8 am - 8 pm</span>
@@ -64,45 +85,29 @@ const contact = ({ data }) => {
                 <span>Nedelja</span>
                 <span>Zatvoreno</span>
               </div>
-            </div>
+            </AddressWrapper>
           </Zoom>
           <Slide right>
-            <div className="address">
-              <h4>
-                ADRESA
+            <AddressWrapper>
+              <h3>
+                Adresa
                 <BsFillHouseDoorFill className="icon"></BsFillHouseDoorFill>
-              </h4>
+              </h3>
               <div className="street">
-                <span>6 April bb, Prijepolje, Srbija</span>
+                <span>Šargovačkih Đaka 1, Banja Luka, BiH</span>
               </div>
               <div>
                 <span></span>
               </div>
-            </div>
+            </AddressWrapper>
           </Slide>
         </div>
-        <Zoom>
-          <div className="section-center map">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2899.6162718128353!2d19.667622114392778!3d43.38504697774884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4757f8f0cf7fb1e5%3A0x2480c811ef3e7ab!2s6.%20aprila%2C%20Prijepolje%2C%20Serbia!5e0!3m2!1sen!2sba!4v1672685192795!5m2!1sen!2sba"
-              width="100%"
-              height="400"
-              style={{ border: "0", overflow: "hidden", margin: "0" }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="google map address"
-            ></iframe>
-          </div>
-        </Zoom>
-        <Slide bottom>
+
+        <Slide right>
+        
           <div className="section-center form-container">
-            <h2>ZAKAŽITE ONLINE PREGLED</h2>
-            <p>
-              Nakon što prosledite obrazac, predstavnik će vas ponovo
-              kontaktirati sa informacijama koje će vam biti potrebne da
-              zakažete sastanak.
-            </p>
+            <h2>Ostanite u Kontaktu, Pišite Nam.</h2>
+
             <form
               name="contact"
               className="form-group"
@@ -114,7 +119,7 @@ const contact = ({ data }) => {
               <input type="hidden" name="form-name" value="contact" />
               <div className="credencial-container">
                 <div>
-                  <label htmlFor="name">VAŠE IME</label>
+                  <label htmlFor="name">Vaše Ime</label>
                   <input
                     type="text"
                     name="name"
@@ -125,7 +130,7 @@ const contact = ({ data }) => {
                   />
                 </div>
                 <div>
-                  <label htmlFor="email">VAŠ EMAIL</label>
+                  <label htmlFor="email">Vaš Email</label>
                   <input
                     type="email"
                     name="email"
@@ -138,7 +143,7 @@ const contact = ({ data }) => {
               </div>
               <div className="message-container">
                 <div>
-                  <label htmlFor="message">VAŠA PORUKA</label>
+                  <label htmlFor="message">Vaša Poruke</label>
                   <textarea
                     name="message"
                     id="message"
@@ -156,15 +161,34 @@ const contact = ({ data }) => {
               </div>
             </form>
           </div>
+         
         </Slide>
+
+        <div className="section-center map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9248.22488290243!2d17.188337875480332!3d44.81992281325674!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475e0202d91271f3%3A0xc1292baf73bbb7cc!2z0KjQsNGA0LPQvtCy0LDRhg!5e0!3m2!1ssr!2sba!4v1689080769230!5m2!1ssr!2sba"
+            width="100%"
+            height="400"
+            style={{ border: "0", overflow: "hidden", margin: "0" }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="google map address"
+          ></iframe>
+        </div>
       </Wrapper>
     </Layout>
   );
-};
+}
 
 export const query = graphql`
   query {
     heroImage1: file(name: { eq: "massage1" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+      }
+    }
+    laticeBg: file(name: { eq: "laticeBg" }) {
       childImageSharp {
         gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
       }
@@ -220,23 +244,32 @@ const Wrapper = styled.section`
     padding-top: 100px;
   }
   .address {
-    background-color: var(--title-color);
+    position: relative;
+    color: var(--title-color);
     padding: 38px 30px 44px;
     margin-bottom: 2rem;
-    border: 1px solid #343434;
     text-align: left;
-    box-shadow: var(--primary-light-shadow);
+    box-shadow: var(--lightShadow);
     -webkit-transition: var(--transition);
     transition: var(--transition);
-    h4 {
+    overflow: hidden;
+    .hero-img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    h3 {
       margin-bottom: 2rem;
-      font-size: 23px;
+      font-size: 1.75rem;
       line-height: 1.4347;
       font-weight: 700;
-      color: var(--body-bg);
+      text-transform: capitalize;
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
     }
     div {
       margin-top: 14px;
@@ -264,12 +297,11 @@ const Wrapper = styled.section`
     }
   }
   .address:hover {
-    box-shadow: var(--primary-dark-shadow);
+    box-shadow: var(--darkShadow);
   }
 
   @media screen and (min-width: 676px) {
     .address-center {
-      padding-bottom: 100px;
       display: grid;
       grid-template-columns: 1fr 1fr;
       -webkit-column-gap: 2rem;
@@ -285,16 +317,17 @@ const Wrapper = styled.section`
 
   /*  FORM SECTION */
   .form-container {
-    background: var(--title-color);
+    overflow: hidden;
+    color: var(--theme-color);
     border-radius: var(--radius);
     text-align: left;
-    box-shadow: var(--primary-light-shadow);
+    box-shadow: var(--lightShadow);
     transition: var(--transition);
     width: 90vw;
     margin-bottom: 2rem;
-    padding: 2rem 1rem;
+    padding: 2rem 2rem;
     &:hover {
-      box-shadow: var(--primary-dark-shadow);
+      box-shadow: var(--darkShadow);
     }
     h2 {
       margin-bottom: 1rem;
@@ -325,7 +358,6 @@ const Wrapper = styled.section`
     textarea,
     select,
     .nice-select {
-      font-family: var(--ff-secondary);
       border: none;
       line-height: 1.923;
       font-weight: 400;
@@ -397,7 +429,7 @@ const Wrapper = styled.section`
     border: 2px solid var(--theme-color);
     color: var(--body-bg);
     box-shadow: var(--dark-shadow);
-    text-transform: uppercase;
+    text-transform: capitalize;
     letter-spacing: 2px;
     font-size: 18px;
     line-height: 1.3em;
