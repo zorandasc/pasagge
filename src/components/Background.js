@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { keyframes } from "styled-components";
+import styled, { /*keyframes*/ } from "styled-components";
 import { convertToBgImage } from "gbimage-bridge";
 import BackgroundImage from "gatsby-background-image";
 
@@ -46,7 +46,7 @@ const Wrapper = styled.section`
     display: grid;
     place-items: center;
     
-    background-color:${props => props.home ? "rgba(0,0,0,0.2)" : "none"};
+    background-color:${props => props.home ? "rgba(0,0,0,0.1)" : "none"};
 
   }
 `;

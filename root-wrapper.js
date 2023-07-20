@@ -130,7 +130,7 @@ p {
   position: relative;
 }
 .section-center {
-  width: 80vw;
+  width: 90vw;
   margin: 0 auto;
   max-width: var(--max-width);
 }

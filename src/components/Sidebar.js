@@ -31,15 +31,15 @@ const Sidebar = () => {
           <ul className="info">
             <li className="info-item">
               <AiFillPushpin className="icon"></AiFillPushpin>
-              <p>Donje Šiprage, New York</p>
+              <p>Šargovačkih Đaka 1, Banja Luka</p>
             </li>
             <li className="info-item">
               <AiFillPhone className="icon"></AiFillPhone>
-              <p>+01234567890</p>
+              <p>(+387) 65 842 979</p>
             </li>
             <li className="info-item">
               <AiFillMail className="icon"></AiFillMail>
-              <p>info@example.com</p>
+              <p>studiopasagge@gmail.com</p>
             </li>
             <li className="info-item">
               <AiFillClockCircle className="icon"></AiFillClockCircle>
@@ -158,7 +158,7 @@ const Wrapper = styled.div`
         text-align: left;
         align-items: flex-start;
         .icon {
-          font-size: 22px;
+          font-size: 24px;
           color: var(--theme-color);
         }
         p {

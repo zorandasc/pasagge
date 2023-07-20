@@ -33,15 +33,17 @@ const contact = ({ data }) => {
     <Layout>
       <Wrapper>
         <Background image={getImage(data.heroImage1)}>
-          <div className="contact-header-title">
-            <ul>
-              <li>
-                <Link to="/">POČETNA</Link>
-              </li>
-              <li>KONTAKT</li>
-            </ul>
-            <div>
-              <h1>KONTAKT</h1>
+          <div className="section-center">
+            <div className="contact-header-title">
+              <ul>
+                <li>
+                  <Link to="/">POČETNA</Link>
+                </li>
+                <li>KONTAKT</li>
+              </ul>
+              <div>
+                <h1>KONTAKT</h1>
+              </div>
             </div>
           </div>
         </Background>
@@ -53,7 +55,7 @@ const contact = ({ data }) => {
                 <BsFillInfoCircleFill className="icon"></BsFillInfoCircleFill>
               </h3>
               <div className="tel-email">
-                <AiOutlinePhone className="icon"></AiOutlinePhone>065 842 979
+                <AiOutlinePhone className="icon"></AiOutlinePhone>(+387) 65 842 979
               </div>
               <div className="tel-email">
                 <TfiEmail className="icon"></TfiEmail>studiopasagge@gmail.com
@@ -99,66 +101,6 @@ const contact = ({ data }) => {
             </AddressWrapper>
           </Slide>
         </div>
-
-        <Slide right>
-          <div className="section-center form-container">
-            <h2>Ostanite u Kontaktu, Pišite Nam.</h2>
-
-            <form
-              name="contact"
-              className="form-group"
-              method="post"
-              data-netlify="true"
-              data-netlify-honeypot="bot-field"
-            >
-              <input type="hidden" name="bot-field" />
-              <input type="hidden" name="form-name" value="contact" />
-              <div className="credencial-container">
-                <div>
-                  <label htmlFor="name">Vaše Ime</label>
-                  <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    required
-                    placeholder="Unesite ime"
-                    className="form-control"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email">Vaš Email</label>
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    required
-                    placeholder="Unesite Vaš email"
-                    className="form-control"
-                  />
-                </div>
-              </div>
-              <div className="message-container">
-                <div>
-                  <label htmlFor="message">Vaša Poruke</label>
-                  <textarea
-                    name="message"
-                    id="message"
-                    required
-                    rows="5"
-                    placeholder="Opišite Vaš problem"
-                    className="form-control"
-                  ></textarea>
-                </div>
-              </div>
-              <div className="btn-container">
-                <button type="submit" className="submit-btn">
-                  pošalji
-                </button>
-              </div>
-            </form>
-          </div>
-        </Slide>
-
         <div className="section-center map">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9248.22488290243!2d17.188337875480332!3d44.81992281325674!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475e0202d91271f3%3A0xc1292baf73bbb7cc!2z0KjQsNGA0LPQvtCy0LDRhg!5e0!3m2!1ssr!2sba!4v1689080769230!5m2!1ssr!2sba"
@@ -170,6 +112,62 @@ const contact = ({ data }) => {
             referrerPolicy="no-referrer-when-downgrade"
             title="google map address"
           ></iframe>
+        </div>
+        <div className="section-center form-container">
+          <h2>Ostanite u Kontaktu, Pišite Nam.</h2>
+
+          <form
+            name="contact"
+            className="form-group"
+            method="post"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+          >
+            <input type="hidden" name="bot-field" />
+            <input type="hidden" name="form-name" value="contact" />
+            <div className="credencial-container">
+              <div>
+                <label htmlFor="name">Vaše Ime</label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  required
+                  placeholder="Unesite Vaše Ime"
+                  className="form-control"
+                />
+              </div>
+              <div>
+                <label htmlFor="email">Vaš Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  required
+                  placeholder="Unesite Vaš email"
+                  className="form-control"
+                />
+              </div>
+            </div>
+            <div className="message-container">
+              <div>
+                <label htmlFor="message">Vaša Poruka</label>
+                <textarea
+                  name="message"
+                  id="message"
+                  required
+                  rows="5"
+                  placeholder="Unesite Vašu Poruku"
+                  className="form-control"
+                ></textarea>
+              </div>
+            </div>
+            <div className="btn-container">
+              <button type="submit" className="submit-btn">
+                pošalji
+              </button>
+            </div>
+          </form>
         </div>
       </Wrapper>
     </Layout>
@@ -231,6 +229,7 @@ const Wrapper = styled.section`
     padding-top: 100px;
   }
   .address {
+    height: 350px;
     position: relative;
     color: var(--title-color);
     padding: 38px 30px 44px;
@@ -304,6 +303,7 @@ const Wrapper = styled.section`
 
   /*  FORM SECTION */
   .form-container {
+    background-color: rgba(242, 216, 231, 0.8);
     overflow: hidden;
     color: var(--theme-color);
     border-radius: var(--radius);
@@ -313,6 +313,7 @@ const Wrapper = styled.section`
     width: 90vw;
     margin-bottom: 2rem;
     padding: 2rem 2rem;
+    margin-bottom: 100px;
     &:hover {
       box-shadow: var(--darkShadow);
     }
@@ -410,60 +411,59 @@ const Wrapper = styled.section`
   }
 
   .submit-btn {
-    display: inline-block;
-    padding: 13px 30px 10px;
-    background: var(--theme-color);
-    border: 2px solid var(--theme-color);
-    color: var(--body-bg);
-    box-shadow: var(--dark-shadow);
-    text-transform: capitalize;
     letter-spacing: 2px;
-    font-size: 18px;
-    line-height: 1.3em;
-    font-weight: 400;
-    cursor: pointer;
+    font-size: 16px;
+    background-color: var(--theme-color);
+    color: var(--white-color);
+    line-height: 1;
+    text-transform: capitalize;
+    display: inline-block;
+    border: none;
     position: relative;
-    overflow: hidden;
-    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
-    clip-path: polygon(
-      20px 0,
-      100% 0,
-      100% calc(100% - 20px),
-      calc(100% - 20px) 100%,
-      0 100%,
-      0 20px
-    );
-    &::before {
+    z-index: 1;
+    text-align: center;
+    padding: 15px 18px;
+    width: 100%;
+    margin-bottom: 1rem;
+    &::before,
+    &::after {
       content: "";
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to right, transparent, #fff, transparent);
       position: absolute;
-      top: 0;
       left: 0;
-      transform: translateX(-100%) skewX(-30deg);
-      transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+      bottom: 0;
+      background-color: var(--title-color);
+      z-index: -1;
+      width: 53%;
+      height: 0;
+      transition: all ease 0.4s;
+      opacity: 0;
+      visibility: hidden;
     }
-
+    &::after {
+      right: 0;
+      top: 0;
+      left: auto;
+      bottom: auto;
+    }
     &:hover {
-      background-color: transparent;
-      clip-path: none;
-      &::before {
-        left: 200%;
-      }
+      color: var(--white-color);
     }
-    //desktop view
-    @media screen and (min-width: 676px) {
-      padding: 18px 29px 15px;
+    &:hover::after,
+    &:hover::before {
+      height: 100%;
+      opacity: 1;
+      visibility: visible;
     }
   }
   .map {
-    padding-bottom: 50px;
+    margin-bottom: 50px;
+    margin-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     @media screen and (min-width: 676px) {
-      padding-bottom: 100px;
+      margin-bottom: 100px;
+      margin-top: 100px;
     }
   }
 `;

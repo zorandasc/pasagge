@@ -77,15 +77,15 @@ const Footer = () => {
             <ul>
               <li>
                 <AiFillPushpin className="icon"></AiFillPushpin>
-                <p>Donje Šiprage, New York</p>
+                <p>Šargovačkih Đaka 1, Banja Luka, BiH</p>
               </li>
               <li>
                 <AiFillPhone className="icon"></AiFillPhone>
-                <p>+01234567890</p>
+                <p>(+387) 65 842 979</p>
               </li>
               <li>
                 <AiOutlineMail className="icon"></AiOutlineMail>
-                <p>info@example.com</p>
+                <p>studiopasagge@gmail.com</p>
               </li>
             </ul>
             <div className="satnica">

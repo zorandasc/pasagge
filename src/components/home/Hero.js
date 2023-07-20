@@ -1,7 +1,7 @@
 import React from "react";
 import { getImage } from "gatsby-plugin-image";
 import styled from "styled-components";
-import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
+//import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 
 import { Background, Button1 } from "../index";
 
@@ -41,6 +41,7 @@ const Hero = ({ images }) => {
           <h1>Liječenje Tijela Uma I Duha</h1>
           <Button1>Naše Usluge</Button1>
         </article>
+{/* 
         <button
           className="prev-btn"
           onClick={() => setIndex(index - 1)}
@@ -67,6 +68,7 @@ const Hero = ({ images }) => {
             );
           })}
         </div>
+        */}
       </Background>
     </Wrapper>
   );
