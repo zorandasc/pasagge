@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { getImage } from "gatsby-plugin-image";
 import { convertToBgImage } from "gbimage-bridge";
 import BackgroundImage from "gatsby-background-image";
+import Rotate from "react-reveal/Rotate";
+import Bounce from "react-reveal/Bounce";
 
 import services from "../../constants/services";
 
@@ -12,14 +14,16 @@ const Services = ({ className, image }) => {
   return (
     <BackgroundImage Tag="section" {...bgImage} className={className}>
       <div className="title-wrapper">
-        <div className="title">
-          <p>
-            Sa više od <span className="label">10 tipova</span> tretmana
-          </p>
-          <h2>
-            Relax Zona <span className="title-label"> Naši Servisi</span>
-          </h2>
-        </div>
+        <Rotate top left cascade>
+          <div className="title">
+            <p>
+              Sa više od <span className="label">10 tipova</span> tretmana
+            </p>
+            <h2>
+              Relax Zona <span className="title-label"> Naši Servisi</span>
+            </h2>
+          </div>
+        </Rotate>
         <div className="subText">
           <p>
             Naš kozmetički salon nudi kompletan spektar terapeutskih i
@@ -28,23 +32,24 @@ const Services = ({ className, image }) => {
           </p>
         </div>
       </div>
-
-      <div className="section-center services-center">
-        {services.map((service) => {
-          const { id, icon, title, body } = service;
-          return (
-            <div key={id} className="service">
-              <div className="service-img">
-                <img src={icon} className="service-icon" alt="icon" />
+      <Bounce top cascade>
+        <div className="section-center services-center">
+          {services.map((service) => {
+            const { id, icon, title, body } = service;
+            return (
+              <div key={id} className="service">
+                <div className="service-img">
+                  <img src={icon} className="service-icon" alt="icon" />
+                </div>
+                <div className="service-body">
+                  <h3>{title}</h3>
+                  <p>{body}</p>
+                </div>
               </div>
-              <div className="service-body">
-                <h3>{title}</h3>
-                <p>{body}</p>
-              </div>
-            </div>
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
+      </Bounce>
     </BackgroundImage>
   );
 };

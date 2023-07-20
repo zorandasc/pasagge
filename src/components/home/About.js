@@ -1,6 +1,9 @@
 import React from "react";
 import { styled } from "styled-components";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
+import Slide from "react-reveal/Slide";
+import Bounce from "react-reveal/Bounce";
+import Rotate from 'react-reveal/Rotate';
 
 import Button1 from "../Button1";
 
@@ -14,47 +17,56 @@ const About = ({ image1, image2, image3 }) => {
             className="img1"
             alt="about"
           ></GatsbyImage>
+
           <GatsbyImage
             image={getImage(image2)}
             className="img2"
             alt="about"
           ></GatsbyImage>
-          <GatsbyImage
-            image={getImage(image3)}
-            className="img3"
-            alt="about"
-          ></GatsbyImage>
+
+          <Slide right>
+            <GatsbyImage
+              image={getImage(image3)}
+              className="img3"
+              alt="about"
+            ></GatsbyImage>
+          </Slide>
         </div>
         <div className="about-text">
-          <div className="title">
-            <p>
-              Mi smo tim sa <span className="year-label">25 godina</span>{" "}
-              iskustva
-            </p>
-            <h2>
-              Nešto Više <span className="about-label">O Nama</span>
-            </h2>
-          </div>
+          <Bounce top cascade>
+            <div className="title">
+              <p>
+                Mi smo tim sa <span className="year-label">25 godina</span>{" "}
+                iskustva
+              </p>
+              <h2>
+                Nešto Više <span className="about-label">O Nama</span>
+              </h2>
+            </div>
+          </Bounce>
           <div className="subText">
             <p>
               Stručnost koju možete osjetiti, rezultati koje možete vidjeti.
-              Destilovanje nastalo godinama profesionalnog iskustva u primjeni tretmana ljepote
-              pružiti će Vam nenadmašno spa iskustvo.
+              Destilovanje nastalo godinama profesionalnog iskustva u primjeni
+              tretmana ljepote pružiti će Vam nenadmašno spa iskustvo.
             </p>
           </div>
           <div className="mainText">
             <p>
               Naš Spa Beauty Salon je tim iskusnih i visoko obučenih kozmetičkih
               terapeuta koji će rado sastaviti spa ili beauty tretman paket
-              dizajniran posebno za vaše potrebe i ponuditi vam savjete o
-              njezi vašeg tijela. U okviru salona Spa Beauty nalazi se oaza
-              smirenosti i spokoja. Započnite svoje putovanje samootkrivanja
-              daleko od spoljašnjeg svijeta gde se tijelo, um i duša njeguju i
-              obnavljaju, ostavljajući vas energičnim iznutra i sjajnim spolja.
+              dizajniran posebno za vaše potrebe i ponuditi vam savjete o njezi
+              vašeg tijela. U okviru salona Spa Beauty nalazi se oaza smirenosti
+              i spokoja. Započnite svoje putovanje samootkrivanja daleko od
+              spoljašnjeg svijeta gde se tijelo, um i duša njeguju i obnavljaju,
+              ostavljajući vas energičnim iznutra i sjajnim spolja.
             </p>
           </div>
+
           <div className="btn-wrapper">
-            <Button1>Kontaktirajte nas</Button1>
+          <Rotate bottom left>
+              <Button1>Kontaktirajte nas</Button1>
+              </Rotate>
           </div>
         </div>
       </div>

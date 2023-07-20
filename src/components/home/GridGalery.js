@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
 import { convertToBgImage } from "gbimage-bridge";
 import BackgroundImage from "gatsby-background-image";
+import Bounce from "react-reveal/Bounce";
+import Rotate from "react-reveal/Rotate";
 
 import Button1 from "../Button1";
 
@@ -33,42 +35,47 @@ const GridGalery = ({ className, images }) => {
 
   return (
     <BackgroundImage Tag="section" {...bgImage} className={className}>
-      <div className="title-wrapper">
-        <div className="title">
-          <p>
-            Pridružite se Našim <span className="label">99 % zadovoljnih</span>{" "}
-            korisnika
-          </p>
-          <h2>
-            Istaknuti Radovi <span className="title-label"> Naša Galerija</span>
-          </h2>
+      <Rotate top left cascade>
+        <div className="title-wrapper">
+          <div className="title">
+            <p>
+              Pridružite se Našim{" "}
+              <span className="label">99 % zadovoljnih</span> korisnika
+            </p>
+            <h2>
+              Istaknuti Radovi{" "}
+              <span className="title-label"> Naša Galerija</span>
+            </h2>
+          </div>
+          <div className="subText">
+            <p>
+              Iskusite metamorfozu od napetosti do spokoja u našem salonu uz
+              veliki izbor masaža i tretmana za lice, tijelo i kosu.
+            </p>
+          </div>
         </div>
-        <div className="subText">
-          <p>
-            Iskusite metamorfozu od napetosti do spokoja u našem salonu uz
-            veliki izbor masaža i tretmana za lice, tijelo i kosu.
-          </p>
-        </div>
-      </div>
-      <div className="tile-layout">
-        {projects.map((project, index) => {
-          const { id, image, name, type } = project;
+      </Rotate>
+      <Bounce top cascade>
+        <div className="tile-layout">
+          {projects.map((project, index) => {
+            const { id, image, name, type } = project;
 
-          return (
-            <article key={id} className={`div-${index}`}>
-              <GatsbyImage
-                className="img"
-                image={getImage(image)}
-                alt="galery image"
-              />
-              <div className="info">
-                <p>- {type} -</p>
-                <h3>{name}</h3>
-              </div>
-            </article>
-          );
-        })}
-      </div>
+            return (
+              <article key={id} className={`div-${index}`}>
+                <GatsbyImage
+                  className="img"
+                  image={getImage(image)}
+                  alt="galery image"
+                />
+                <div className="info">
+                  <p>- {type} -</p>
+                  <h3>{name}</h3>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </Bounce>
       <div className="btn-wrapper">
         <Button1>Galerija</Button1>
       </div>

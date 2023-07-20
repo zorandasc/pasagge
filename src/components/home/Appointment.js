@@ -4,6 +4,8 @@ import { getImage } from "gatsby-plugin-image";
 import { convertToBgImage } from "gbimage-bridge";
 import BackgroundImage from "gatsby-background-image";
 import { FaRegCalendarDays } from "react-icons/fa6";
+import Flip from "react-reveal/Flip";
+
 import services from "../../constants/services";
 
 const Appointment = ({ className, image }) => {
@@ -11,116 +13,118 @@ const Appointment = ({ className, image }) => {
 
   return (
     <BackgroundImage Tag="section" {...bgImage} className={className}>
-      <div className="form-container">
-        <div className="title">
-          <div className="icon-container">
-            <FaRegCalendarDays className="icon"></FaRegCalendarDays>
+      <Flip>
+        <div className="form-container">
+          <div className="title">
+            <div className="icon-container">
+              <FaRegCalendarDays className="icon"></FaRegCalendarDays>
+            </div>
+            <div className="title-body">
+              <span>Relaksirajte se svaki dan u svako vrijeme</span>
+              <p>Zakažite Tretman</p>
+            </div>
           </div>
-          <div className="title-body">
-            <span>Relaksirajte se svaki dan u svako vrijeme</span>
-            <p>Zakažite Tretman</p>
-          </div>
-        </div>
 
-        <form
-          name="contact"
-          className="form"
-          method="post"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-        >
-          <input type="hidden" name="bot-field" />
-          <input type="hidden" name="form-name" value="contact" />
+          <form
+            name="contact"
+            className="form"
+            method="post"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+          >
+            <input type="hidden" name="bot-field" />
+            <input type="hidden" name="form-name" value="contact" />
 
-          <div className="form-group">
-            <label htmlFor="name"> </label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              required
-              placeholder="Unesite ime"
-              className="form-control"
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="prezime"> </label>
-            <input
-              type="text"
-              name="prezime"
-              id="prezime"
-              required
-              placeholder="Unesite prezime"
-              className="form-control"
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="email"> </label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              required
-              placeholder="Unesite Vaš email"
-              className="form-control"
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="phone"> </label>
-            <input
-              type="text"
-              name="phone"
-              id="phone"
-              placeholder="Unesite Vaš telefon"
-              className="form-control"
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="usluga"> </label>
-            <select
-              name="usluga"
-              id="usluga"
-              required
-              placeholder="Izaberite uslugu"
-              className="form-control"
-              defaultValue="Izaberite uslugu"
-            >
-              <option disabled value="Izaberite uslugu">
-                Izaberite uslugu
-              </option>
-              {services.map((service) => (
-                <option key={service.id} value={service.title}>
-                  {service.title}
+            <div className="form-group">
+              <label htmlFor="name"> </label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                required
+                placeholder="Unesite ime"
+                className="form-control"
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="prezime"> </label>
+              <input
+                type="text"
+                name="prezime"
+                id="prezime"
+                required
+                placeholder="Unesite prezime"
+                className="form-control"
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="email"> </label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                required
+                placeholder="Unesite Vaš email"
+                className="form-control"
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="phone"> </label>
+              <input
+                type="text"
+                name="phone"
+                id="phone"
+                placeholder="Unesite Vaš telefon"
+                className="form-control"
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="usluga"> </label>
+              <select
+                name="usluga"
+                id="usluga"
+                required
+                placeholder="Izaberite uslugu"
+                className="form-control"
+                defaultValue="Izaberite uslugu"
+              >
+                <option disabled value="Izaberite uslugu">
+                  Izaberite uslugu
                 </option>
-              ))}
-            </select>
-          </div>
-          <div className="form-group">
-            <label htmlFor="date"> </label>
-            <input
-              type="date"
-              name="date"
-              id="date"
-              required
-              placeholder="Izaberite datum"
-              className="form-control"
-            />
-          </div>
-          <div className="form-group message-container">
-            <label htmlFor="message"> </label>
-            <textarea
-              name="message"
-              id="message"
-              rows="5"
-              placeholder="Vaša poruka"
-              className="form-control"
-            ></textarea>
-          </div>
-          <button type="submit" className="submit-btn" aria-label="send">
-            Pošalji
-          </button>
-        </form>
-      </div>
+                {services.map((service) => (
+                  <option key={service.id} value={service.title}>
+                    {service.title}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="form-group">
+              <label htmlFor="date"> </label>
+              <input
+                type="date"
+                name="date"
+                id="date"
+                required
+                placeholder="Izaberite datum"
+                className="form-control"
+              />
+            </div>
+            <div className="form-group message-container">
+              <label htmlFor="message"> </label>
+              <textarea
+                name="message"
+                id="message"
+                rows="5"
+                placeholder="Vaša poruka"
+                className="form-control"
+              ></textarea>
+            </div>
+            <button type="submit" className="submit-btn" aria-label="send">
+              Pošalji
+            </button>
+          </form>
+        </div>
+      </Flip>
     </BackgroundImage>
   );
 };

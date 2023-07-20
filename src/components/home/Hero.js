@@ -2,6 +2,8 @@ import React from "react";
 import { getImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 //import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
+import Slide from "react-reveal/Slide";
+import Rotate from "react-reveal/Rotate";
 
 import { Background, Button1 } from "../index";
 
@@ -36,12 +38,18 @@ const Hero = ({ images }) => {
   return (
     <Wrapper>
       <Background image={getImage(images[index])} home="true">
-        <article>
-          <p>Relax & spa centar</p>
-          <h1>Liječenje Tijela Uma I Duha</h1>
-          <Button1>Naše Usluge</Button1>
-        </article>
-{/* 
+        <Rotate cascade>
+          <article>
+            <p>Relax & spa centar</p>
+
+            <h1>Liječenje Tijela Uma I Duha</h1>
+
+            <Slide bottom>
+              <Button1>Naše Usluge</Button1>
+            </Slide>
+          </article>
+        </Rotate>
+        {/* 
         <button
           className="prev-btn"
           onClick={() => setIndex(index - 1)}

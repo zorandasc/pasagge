@@ -37,9 +37,9 @@ const contact = ({ data }) => {
             <div className="contact-header-title">
               <ul>
                 <li>
-                  <Link to="/">POČETNA</Link>
+                  <Link to="/">Početna</Link>
                 </li>
-                <li>KONTAKT</li>
+                <li>Kontakt</li>
               </ul>
               <div>
                 <h1>KONTAKT</h1>
