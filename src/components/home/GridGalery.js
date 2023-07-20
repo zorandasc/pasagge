@@ -4,7 +4,6 @@ import { getImage, GatsbyImage } from "gatsby-plugin-image";
 import { convertToBgImage } from "gbimage-bridge";
 import BackgroundImage from "gatsby-background-image";
 import Bounce from "react-reveal/Bounce";
-import Rotate from "react-reveal/Rotate";
 
 import Button1 from "../Button1";
 
@@ -35,7 +34,7 @@ const GridGalery = ({ className, images }) => {
 
   return (
     <BackgroundImage Tag="section" {...bgImage} className={className}>
-      <Rotate top left cascade>
+       <Bounce top cascade>
         <div className="title-wrapper">
           <div className="title">
             <p>
@@ -54,7 +53,7 @@ const GridGalery = ({ className, images }) => {
             </p>
           </div>
         </div>
-      </Rotate>
+        </Bounce>
       <Bounce top cascade>
         <div className="tile-layout">
           {projects.map((project, index) => {

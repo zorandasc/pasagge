@@ -137,6 +137,10 @@ const Wrapper = styled.nav`
         font-size: 20px;
       }
     }
+    .active {
+      color: var(--theme-color);
+      //box-shadow: 0px 2px var(--theme-color);
+    }
   }
 
   .socialWrapper {

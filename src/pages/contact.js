@@ -463,7 +463,6 @@ const Wrapper = styled.section`
     align-items: center;
     @media screen and (min-width: 676px) {
       margin-bottom: 100px;
-      margin-top: 100px;
     }
   }
 `;

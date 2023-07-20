@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { getImage } from "gatsby-plugin-image";
 import { convertToBgImage } from "gbimage-bridge";
 import BackgroundImage from "gatsby-background-image";
-import Rotate from "react-reveal/Rotate";
 import Bounce from "react-reveal/Bounce";
 
 import services from "../../constants/services";
@@ -14,7 +13,7 @@ const Services = ({ className, image }) => {
   return (
     <BackgroundImage Tag="section" {...bgImage} className={className}>
       <div className="title-wrapper">
-        <Rotate top left cascade>
+        <Bounce top cascade>
           <div className="title">
             <p>
               Sa više od <span className="label">10 tipova</span> tretmana
@@ -23,7 +22,7 @@ const Services = ({ className, image }) => {
               Relax Zona <span className="title-label"> Naši Servisi</span>
             </h2>
           </div>
-        </Rotate>
+        </Bounce>
         <div className="subText">
           <p>
             Naš kozmetički salon nudi kompletan spektar terapeutskih i
@@ -32,7 +31,7 @@ const Services = ({ className, image }) => {
           </p>
         </div>
       </div>
-      <Bounce top cascade>
+      <Bounce cascade>
         <div className="section-center services-center">
           {services.map((service) => {
             const { id, icon, title, body } = service;

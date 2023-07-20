@@ -32,7 +32,7 @@ const GlobalStyle = createGlobalStyle`
   --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
   --primary-light-shadow: 0 10px 15px rgba(223,73,124, 0.2);
   --primary-dark-shadow: 0 10px 15px rgba(223,73,124, 0.6);
-  --max-width: 1170px;
+  --max-width: 1270px;
   --fixed-width: 700px;
 }
 
