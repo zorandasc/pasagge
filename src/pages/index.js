@@ -1,4 +1,4 @@
-import * as React from "react";
+import React,{useRef} from "react";
 import { graphql } from "gatsby";
 
 import { Layout, Seo } from "../components";
@@ -174,15 +174,21 @@ export const query = graphql`
 `;
 
 const IndexPage = ({ data }) => {
+  const ref = useRef(null);
+
+  const handleClick=()=>{
+    ref.current?.scrollIntoView({behavior: 'smooth'});
+  }
+
   return (
     <Layout>
-      <Hero images={[data.heroImage1, data.heroImage2, data.heroImage3]}></Hero>
+      <Hero images={[data.heroImage1, data.heroImage2, data.heroImage3]} handleClick={handleClick}></Hero>
       <About
         image1={data.aboutImage1}
         image2={data.aboutImage2}
         image3={data.aboutImage3}
       ></About>
-      <Services image={data.serviceImage}></Services>
+      <Services image={data.serviceImage} setref={ref}></Services>
       <Comments
         images={[
           data.commentImage,

@@ -1,14 +1,22 @@
 import React from "react";
+import { Link } from "gatsby";
 import { BsFillArrowRightSquareFill } from "react-icons/bs";
 import { styled } from "styled-components";
 
-const Button1 = ({ path, link, children }) => {
+const Button1 = ({ path, handleClick, children }) => {
   return (
     <Wrapper>
-      {link<button className="btn btn-app" aria-label={children}>
-        {children}
-        <BsFillArrowRightSquareFill className="icon"></BsFillArrowRightSquareFill>
-      </button>}
+      {handleClick ? (
+        <button className="btn btn-app" aria-label={children} onClick={handleClick}>
+          {children}
+          <BsFillArrowRightSquareFill className="icon"></BsFillArrowRightSquareFill>
+        </button>
+      ) : (
+        <Link className="btn btn-app" to={path}>
+          {children}
+          <BsFillArrowRightSquareFill className="icon"></BsFillArrowRightSquareFill>
+        </Link>
+      )}
     </Wrapper>
   );
 };

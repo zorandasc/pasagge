@@ -3,20 +3,19 @@ import styled from "styled-components";
 import { graphql, Link } from "gatsby";
 import { getImage, StaticImage } from "gatsby-plugin-image";
 import { TfiEmail } from "react-icons/tfi";
-import { AiOutlinePhone } from "react-icons/ai";
+import { AiOutlinePhone, AiFillPushpin } from "react-icons/ai";
 import {
   BsFillHouseDoorFill,
   BsFillClockFill,
   BsFillInfoCircleFill,
 } from "react-icons/bs";
-import Slide from "react-reveal/Slide";
-import Zoom from "react-reveal/Zoom";
+import Bounce from "react-reveal/Bounce";
 
 import { Layout, Seo, Background } from "../components";
 
 const AddressWrapper = ({ children }) => {
   return (
-    <div className="address">
+    <div className="card">
       {children}
       <StaticImage
         src="../images/laticeBg.jpg"
@@ -47,18 +46,17 @@ const contact = ({ data }) => {
             </div>
           </div>
         </Background>
-        <div className="section-center address-center">
-          <Slide left>
-            <div className="address">
+        <div className="section-center cards-center">
+          <Bounce left>
+            <div className="card">
               <StaticImage
                 src="../images/logo.jpg"
                 layout="constrained"
-                className="hero-img"
                 alt="Herro image"
               ></StaticImage>
             </div>
-          </Slide>
-          <Slide left>
+          </Bounce>
+          <Bounce>
             <AddressWrapper>
               <h3>
                 Informacije i Podrška{" "}
@@ -72,8 +70,8 @@ const contact = ({ data }) => {
                 <TfiEmail className="icon"></TfiEmail>studiopasagge@gmail.com
               </div>
             </AddressWrapper>
-          </Slide>
-          <Zoom>
+          </Bounce>
+          <Bounce right>
             <AddressWrapper>
               <h3>
                 Radno Vrijeme{" "}
@@ -96,34 +94,40 @@ const contact = ({ data }) => {
                 <span>Zatvoreno</span>
               </div>
             </AddressWrapper>
-          </Zoom>
-          <Slide right>
-            <AddressWrapper>
+          </Bounce>
+        </div>
+        <Bounce>
+          <div className="section-center mapWrapper">
+            <div className="address">
               <h3>
                 Adresa
                 <BsFillHouseDoorFill className="icon"></BsFillHouseDoorFill>
               </h3>
               <div className="street">
+                <AiFillPushpin></AiFillPushpin>
                 <span>Šargovačkih Đaka 1, Banja Luka, BiH</span>
               </div>
-              <div>
-                <span></span>
-              </div>
-            </AddressWrapper>
-          </Slide>
-        </div>
-        <div className="section-center map">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9248.22488290243!2d17.188337875480332!3d44.81992281325674!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475e0202d91271f3%3A0xc1292baf73bbb7cc!2z0KjQsNGA0LPQvtCy0LDRhg!5e0!3m2!1ssr!2sba!4v1689080769230!5m2!1ssr!2sba"
-            width="100%"
-            height="400"
-            style={{ border: "0", overflow: "hidden", margin: "0" }}
-            allowFullScreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="google map address"
-          ></iframe>
-        </div>
+            </div>
+            <div className="map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9248.22488290243!2d17.188337875480332!3d44.81992281325674!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475e0202d91271f3%3A0xc1292baf73bbb7cc!2z0KjQsNGA0LPQvtCy0LDRhg!5e0!3m2!1ssr!2sba!4v1689080769230!5m2!1ssr!2sba"
+                width="100%"
+                height="400"
+                style={{ border: "0", overflow: "hidden", margin: "0" }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="google map address"
+              ></iframe>
+            </div>
+            <StaticImage
+              src="../images/laticeBg.jpg"
+              layout="constrained"
+              className="hero-img"
+              alt="Herro image"
+            ></StaticImage>
+          </div>
+        </Bounce>
         <div className="section-center form-container">
           <h2>Ostanite u Kontaktu, Pišite Nam.</h2>
 
@@ -235,13 +239,13 @@ const Wrapper = styled.section`
     }
   }
   /*  ADRESSSECTION */
-  .address-center {
+  .cards-center {
     padding-top: 50px;
     @media (min-width: 768px) {
       padding: 100px 0;
     }
   }
-  .address {
+  .card {
     height: 350px;
     position: relative;
     color: var(--title-color);
@@ -249,7 +253,7 @@ const Wrapper = styled.section`
     flex-direction: column;
     align-items: inherit;
     justify-content: center;
-    padding: 10px;
+    padding: 10px 30px;
     margin-bottom: 2rem;
     text-align: left;
     box-shadow: var(--lightShadow);
@@ -284,8 +288,7 @@ const Wrapper = styled.section`
         }
       }
     }
-    .time,
-    .street {
+    .time {
       margin-bottom: 1.25rem;
       display: flex;
       justify-content: space-between;
@@ -298,13 +301,60 @@ const Wrapper = styled.section`
     .icon {
       font-size: 1.5em;
     }
+    &:hover {
+      box-shadow: var(--darkShadow);
+    }
   }
-  .address:hover {
-    box-shadow: var(--darkShadow);
+  .mapWrapper {
+    position: relative;
+    color: var(--title-color);
+    display: flex;
+    flex-direction: column;
+    align-items: inherit;
+    justify-content: center;
+    padding: 10px 30px;
+    margin-bottom: 2rem;
+    text-align: left;
+    box-shadow: var(--lightShadow);
+    -webkit-transition: var(--transition);
+    transition: var(--transition);
+    overflow: hidden;
+    .hero-img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    .address {
+      @media (min-width: 768px) {
+        max-width: 20vw;
+      }
+      h3 {
+        margin-bottom: 2rem;
+        font-size: 1.75rem;
+        line-height: 1.4347;
+        font-weight: 700;
+        text-transform: capitalize;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+      .street {
+        margin-bottom: 1.25rem;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    .icon {
+      font-size: 1.5em;
+    }
   }
 
   @media screen and (min-width: 676px) {
-    .address-center {
+    .cards-center {
       display: grid;
       grid-template-columns: 1fr 1fr;
       -webkit-column-gap: 2rem;
@@ -313,7 +363,7 @@ const Wrapper = styled.section`
     }
   }
   @media screen and (min-width: 992px) {
-    .address-center {
+    .cards-center {
       grid-template-columns: 1fr 1fr 1fr;
     }
   }
@@ -473,14 +523,6 @@ const Wrapper = styled.section`
     }
   }
   .map {
-    margin-bottom: 50px;
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    @media screen and (min-width: 676px) {
-      margin-bottom: 100px;
-    }
   }
 `;
 

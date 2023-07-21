@@ -1,13 +1,14 @@
 import React from "react";
+import { Link } from "gatsby";
 import { AiFillPhone } from "react-icons/ai";
 import { styled } from "styled-components";
 
-const Button2 = () => {
+const Button2 = ({ children, path }) => {
   return (
     <Wrapper>
-      <button className="btn btn-call">
-        <AiFillPhone className="icon"></AiFillPhone> POZOVITE NAS
-      </button>
+      <Link className="btn btn-call" to={path}>
+        <AiFillPhone className="icon"></AiFillPhone> {children}
+      </Link>
     </Wrapper>
   );
 };
@@ -18,18 +19,20 @@ const Wrapper = styled.div`
     width: initial;
   }
   .btn {
+    letter-spacing: 2px;
     line-height: 1;
     text-transform: uppercase;
     display: inline-block;
     padding: 15px 18px;
     border: none;
     position: relative;
+    border-radius: 2rem;
     z-index: 1;
     text-align: center;
     width: 100%;
     max-width: 260px;
     margin-bottom: 1rem;
-
+    overflow: hidden;
     .icon {
       width: var(--icon-size, 30px);
       height: var(--icon-size, 30px);
@@ -70,7 +73,6 @@ const Wrapper = styled.div`
     }
   }
   .btn-call {
-    letter-spacing: 0;
     text-transform: capitalize;
     background-color: transparent;
     border: 2px solid var(--title-color);

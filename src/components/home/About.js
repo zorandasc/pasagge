@@ -5,6 +5,8 @@ import Slide from "react-reveal/Slide";
 import Rotate from "react-reveal/Rotate";
 
 import Button1 from "../Button1";
+import Button2 from "../Button2";
+
 
 const About = ({ image1, image2, image3 }) => {
   return (
@@ -39,7 +41,7 @@ const About = ({ image1, image2, image3 }) => {
                 iskustva
               </p>
               <h2>
-                Nešto Više <span className="about-label">O Nama</span>
+                Nešto Malo <span className="about-label">O Nama</span>
               </h2>
             </div>
           </Slide>
@@ -63,8 +65,9 @@ const About = ({ image1, image2, image3 }) => {
           </div>
 
           <div className="btn-wrapper">
-            <Rotate bottom left>
-              <Button1>Kontaktirajte nas</Button1>
+            <Rotate bottom left cascade>
+              <Button1 path="/about">Saznaj Više</Button1>
+              <Button2 path="/contact">Kontaktirajte nas</Button2>
             </Rotate>
           </div>
         </div>

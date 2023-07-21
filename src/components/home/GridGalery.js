@@ -76,7 +76,7 @@ const GridGalery = ({ className, images }) => {
         </div>
       </Bounce>
       <div className="btn-wrapper">
-        <Button1>Galerija</Button1>
+        <Button1 path="/gallery">Galerija</Button1>
       </div>
     </BackgroundImage>
   );

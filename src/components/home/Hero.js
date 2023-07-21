@@ -3,11 +3,11 @@ import { getImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 //import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 import Bounce from "react-reveal/Bounce";
-import Slide from "react-reveal/Slide"
+import Slide from "react-reveal/Slide";
 
 import { Background, Button1 } from "../index";
 
-const Hero = ({ images }) => {
+const Hero = ({ images,handleClick }) => {
   const [index, setIndex] = React.useState(0);
 
   //AUTOMATIZACIJA
@@ -35,6 +35,9 @@ const Hero = ({ images }) => {
     }
   }, [index, images]);
 
+
+ 
+
   return (
     <Wrapper>
       <Background image={getImage(images[index])} home="true">
@@ -45,7 +48,7 @@ const Hero = ({ images }) => {
             <h1>Liječenje Tijela Uma I Duha</h1>
 
             <Slide bottom>
-              <Button1>Naše Usluge</Button1>
+              <Button1 handleClick={handleClick}>Naše Usluge</Button1>
             </Slide>
           </article>
         </Bounce>

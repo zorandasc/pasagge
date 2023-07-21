@@ -7,18 +7,18 @@ import Bounce from "react-reveal/Bounce";
 
 import services from "../../constants/services";
 
-const Services = ({ className, image }) => {
+const Services = ({ className, image, setref }) => {
   const bgImage = convertToBgImage(getImage(image));
 
   return (
     <BackgroundImage Tag="section" {...bgImage} className={className}>
-      <div className="title-wrapper">
+      <div className="title-wrapper" ref={setref}>
         <div className="title">
           <p>
             Sa više od <span className="label">10 tipova</span> tretmana
           </p>
           <h2>
-            Relax Zona <span className="title-label"> Naši Servisi</span>
+            Relax Zona <span className="title-label"> Naše Usluge</span>
           </h2>
         </div>
 
