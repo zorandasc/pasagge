@@ -20,8 +20,8 @@ const Separator = () => {
 
 const SeparatorWrapper = styled.div`
   float: left;
-  margin-top: 4%;
-  margin-bottom: 40px;
+  margin-top: 2%;
+  margin-bottom: 30px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -82,35 +82,55 @@ const about = ({ data }) => {
           <article className="about-text">
             <Separator></Separator>
             <h2 className="title">
-              Tim Pasagge salona ljepote čini kvalifikovano osoblje sa velikim
-              iskustvom u primjeni tretmana ljepote. Radujemo se Vašem dolasku!
+              U današnjem užurbanom svijetu svima nam je ponekad potrebno neko
+              dragocjeno "ja" vrijeme. Radujemo se Vašem dolasku!
             </h2>
             <Separator></Separator>
             <p>
-              Spa Beauty Salon Pasagge je poznat po svojoj profesionalnosti i
-              visokim standardima. Salon je uživao izuzetan rast i osvojio je
-              više nagrada, kako na lokalnom, tako i na nacionalnom nivou.
+              Tim Pasagge salona ljepote čini kvalifikovano osoblje sa velikim
+              iskustvom u primjeni tretmana ljepote. Spa Beauty Salon Pasagge je
+              poznat po svojoj profesionalnosti i visokim standardima. Salon je
+              uživao izuzetan rast i osvojio je više nagrada, kako na lokalnom,
+              tako i na nacionalnom nivou.
             </p>
             <p>
               Energija i strast koje naš tim terapeuta gaji prema kozmetičkom
               poslu znači da salon stalno traži inovativne i originalne načine
-              da poboljša iskustvo klijenta. U užurbanom svijetu svima nam je
-              ponekad potrebno neko dragocjeno "ja" vrijeme.
+              da poboljša iskustvo klijenta.
             </p>
             <p>
-              Spa Beauty Salon vam omogućava da se opustite u prelepom okruženju
-              i uživate u čitavom nizu tretmana dizajniranih da podmlade i
-              tijelo i um.
+              Spa Beauty Salon vam omogućava da se opustite u prelijepom
+              okruženju i uživate u čitavom nizu tretmana dizajniranih da
+              podmlade i tijelo i um.
             </p>
             <ul>
-              <li>Manikir i pedikir</li>
-              <li>Masaža</li>
-              <li>Solarijum i Tamnjenje</li>
-              <li>Spa Lica</li>
-              <li>Tretmani voska</li>
-              <li>Lasersko otklanjanje dlaka</li>
-              <li>Lasersko podmlađivanje</li>
-              <li>Spa dani</li>
+              <li>
+                <FaPagelines className="icon"></FaPagelines> Manikir i Pedikir
+              </li>
+              <li>
+                <FaPagelines className="icon"></FaPagelines> Masaža i Relaksacija
+              </li>
+              <li>
+                <FaPagelines className="icon"></FaPagelines> Solarijum i
+                Tamnjenje
+              </li>
+              <li>
+                <FaPagelines className="icon"></FaPagelines> Njega Lica i Makeup
+              </li>
+              <li>
+                <FaPagelines className="icon"></FaPagelines> Tretmani voska
+              </li>
+              <li>
+                <FaPagelines className="icon"></FaPagelines> Lasersko
+                otklanjanje dlaka
+              </li>
+              <li>
+                <FaPagelines className="icon"></FaPagelines> Lasersko
+                podmlađivanje
+              </li>
+              <li>
+                <FaPagelines className="icon"></FaPagelines> Spa dani
+              </li>
             </ul>
           </article>
           <div className="about-img">
@@ -154,6 +174,7 @@ const Wrapper = styled.section`
       margin: 0 0 31px;
       list-style: none;
       color: var(--theme-color);
+      font-size: 20px;
 
       li:first-child a {
         color: var(--title-color);
@@ -176,7 +197,10 @@ const Wrapper = styled.section`
 
   /*  CENTER SECTION */
   .about-center {
-    padding: 100px 0;
+    padding: 50px 0;
+    @media (min-width: 768px) {
+      padding: 100px 0;
+    }
   }
 
   .about-text {
@@ -191,6 +215,18 @@ const Wrapper = styled.section`
     }
     p {
       line-height: 2;
+    }
+    ul {
+      padding-top: 1rem;
+      li {
+        display: flex;
+        align-items: center;
+        padding-bottom: 1rem;
+        font-style: italic;
+        .icon{
+          margin-right: 1rem;
+        }
+      }
     }
   }
 

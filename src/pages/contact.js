@@ -49,13 +49,24 @@ const contact = ({ data }) => {
         </Background>
         <div className="section-center address-center">
           <Slide left>
+            <div className="address">
+              <StaticImage
+                src="../images/logo.jpg"
+                layout="constrained"
+                className="hero-img"
+                alt="Herro image"
+              ></StaticImage>
+            </div>
+          </Slide>
+          <Slide left>
             <AddressWrapper>
               <h3>
                 Informacije i Podrška{" "}
                 <BsFillInfoCircleFill className="icon"></BsFillInfoCircleFill>
               </h3>
               <div className="tel-email">
-                <AiOutlinePhone className="icon"></AiOutlinePhone>(+387) 65 842 979
+                <AiOutlinePhone className="icon"></AiOutlinePhone>(+387) 65 842
+                979
               </div>
               <div className="tel-email">
                 <TfiEmail className="icon"></TfiEmail>studiopasagge@gmail.com
@@ -190,7 +201,6 @@ export const query = graphql`
 `;
 
 const Wrapper = styled.section`
-  color: var(--title-color);
   .contact-header-title {
     width: 100%;
     padding-right: 15px;
@@ -205,7 +215,7 @@ const Wrapper = styled.section`
       margin: 0 0 31px;
       list-style: none;
       color: var(--theme-color);
-
+      font-size: 20px;
       li:first-child a {
         color: var(--title-color);
       }
@@ -226,13 +236,20 @@ const Wrapper = styled.section`
   }
   /*  ADRESSSECTION */
   .address-center {
-    padding-top: 100px;
+    padding-top: 50px;
+    @media (min-width: 768px) {
+      padding: 100px 0;
+    }
   }
   .address {
     height: 350px;
     position: relative;
     color: var(--title-color);
-    padding: 38px 30px 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: inherit;
+    justify-content: center;
+    padding: 10px;
     margin-bottom: 2rem;
     text-align: left;
     box-shadow: var(--lightShadow);

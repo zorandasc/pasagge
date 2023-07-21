@@ -40,13 +40,18 @@ const Wrapper = styled.section`
   .bcg {
     /* MUST!!!!!! */
     //min-height: 100vh;
-    min-height: ${props => props.home ? "100vh" : "50vh"};
+    min-height: ${props => props.home ? "100vh" : "30vh"};
     //margin-top: -5rem;
     margin-top: ${props => props.home ? "-5rem" : "0"};
     display: grid;
     place-items: center;
     
     background-color:${props => props.home ? "rgba(0,0,0,0.1)" : "none"};
+
+    @media(min-width:768px){
+
+        min-height: ${props => props.home ? "100vh" : "50vh"};
+    }
 
   }
 `;

@@ -120,7 +120,7 @@ const Footer = () => {
               </li>
               <li>
                 <IoIosArrowForward className="icon"></IoIosArrowForward>
-                <p>NAŠ BLOG</p>
+                <p>GALERIJA</p>
               </li>
             </ul>
           </div>
@@ -142,7 +142,7 @@ const Footer = () => {
               </li>
               <li>
                 <IoIosArrowForward className="icon"></IoIosArrowForward>
-                <p>FRAGRANCE</p>
+                <p>MASAŽA</p>
               </li>
               <li>
                 <IoIosArrowForward className="icon"></IoIosArrowForward>
@@ -210,7 +210,7 @@ const Wrapper = styled.footer`
       flex-wrap: wrap;
       align-content: flex-start;
       border-style: solid;
-      border-width: 0px 0px 2px 0px;
+      border-width: 0px 0px 1px 0px;
       border-color: var(--theme-color);
       @media (max-width: 1024px) {
         flex-wrap: wrap;
