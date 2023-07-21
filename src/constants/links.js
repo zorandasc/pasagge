@@ -13,7 +13,7 @@ const links = [
   {
     id: 3,
     text: "Galerija",
-    url: "/galery",
+    url: "/gallery",
   },
   {
     id: 4,

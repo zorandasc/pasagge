@@ -2,8 +2,8 @@ import React from "react";
 import { getImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 //import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
-import Slide from "react-reveal/Slide";
-import Rotate from "react-reveal/Rotate";
+import Bounce from "react-reveal/Bounce";
+import Slide from "react-reveal/Slide"
 
 import { Background, Button1 } from "../index";
 
@@ -38,7 +38,7 @@ const Hero = ({ images }) => {
   return (
     <Wrapper>
       <Background image={getImage(images[index])} home="true">
-        <Rotate cascade>
+        <Bounce cascade>
           <article>
             <p>Relax & spa centar</p>
 
@@ -48,7 +48,7 @@ const Hero = ({ images }) => {
               <Button1>Naše Usluge</Button1>
             </Slide>
           </article>
-        </Rotate>
+        </Bounce>
         {/* 
         <button
           className="prev-btn"

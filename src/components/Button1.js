@@ -2,13 +2,13 @@ import React from "react";
 import { BsFillArrowRightSquareFill } from "react-icons/bs";
 import { styled } from "styled-components";
 
-const Button1 = ({ path, children }) => {
+const Button1 = ({ path, link, children }) => {
   return (
     <Wrapper>
-      <button className="btn btn-app" aria-label={children}>
+      {link<button className="btn btn-app" aria-label={children}>
         {children}
         <BsFillArrowRightSquareFill className="icon"></BsFillArrowRightSquareFill>
-      </button>
+      </button>}
     </Wrapper>
   );
 };

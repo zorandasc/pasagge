@@ -13,16 +13,15 @@ const Services = ({ className, image }) => {
   return (
     <BackgroundImage Tag="section" {...bgImage} className={className}>
       <div className="title-wrapper">
-        <Bounce top cascade>
-          <div className="title">
-            <p>
-              Sa više od <span className="label">10 tipova</span> tretmana
-            </p>
-            <h2>
-              Relax Zona <span className="title-label"> Naši Servisi</span>
-            </h2>
-          </div>
-        </Bounce>
+        <div className="title">
+          <p>
+            Sa više od <span className="label">10 tipova</span> tretmana
+          </p>
+          <h2>
+            Relax Zona <span className="title-label"> Naši Servisi</span>
+          </h2>
+        </div>
+
         <div className="subText">
           <p>
             Naš kozmetički salon nudi kompletan spektar terapeutskih i
@@ -31,12 +30,13 @@ const Services = ({ className, image }) => {
           </p>
         </div>
       </div>
-      <Bounce cascade>
-        <div className="section-center services-center">
-          {services.map((service) => {
-            const { id, icon, title, body } = service;
-            return (
-              <div key={id} className="service">
+
+      <div className="section-center services-center">
+        {services.map((service) => {
+          const { id, icon, title, body } = service;
+          return (
+            <Bounce key={id}>
+              <div className="service">
                 <div className="service-img">
                   <img src={icon} className="service-icon" alt="icon" />
                 </div>
@@ -45,10 +45,10 @@ const Services = ({ className, image }) => {
                   <p>{body}</p>
                 </div>
               </div>
-            );
-          })}
-        </div>
-      </Bounce>
+            </Bounce>
+          );
+        })}
+      </div>
     </BackgroundImage>
   );
 };

@@ -34,7 +34,7 @@ const GridGalery = ({ className, images }) => {
 
   return (
     <BackgroundImage Tag="section" {...bgImage} className={className}>
-       <Bounce top cascade>
+      <Bounce right cascade>
         <div className="title-wrapper">
           <div className="title">
             <p>
@@ -53,8 +53,8 @@ const GridGalery = ({ className, images }) => {
             </p>
           </div>
         </div>
-        </Bounce>
-      <Bounce top cascade>
+      </Bounce>
+      <Bounce cascade>
         <div className="tile-layout">
           {projects.map((project, index) => {
             const { id, image, name, type } = project;
@@ -174,6 +174,7 @@ export default styled(GridGalery)`
     /*GOTCHA AKO HOCEM DA GATBY IMAGE PLAY NICELY WIDTH DEFINET 300PX  HEIGHT OF ROW
   MORA SE ZA IMG DEFINISATI HEIGHT OD 100%*/
     .img {
+      width: 100%;
       height: 100%;
       border-radius: var(--radius);
       transition: var(--transition);

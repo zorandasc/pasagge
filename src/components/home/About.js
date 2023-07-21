@@ -2,8 +2,7 @@ import React from "react";
 import { styled } from "styled-components";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
 import Slide from "react-reveal/Slide";
-import Bounce from "react-reveal/Bounce";
-import Rotate from 'react-reveal/Rotate';
+import Rotate from "react-reveal/Rotate";
 
 import Button1 from "../Button1";
 
@@ -24,7 +23,7 @@ const About = ({ image1, image2, image3 }) => {
             alt="about"
           ></GatsbyImage>
 
-          <Slide right>
+          <Slide left>
             <GatsbyImage
               image={getImage(image3)}
               className="img3"
@@ -33,7 +32,7 @@ const About = ({ image1, image2, image3 }) => {
           </Slide>
         </div>
         <div className="about-text">
-          <Bounce top cascade>
+          <Slide right cascade>
             <div className="title">
               <p>
                 Mi smo tim sa <span className="year-label">25 godina</span>{" "}
@@ -43,7 +42,7 @@ const About = ({ image1, image2, image3 }) => {
                 Nešto Više <span className="about-label">O Nama</span>
               </h2>
             </div>
-          </Bounce>
+          </Slide>
           <div className="subText">
             <p>
               Stručnost koju možete osjetiti, rezultati koje možete vidjeti.
@@ -64,9 +63,9 @@ const About = ({ image1, image2, image3 }) => {
           </div>
 
           <div className="btn-wrapper">
-          <Rotate bottom left>
+            <Rotate bottom left>
               <Button1>Kontaktirajte nas</Button1>
-              </Rotate>
+            </Rotate>
           </div>
         </div>
       </div>

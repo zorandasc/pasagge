@@ -56,7 +56,7 @@ const Prices = ({ className, images }) => {
   return (
     <BackgroundImage Tag="section" {...bgImage} className={className}>
       <div className="title-wrapper">
-        <Bounce top cascade>
+        <Bounce letf cascade>
           <div className="title">
             <p>
               Vaših <span className="label">25 % popusta</span> je ovdije
