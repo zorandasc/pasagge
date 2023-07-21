@@ -18,7 +18,7 @@ const AddressWrapper = ({ children }) => {
     <div className="card">
       {children}
       <StaticImage
-        src="../images/laticeBg.jpg"
+        src="../images/laticeBgSkin.png"
         layout="constrained"
         className="hero-img"
         alt="Herro image"
@@ -48,11 +48,12 @@ const contact = ({ data }) => {
         </Background>
         <div className="section-center cards-center">
           <Bounce left>
-            <div className="card">
+            <div className="card card-logo">
               <StaticImage
-                src="../images/logo.jpg"
+                src="../images/logoSkin.jpg"
                 layout="constrained"
-                alt="Herro image"
+                alt="logo image"
+                objectFit="contain"
               ></StaticImage>
             </div>
           </Bounce>
@@ -62,12 +63,14 @@ const contact = ({ data }) => {
                 Informacije i Podrška{" "}
                 <BsFillInfoCircleFill className="icon"></BsFillInfoCircleFill>
               </h3>
-              <div className="tel-email">
-                <AiOutlinePhone className="icon"></AiOutlinePhone>(+387) 65 842
-                979
-              </div>
-              <div className="tel-email">
-                <TfiEmail className="icon"></TfiEmail>studiopasagge@gmail.com
+              <div>
+                <div className="tel-email">
+                  <AiOutlinePhone className="icon"></AiOutlinePhone>(+387) 65
+                  842 979
+                </div>
+                <div className="tel-email">
+                  <TfiEmail className="icon"></TfiEmail>studiopasagge@gmail.com
+                </div>
               </div>
             </AddressWrapper>
           </Bounce>
@@ -77,21 +80,19 @@ const contact = ({ data }) => {
                 Radno Vrijeme{" "}
                 <BsFillClockFill className="icon"></BsFillClockFill>
               </h3>
-              <div className="time">
-                <span>Ponedeljak - Četvrtak</span>
-                <span>8 am - 8 pm</span>
-              </div>
-              <div className="time">
-                <span>Petak</span>
-                <span>8 am - 6 pm</span>
-              </div>
-              <div className="time">
-                <span>Subota</span>
-                <span>9 am - 4 pm</span>
-              </div>
-              <div className="time">
-                <span>Nedelja</span>
-                <span>Zatvoreno</span>
+              <div>
+                <div className="time">
+                  <span>Ponedeljak - Petak</span>
+                  <span>8 am - 8 pm</span>
+                </div>
+                <div className="time">
+                  <span>Subota</span>
+                  <span>9 am - 4 pm</span>
+                </div>
+                <div className="time">
+                  <span>Nedelja</span>
+                  <span>Zatvoreno</span>
+                </div>
               </div>
             </AddressWrapper>
           </Bounce>
@@ -104,7 +105,7 @@ const contact = ({ data }) => {
                 <BsFillHouseDoorFill className="icon"></BsFillHouseDoorFill>
               </h3>
               <div className="street">
-                <AiFillPushpin></AiFillPushpin>
+                <AiFillPushpin className="icon"></AiFillPushpin>
                 <span>Šargovačkih Đaka 1, Banja Luka, BiH</span>
               </div>
             </div>
@@ -121,7 +122,7 @@ const contact = ({ data }) => {
               ></iframe>
             </div>
             <StaticImage
-              src="../images/laticeBg.jpg"
+              src="../images/laticeBgSkin.png"
               layout="constrained"
               className="hero-img"
               alt="Herro image"
@@ -148,7 +149,7 @@ const contact = ({ data }) => {
                   name="name"
                   id="name"
                   required
-                  placeholder="Unesite Vaše Ime"
+                  placeholder=""
                   className="form-control"
                 />
               </div>
@@ -159,7 +160,7 @@ const contact = ({ data }) => {
                   name="email"
                   id="email"
                   required
-                  placeholder="Unesite Vaš email"
+                  placeholder=""
                   className="form-control"
                 />
               </div>
@@ -172,7 +173,7 @@ const contact = ({ data }) => {
                   id="message"
                   required
                   rows="5"
-                  placeholder="Unesite Vašu Poruku"
+                  placeholder=""
                   className="form-control"
                 ></textarea>
               </div>
@@ -252,7 +253,7 @@ const Wrapper = styled.section`
     display: flex;
     flex-direction: column;
     align-items: inherit;
-    justify-content: center;
+    justify-content: space-around;
     padding: 10px 30px;
     margin-bottom: 2rem;
     text-align: left;
@@ -278,16 +279,6 @@ const Wrapper = styled.section`
       justify-content: space-between;
       align-items: flex-start;
     }
-    div {
-      margin-top: 14px;
-      a {
-        color: var(--body-bg);
-        transition: var(--transition);
-        &:hover {
-          color: var(--theme-color);
-        }
-      }
-    }
     .time {
       margin-bottom: 1.25rem;
       display: flex;
@@ -297,6 +288,7 @@ const Wrapper = styled.section`
       display: flex;
       justify-content: space-between;
       align-items: center;
+      margin-top: 2rem;
     }
     .icon {
       font-size: 1.5em;
@@ -305,6 +297,12 @@ const Wrapper = styled.section`
       box-shadow: var(--darkShadow);
     }
   }
+
+  .card-logo {
+    padding: 10px;
+    background: var(--skin-color);
+  }
+
   .mapWrapper {
     position: relative;
     color: var(--title-color);
@@ -329,7 +327,7 @@ const Wrapper = styled.section`
     }
     .address {
       @media (min-width: 768px) {
-        max-width: 20vw;
+        max-width: 30vw;
       }
       h3 {
         margin-bottom: 2rem;
@@ -346,10 +344,9 @@ const Wrapper = styled.section`
         display: flex;
         justify-content: space-between;
       }
-    }
-
-    .icon {
-      font-size: 1.5em;
+      .icon {
+        font-size: 1.5em;
+      }
     }
   }
 

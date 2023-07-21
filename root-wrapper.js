@@ -18,6 +18,7 @@ const GlobalStyle = createGlobalStyle`
   --theme-color: #DF497C;
   //rgb(223,73,124)
   --theme-color-light:rgba(242,216,231,0.8);
+  --skin-color:rgb(236,232,229);
 
   --drawer-width: 480px;
   --title-font: 'Dancing Script', Georgia, Times, serif;

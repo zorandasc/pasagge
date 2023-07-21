@@ -19,7 +19,7 @@ const gallery = ({ data }) => {
                 <li>Galerija</li>
               </ul>
               <div>
-                <h1>Galerija</h1>
+                <h1>GALERIJA</h1>
               </div>
             </div>
           </div>
