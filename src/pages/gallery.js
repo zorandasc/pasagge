@@ -56,23 +56,30 @@ const cards = [
   },
 ];
 
-const Card = ({ number, url }) => {
+const Card = ({ number, url, handleClick }) => {
   return (
-    <a href="#portfolio-item-1" className="button" role="button">
-      <div
-        className={`card 
+    <button
+      onClick={handleClick}
+      className={`card 
       ${number === 1 ? "card-tall card-wide" : ""} 
       ${number === 2 ? "card-tall" : ""}
       ${number === 7 ? "card-wide" : ""}`}
-        style={{ backgroundImage: `url(${url})` }}
-      >
-        {number}
-      </div>
-    </a>
+      style={{ backgroundImage: `url(${url})` }}
+    >
+      {number}
+    </button>
   );
 };
 
-const gallery = ({ data }) => {
+const Gallery = ({ data }) => {
+  const [showLightBox, setShowLightBox] = React.useState(false);
+  const [lightBoxUrl, setLightBoxUrl] = React.useState("");
+
+  const handleImageClick = (url) => {
+    setLightBoxUrl(url);
+    setShowLightBox(true);
+  };
+
   return (
     <Layout>
       <Wrapper>
@@ -94,15 +101,34 @@ const gallery = ({ data }) => {
         <div className=" gallery-center">
           <div className="photo-grid">
             {cards.map(({ number, url }) => {
-              return <Card key={number} number={number} url={url}></Card>;
+              return (
+                <Card
+                  key={number}
+                  number={number}
+                  url={url}
+                  handleClick={() => handleImageClick(url)}
+                ></Card>
+              );
             })}
           </div>
         </div>
-        <div id="portfolio-item-1" className="portfolio-lightbox">
+        <div
+          id="portfolio-item-1"
+          className={
+            showLightBox
+              ? "portfolio-lightbox portfolio-lightbox-target"
+              : "portfolio-lightbox"
+          }
+        >
           <div className="portfolio-lighthbox_content">
-            <a href="#portfolio" className="close"></a>
+            <button
+              onClick={() => setShowLightBox(false)}
+              aria-label="close"
+              className="close"
+            ></button>
             <img
-              src="http://unsplash.it/900/400?image=1080"
+              alt="galery"
+              src={lightBoxUrl}
               className="portfolio-lightbox__image"
             />
             <h3 className="portfolio_lightbox_title">
@@ -175,30 +201,31 @@ const Wrapper = styled.section`
       /*IMPLICITNI GRID SA AUTO FIT*/
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       grid-auto-rows: 270px;
-    }
-    .card {
-      background: #353535;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      font-size: 3rem;
-      color: #fff;
-      box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem,
-        rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+      .card {
+        border: none;
+        background: #353535;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 3rem;
+        color: #fff;
+        box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem,
+          rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
 
-      height: 100%;
-      width: 100%;
-      border-radius: 4px;
-      transition: all 500ms;
-      overflow: hidden;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      &:hover {
-        box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em,
-          rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
-        transform: translateY(-3px) scale(1.1);
+        height: 100%;
+        width: 100%;
+        border-radius: 4px;
+        transition: all 500ms;
+        overflow: hidden;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        &:hover {
+          box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em,
+            rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+          transform: translateY(-3px) scale(1.1);
+        }
       }
     }
   }
@@ -219,40 +246,43 @@ const Wrapper = styled.section`
     transform: scale(0, 1);
     transform-origin: right;
     transition: transform 500ms ease-in-out;
-    .portfolio-lightbox__image {
-      width: 100%;
-      display: block;
-      margin-bottom: 1em;
-    }
-    &:target {
-      transform: scale(1, 1);
-      transform-origin: left;
-    }
+
     .portfolio-lighthbox_content {
       width: 75%;
+      height: 75%;
       background: black;
       padding: 1em;
       position: relative;
+      .portfolio-lightbox__image {
+        width: 100%;
+        height: 100%;
+        display: block;
+        margin-bottom: 1em;
+      }
+      .close {
+        position: absolute;
+        width: 2em;
+        height: 2em;
+        background: seagreen;
+        top: -1em;
+        right: -1em;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid whitesmoke;
+        &::after {
+          content: "X";
+          color: aliceblue;
+          font-weight: 700;
+        }
+      }
     }
-    .close {
-      position: absolute;
-      width: 2em;
-      height: 2em;
-      background: seagreen;
-      top: -1em;
-      right: -1em;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid whitesmoke;
-    }
+  }
 
-    .close::after {
-      content: "X";
-      color: aliceblue;
-      font-weight: 700;
-    }
+  .portfolio-lightbox-target {
+    transform: scale(1, 1);
+    transform-origin: left;
   }
 
   @media screen and (min-width: 600px) {
@@ -268,4 +298,4 @@ const Wrapper = styled.section`
 
 export const Head = () => <Seo title="Galerija Radova" />;
 
-export default gallery;
+export default Gallery;
