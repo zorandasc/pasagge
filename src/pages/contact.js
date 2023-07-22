@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { graphql, Link } from "gatsby";
 import { getImage, StaticImage } from "gatsby-plugin-image";
 import { TfiEmail } from "react-icons/tfi";
-import { AiOutlinePhone, AiFillPushpin } from "react-icons/ai";
+import { AiOutlinePhone, AiOutlinePushpin } from "react-icons/ai";
 import {
   BsFillHouseDoorFill,
   BsFillClockFill,
@@ -46,8 +46,8 @@ const contact = ({ data }) => {
             </div>
           </div>
         </Background>
-        <div className="section-center cards-center">
-          <Bounce left>
+        <Bounce left cascade>
+          <div className="section-center cards-center">
             <div className="card card-logo">
               <StaticImage
                 src="../images/logoSkin.jpg"
@@ -56,8 +56,7 @@ const contact = ({ data }) => {
                 objectFit="contain"
               ></StaticImage>
             </div>
-          </Bounce>
-          <Bounce>
+
             <AddressWrapper>
               <h3>
                 Informacije i Podrška{" "}
@@ -73,8 +72,7 @@ const contact = ({ data }) => {
                 </div>
               </div>
             </AddressWrapper>
-          </Bounce>
-          <Bounce right>
+
             <AddressWrapper>
               <h3>
                 Radno Vrijeme{" "}
@@ -95,9 +93,9 @@ const contact = ({ data }) => {
                 </div>
               </div>
             </AddressWrapper>
-          </Bounce>
-        </div>
-        <Bounce>
+          </div>
+        </Bounce>
+        <Bounce right>
           <div className="section-center mapWrapper">
             <div className="address">
               <h3>
@@ -105,7 +103,7 @@ const contact = ({ data }) => {
                 <BsFillHouseDoorFill className="icon"></BsFillHouseDoorFill>
               </h3>
               <div className="street">
-                <AiFillPushpin className="icon"></AiFillPushpin>
+                <AiOutlinePushpin className="icon"></AiOutlinePushpin>
                 <span>Šargovačkih Đaka 1, Banja Luka, BiH</span>
               </div>
             </div>
@@ -129,62 +127,64 @@ const contact = ({ data }) => {
             ></StaticImage>
           </div>
         </Bounce>
-        <div className="section-center form-container">
-          <h2>Ostanite u Kontaktu, Pišite Nam.</h2>
+        <Bounce left>
+          <div className="section-center form-container">
+            <h2>Ostanite u Kontaktu, Pišite Nam.</h2>
 
-          <form
-            name="contact"
-            className="form-group"
-            method="post"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-          >
-            <input type="hidden" name="bot-field" />
-            <input type="hidden" name="form-name" value="contact" />
-            <div className="credencial-container">
-              <div>
-                <label htmlFor="name">Vaše Ime</label>
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  required
-                  placeholder=""
-                  className="form-control"
-                />
+            <form
+              name="contact"
+              className="form-group"
+              method="post"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+            >
+              <input type="hidden" name="bot-field" />
+              <input type="hidden" name="form-name" value="contact" />
+              <div className="credencial-container">
+                <div>
+                  <label htmlFor="name">Vaše Ime</label>
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    required
+                    placeholder=""
+                    className="form-control"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email">Vaš Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    required
+                    placeholder=""
+                    className="form-control"
+                  />
+                </div>
               </div>
-              <div>
-                <label htmlFor="email">Vaš Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  required
-                  placeholder=""
-                  className="form-control"
-                />
+              <div className="message-container">
+                <div>
+                  <label htmlFor="message">Vaša Poruka</label>
+                  <textarea
+                    name="message"
+                    id="message"
+                    required
+                    rows="5"
+                    placeholder=""
+                    className="form-control"
+                  ></textarea>
+                </div>
               </div>
-            </div>
-            <div className="message-container">
-              <div>
-                <label htmlFor="message">Vaša Poruka</label>
-                <textarea
-                  name="message"
-                  id="message"
-                  required
-                  rows="5"
-                  placeholder=""
-                  className="form-control"
-                ></textarea>
+              <div className="btn-container">
+                <button type="submit" className="submit-btn">
+                  pošalji
+                </button>
               </div>
-            </div>
-            <div className="btn-container">
-              <button type="submit" className="submit-btn">
-                pošalji
-              </button>
-            </div>
-          </form>
-        </div>
+            </form>
+          </div>
+        </Bounce>
       </Wrapper>
     </Layout>
   );
@@ -261,6 +261,9 @@ const Wrapper = styled.section`
     -webkit-transition: var(--transition);
     transition: var(--transition);
     overflow: hidden;
+    @media (min-width: 768px) {
+      margin-bottom: 0;
+    }
     .hero-img {
       position: absolute;
       left: 0;
@@ -327,7 +330,7 @@ const Wrapper = styled.section`
     }
     .address {
       @media (min-width: 768px) {
-        max-width: 30vw;
+        margin: 0.5rem auto;
       }
       h3 {
         margin-bottom: 2rem;
@@ -374,10 +377,12 @@ const Wrapper = styled.section`
     text-align: left;
     box-shadow: var(--lightShadow);
     transition: var(--transition);
-    width: 90vw;
-    margin-bottom: 2rem;
-    padding: 2rem 2rem;
-    margin-bottom: 100px;
+    padding: 1rem;
+    margin: 50px auto;
+    @media (min-width: 768px) {
+      margin: 100px auto;
+      padding: 2rem;
+    }
     &:hover {
       box-shadow: var(--darkShadow);
     }
@@ -443,9 +448,8 @@ const Wrapper = styled.section`
           background-color: transparent;
           padding: 0 !important;
           font-size: 14px;
-          color: #c2c2c2;
-
-          border-bottom: 2px solid #343434;
+          color: var(--title-color);
+          border-bottom: 2px solid var(--title-color);
         }
       }
     }
