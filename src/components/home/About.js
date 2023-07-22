@@ -2,10 +2,8 @@ import React from "react";
 import { styled } from "styled-components";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
 import Slide from "react-reveal/Slide";
-import Rotate from "react-reveal/Rotate";
 
-import Button1 from "../Button1";
-import Button2 from "../Button2";
+import TwoButtons from "../TwoButtons";
 
 const About = ({ image1, image2, image3 }) => {
   return (
@@ -62,15 +60,7 @@ const About = ({ image1, image2, image3 }) => {
               ostavljajući vas energičnim iznutra i sjajnim spolja.
             </p>
           </div>
-
-          <div className="btn-wrapper">
-            <Rotate>
-              <Button1 path="/about">Saznaj Više</Button1>
-            </Rotate>
-            <Rotate>
-              <Button2 path="/contact">Kontaktirajte nas</Button2>
-            </Rotate>
-          </div>
+          <TwoButtons></TwoButtons>
         </div>
       </div>
     </Wrapper>

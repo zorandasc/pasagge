@@ -25,6 +25,7 @@ const Wrapper = styled.div`
 
   .btn {
     width: 100%;
+    max-width: 250px;
     cursor: pointer;
     letter-spacing: 2px;
     font-size: 16px;
