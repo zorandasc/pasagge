@@ -7,12 +7,12 @@ const Button1 = ({ path, handleClick, children }) => {
   return (
     <Wrapper>
       {handleClick ? (
-        <button className="btn btn-app" aria-label={children} onClick={handleClick}>
+        <button className="btn" aria-label={children} onClick={handleClick}>
           {children}
           <BsFillArrowRightSquareFill className="icon"></BsFillArrowRightSquareFill>
         </button>
       ) : (
-        <Link className="btn btn-app" to={path}>
+        <Link className="btn" to={path}>
           {children}
           <BsFillArrowRightSquareFill className="icon"></BsFillArrowRightSquareFill>
         </Link>
@@ -22,11 +22,9 @@ const Button1 = ({ path, handleClick, children }) => {
 };
 
 const Wrapper = styled.div`
-  width: 100%;
-  @media (min-width: 768px) {
-    width: initial;
-  }
+
   .btn {
+    width: 100%;
     cursor: pointer;
     letter-spacing: 2px;
     font-size: 16px;
@@ -40,10 +38,7 @@ const Wrapper = styled.div`
     position: relative;
     z-index: 1;
     text-align: center;
-    margin: 0 auto;
     padding: 15px 18px;
-    //width: 100%;
-    //max-width: 260px;
     margin-bottom: 1rem;
     box-shadow: 0 5px 30px 0 rgba(223, 73, 124, 0.72);
     overflow: hidden;

@@ -7,19 +7,17 @@ const Button2 = ({ children, path }) => {
   return (
     <Wrapper>
       <Link className="btn btn-call" to={path}>
-        <AiFillPhone className="icon"></AiFillPhone> {children}
+      {children} <AiFillPhone className="icon"></AiFillPhone> 
       </Link>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
-  width: 100%;
-  @media (min-width: 768px) {
-    width: initial;
-  }
+ 
   .btn {
-    letter-spacing: 2px;
+    width: 100%;
+    letter-spacing: 1px;
     line-height: 1;
     text-transform: uppercase;
     display: inline-block;
@@ -29,8 +27,6 @@ const Wrapper = styled.div`
     border-radius: 2rem;
     z-index: 1;
     text-align: center;
-    width: 100%;
-    max-width: 260px;
     margin-bottom: 1rem;
     overflow: hidden;
     .icon {
@@ -38,7 +34,6 @@ const Wrapper = styled.div`
       height: var(--icon-size, 30px);
       line-height: var(--icon-size, 40px);
       display: inline-block;
-      margin-left: 15px;
       font-size: 18px;
       vertical-align: middle;
     }

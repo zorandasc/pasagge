@@ -7,7 +7,6 @@ import Rotate from "react-reveal/Rotate";
 import Button1 from "../Button1";
 import Button2 from "../Button2";
 
-
 const About = ({ image1, image2, image3 }) => {
   return (
     <Wrapper>
@@ -65,8 +64,10 @@ const About = ({ image1, image2, image3 }) => {
           </div>
 
           <div className="btn-wrapper">
-            <Rotate bottom left cascade>
+            <Rotate>
               <Button1 path="/about">Saznaj Više</Button1>
+            </Rotate>
+            <Rotate>
               <Button2 path="/contact">Kontaktirajte nas</Button2>
             </Rotate>
           </div>
@@ -78,7 +79,6 @@ const About = ({ image1, image2, image3 }) => {
 
 const Wrapper = styled.section`
   padding: 5rem 0;
-
   width: 100%;
   .inner {
     max-width: 1200px;
@@ -210,13 +210,13 @@ const Wrapper = styled.section`
       }
       .btn-wrapper {
         width: 100%;
-        max-width: 500px;
-        display: flex;
-        flex-wrap: wrap;
-        margin-right: auto;
-        position: relative;
-        justify-content: space-between;
-        align-items: center;
+        @media (min-width: 768px) {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          -webkit-column-gap: 2rem;
+          -moz-column-gap: 2rem;
+          column-gap: 2rem;
+        }
       }
     }
   }
