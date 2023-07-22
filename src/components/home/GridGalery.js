@@ -18,7 +18,7 @@ const GridGalery = ({ className, images }) => {
     {
       id: 2,
       image: getImage(images[2]),
-      name: "maska od blata",
+      name: "ljekovita maska",
       type: "njega lica",
     },
     {
@@ -27,7 +27,7 @@ const GridGalery = ({ className, images }) => {
       name: "sjajan ten",
       type: "njega tijela",
     },
-    { id: 4, image: getImage(images[3]), name: "relax", type: "relax" },
+    { id: 4, image: getImage(images[3]), name: "relax masaža", type: "relaks" },
   ];
 
   const bgImage = convertToBgImage(getImage(images[4]));
@@ -66,9 +66,11 @@ const GridGalery = ({ className, images }) => {
                   image={getImage(image)}
                   alt="galery image"
                 />
+                <div className="overlay"></div>
                 <div className="info">
-                  <p>- {type} -</p>
-                  <h3>{name}</h3>
+                  <h3>- {type} -</h3>
+                  <hr />
+                  <p>{name}</p>
                 </div>
               </article>
             );
@@ -183,29 +185,53 @@ export default styled(GridGalery)`
       position: relative;
       overflow: hidden;
       border-radius: var(--radius);
-      background: var(--theme-color);
+
       &:hover .img {
         opacity: 0.2;
       }
       .info {
+        width: 80%;
         position: absolute;
-        top: 50%;
+        bottom: 0;
         left: 50%;
-        transform: translate(-50%, -1%);
-        width: 100%;
-        transition: var(--transition);
+        transform: translateX(-50%);
         color: var(--smoke-color);
         text-align: center;
         opacity: 0;
+        transition: 0.7s;
         p {
           margin-bottom: 0.5rem;
-          color: var(--clr-white);
-          text-transform: uppercase;
+          color: var(--smoke-color);
+          text-transform: capitalize;
+        }
+        hr {
+          background: #fff;
+          height: 1px;
+          border: 0;
+          margin: 15px auto;
+          width: 60%;
         }
       }
-      &:hover .info {
-        opacity: 1;
-        transform: translate(-50%, -50%);
+
+      .overlay {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        border-radius: 7px;
+        cursor: pointer;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), var(--theme-color));
+        opacity: 0;
+        transition: 1s;
+      }
+      &:hover {
+        .overlay {
+          opacity: 1;
+        }
+        .info {
+          bottom: 40%;
+          opacity: 1;
+        }
       }
     }
     @media (min-width: 768px) {
