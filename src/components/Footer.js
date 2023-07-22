@@ -69,7 +69,7 @@ const Footer = () => {
         <div className="bodyInner">
           <div className="column about">
             <div className="title">
-              <h4>O Nama Passage</h4>
+              <h4>O Nama Pasagge</h4>
             </div>
             <div className="divider">
               <span></span>

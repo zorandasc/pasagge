@@ -46,8 +46,9 @@ const contact = ({ data }) => {
             </div>
           </div>
         </Background>
-        <Bounce left cascade>
-          <div className="section-center cards-center">
+
+        <div className="section-center cards-center">
+          <Bounce left>
             <div className="card card-logo">
               <StaticImage
                 src="../images/logoSkin.jpg"
@@ -56,7 +57,8 @@ const contact = ({ data }) => {
                 objectFit="contain"
               ></StaticImage>
             </div>
-
+          </Bounce>
+          <Bounce>
             <AddressWrapper>
               <h3>
                 Informacije i Podrška{" "}
@@ -72,7 +74,8 @@ const contact = ({ data }) => {
                 </div>
               </div>
             </AddressWrapper>
-
+          </Bounce>
+          <Bounce right>
             <AddressWrapper>
               <h3>
                 Radno Vrijeme{" "}
@@ -93,8 +96,9 @@ const contact = ({ data }) => {
                 </div>
               </div>
             </AddressWrapper>
-          </div>
-        </Bounce>
+          </Bounce>
+        </div>
+
         <Bounce right>
           <div className="section-center mapWrapper">
             <div className="address">
