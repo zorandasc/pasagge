@@ -58,15 +58,17 @@ const cards = [
 
 const Card = ({ number, url }) => {
   return (
-    <div
-      className={`card 
+    <a href="#portfolio-item-1" className="button" role="button">
+      <div
+        className={`card 
       ${number === 1 ? "card-tall card-wide" : ""} 
       ${number === 2 ? "card-tall" : ""}
       ${number === 7 ? "card-wide" : ""}`}
-      style={{ backgroundImage: `url(${url})` }}
-    >
-      {number}
-    </div>
+        style={{ backgroundImage: `url(${url})` }}
+      >
+        {number}
+      </div>
+    </a>
   );
 };
 
@@ -94,6 +96,21 @@ const gallery = ({ data }) => {
             {cards.map(({ number, url }) => {
               return <Card key={number} number={number} url={url}></Card>;
             })}
+          </div>
+        </div>
+        <div id="portfolio-item-1" className="portfolio-lightbox">
+          <div className="portfolio-lighthbox_content">
+            <a href="#portfolio" className="close"></a>
+            <img
+              src="http://unsplash.it/900/400?image=1080"
+              className="portfolio-lightbox__image"
+            />
+            <h3 className="portfolio_lightbox_title">
+              This is title inide lightbox
+            </h3>
+            <p className="portfolio_lightbox_body">
+              This is body inide lightbox
+            </p>
           </div>
         </div>
       </Wrapper>
@@ -183,6 +200,58 @@ const Wrapper = styled.section`
           rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
         transform: translateY(-3px) scale(1.1);
       }
+    }
+  }
+
+  .portfolio-lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 2em;
+    background: rgba(0, 0, 0, 0.5);
+    /*box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.25);*/
+    width: 100vw;
+    height: 100vh;
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0, 1);
+    transform-origin: right;
+    transition: transform 500ms ease-in-out;
+    .portfolio-lightbox__image {
+      width: 100%;
+      display: block;
+      margin-bottom: 1em;
+    }
+    &:target {
+      transform: scale(1, 1);
+      transform-origin: left;
+    }
+    .portfolio-lighthbox_content {
+      width: 75%;
+      background: black;
+      padding: 1em;
+      position: relative;
+    }
+    .close {
+      position: absolute;
+      width: 2em;
+      height: 2em;
+      background: seagreen;
+      top: -1em;
+      right: -1em;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid whitesmoke;
+    }
+
+    .close::after {
+      content: "X";
+      color: aliceblue;
+      font-weight: 700;
     }
   }
 
