@@ -108,7 +108,8 @@ const about = ({ data }) => {
                 <FaPagelines className="icon"></FaPagelines> Manikir i Pedikir
               </li>
               <li>
-                <FaPagelines className="icon"></FaPagelines> Masaža i Relaksacija
+                <FaPagelines className="icon"></FaPagelines> Masaža i
+                Relaksacija
               </li>
               <li>
                 <FaPagelines className="icon"></FaPagelines> Solarijum i
@@ -135,13 +136,24 @@ const about = ({ data }) => {
           </article>
           <div className="about-img">
             <StaticImage
-              src="../images/aboutPage.jpg"
+              src="../images/rozi.jpg"
               layout="constrained"
               //placeholder="blurred"
               className="img"
               alt="Herro image"
             ></StaticImage>
           </div>
+        </div>
+        <div className="section section-center">
+          <iframe
+            width="100%"
+            height="560"
+            src="https://www.youtube.com/embed/heLOYh2irBQ"
+            title="Salon Ljepote Pasagge"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
         </div>
       </Wrapper>
     </Layout>
@@ -151,6 +163,16 @@ const about = ({ data }) => {
 export const query = graphql`
   query {
     heroImage1: file(name: { eq: "pageBg" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+      }
+    }
+    rozi: file(name: { eq: "rozi" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+      }
+    }
+    smallRozi: file(name: { eq: "smallRozi" }) {
       childImageSharp {
         gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
       }
@@ -223,7 +245,7 @@ const Wrapper = styled.section`
         align-items: center;
         padding-bottom: 1rem;
         font-style: italic;
-        .icon{
+        .icon {
           margin-right: 1rem;
         }
       }
@@ -233,17 +255,26 @@ const Wrapper = styled.section`
   .about-img {
     overflow: hidden;
     margin-top: 2rem;
-    width: 100%;
+    width: 120%;
     height: 100%;
     display: block;
+    margin: 0 -2rem;
+    @media (min-width: 768px) {
+      margin: 2rem 0;
+      width: 100%;
+    }
 
     .img {
       width: 100%;
+      max-height: 300px;
       height: 100%;
       transition: all 200ms linear 0ms;
-      filter: brightness(60%);
+      filter: brightness(90%);
       &:hover {
         transform: scale(1.45) rotate(-1.5deg);
+      }
+      @media (min-width: 768px) {
+        max-height: 100%;
       }
     }
   }
@@ -261,6 +292,15 @@ const Wrapper = styled.section`
     }
     .about-img {
       grid-column: 7 / -1;
+    }
+  }
+  .videoContainer {
+    width: 100%;
+    //height: 500px;
+
+    .video {
+      width: 100%;
+      height: auto;
     }
   }
 `;

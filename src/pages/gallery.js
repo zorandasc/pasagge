@@ -46,15 +46,17 @@ const Gallery = ({ data }) => {
     },
     {
       number: 5,
-      url: data.massageImage2,
+      url: data.sminka3,
     },
+
     {
       number: 6,
       url: data.aboutImage1,
     },
+
     {
       number: 7,
-      url: data.massageImage4,
+      url: data.sminka2,
     },
     {
       number: 8,
@@ -66,11 +68,23 @@ const Gallery = ({ data }) => {
     },
     {
       number: 10,
-      url: data.commentImage,
+      url: data.sminka1,
     },
     {
       number: 11,
+      url: data.commentImage,
+    },
+    {
+      number: 12,
       url: data.gallImage4,
+    },
+    {
+      number: 13,
+      url: data.massageImage4,
+    },
+    {
+      number: 14,
+      url: data.massageImage2,
     },
   ];
 
@@ -179,6 +193,11 @@ export const query = graphql`
         gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
       }
     }
+    sminka1: file(name: { eq: "sminka1" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+      }
+    }
     massageImage3: file(name: { eq: "massage3" }) {
       childImageSharp {
         gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
@@ -194,12 +213,22 @@ export const query = graphql`
         gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
       }
     }
+    sminka2: file(name: { eq: "sminka2" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+      }
+    }
     gallImage2: file(name: { eq: "gallery2" }) {
       childImageSharp {
         gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
       }
     }
     gallImage3: file(name: { eq: "gallery3" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+      }
+    }
+    sminka3: file(name: { eq: "sminka3" }) {
       childImageSharp {
         gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
       }
@@ -310,8 +339,7 @@ const Wrapper = styled.section`
     transition: transform 500ms ease-in-out;
 
     .portfolio-lighthbox_content {
-      width: 75%;
-      height: 85%;
+    width: 75%;
       background: black;
       padding: 1em;
       position: relative;
@@ -320,6 +348,7 @@ const Wrapper = styled.section`
         height: 100%;
         display: block;
         margin-bottom: 1em;
+        object-fit: contain;
       }
       .close {
         cursor: pointer;
