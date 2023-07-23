@@ -1,79 +1,78 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { graphql, Link } from "gatsby";
-import { getImage } from "gatsby-plugin-image";
+import { getImage, GatsbyImage } from "gatsby-plugin-image";
 
+import { GatsbyContext } from "../context/context";
 import { Layout, Seo, Background } from "../components";
 
-const cards = [
-  {
-    number: 1,
-    url: "https://images.unsplash.com/photo-1558981359-219d6364c9c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80",
-  },
-  {
-    number: 2,
-    url: "https://images.unsplash.com/photo-1583585635793-0e1894c169bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=913&q=80",
-  },
-  {
-    number: 3,
-    url: "https://images.unsplash.com/photo-1583531172005-814191b8b6c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80",
-  },
-  {
-    number: 4,
-    url: "https://images.unsplash.com/photo-1583426573939-97d09302d76a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=968&q=80",
-  },
-  {
-    number: 5,
-    url: "https://images.unsplash.com/photo-1583532452513-a02186582ccd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
-  },
-  {
-    number: 6,
-    url: "https://images.unsplash.com/photo-1583445013765-46c20c4a6772?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
-  },
-  {
-    number: 7,
-    url: "https://images.unsplash.com/photo-1583562835057-a62d1beffbf3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=949&q=80",
-  },
-  {
-    number: 8,
-    url: "https://images.unsplash.com/photo-1583483425010-c566431a7710?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80",
-  },
-  {
-    number: 9,
-    url: "https://images.unsplash.com/photo-1583500557349-fb5238f8d946?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1949&q=80",
-  },
-  {
-    number: 10,
-    url: "https://images.unsplash.com/photo-1583468323330-9032ad490fed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1955&q=80",
-  },
-  {
-    number: 11,
-    url: "https://images.unsplash.com/photo-1583425423320-2386622cd2e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1980&q=80",
-  },
-  {
-    number: 12,
-    url: "https://images.unsplash.com/photo-1583518257225-f9a8081f6a84?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
-  },
-];
-
 const Card = ({ number, url, handleClick }) => {
+  const { size } = useContext(GatsbyContext);
   return (
     <button
-      onClick={handleClick}
+      type="button"
+      aria-label="image gallery"
+      onClick={size > 768 ? handleClick : null}
       className={`card 
       ${number === 1 ? "card-tall card-wide" : ""} 
       ${number === 2 ? "card-tall" : ""}
       ${number === 7 ? "card-wide" : ""}`}
-      style={{ backgroundImage: `url(${url})` }}
     >
-      {number}
+      <GatsbyImage className="img" image={getImage(url)} alt="galery image" />
     </button>
   );
 };
 
 const Gallery = ({ data }) => {
   const [showLightBox, setShowLightBox] = React.useState(false);
-  const [lightBoxUrl, setLightBoxUrl] = React.useState("");
+  const [lightBoxUrl, setLightBoxUrl] = React.useState(null);
+
+  const cards = [
+    {
+      number: 1,
+      url: data.appointImage,
+    },
+    {
+      number: 2,
+      url: data.gallImage3,
+    },
+    {
+      number: 3,
+      url: data.massageImage3,
+    },
+    {
+      number: 4,
+      url: data.massageImage1,
+    },
+    {
+      number: 5,
+      url: data.massageImage2,
+    },
+    {
+      number: 6,
+      url: data.aboutImage1,
+    },
+    {
+      number: 7,
+      url: data.massageImage4,
+    },
+    {
+      number: 8,
+      url: data.gallImage1,
+    },
+    {
+      number: 9,
+      url: data.gallImage2,
+    },
+    {
+      number: 10,
+      url: data.commentImage,
+    },
+    {
+      number: 11,
+      url: data.gallImage4,
+    },
+  ];
 
   const handleImageClick = (url) => {
     setLightBoxUrl(url);
@@ -98,7 +97,7 @@ const Gallery = ({ data }) => {
             </div>
           </div>
         </Background>
-        <div className=" gallery-center">
+        <div className="gallery-center">
           <div className="photo-grid">
             {cards.map(({ number, url }) => {
               return (
@@ -126,17 +125,21 @@ const Gallery = ({ data }) => {
               aria-label="close"
               className="close"
             ></button>
-            <img
-              alt="galery"
-              src={lightBoxUrl}
-              className="portfolio-lightbox__image"
-            />
+            {lightBoxUrl && (
+              <GatsbyImage
+                className="portfolio-lightbox__image"
+                image={getImage(lightBoxUrl)}
+                alt="galery"
+              />
+            )}
+            {/* 
             <h3 className="portfolio_lightbox_title">
               This is title inide lightbox
             </h3>
             <p className="portfolio_lightbox_body">
               This is body inide lightbox
             </p>
+            */}
           </div>
         </div>
       </Wrapper>
@@ -147,6 +150,61 @@ const Gallery = ({ data }) => {
 export const query = graphql`
   query {
     heroImage1: file(name: { eq: "pageBg" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+      }
+    }
+    appointImage: file(name: { eq: "appointBg" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+      }
+    }
+    commentImage: file(name: { eq: "commentBg" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: BLURRED)
+      }
+    }
+    aboutImage1: file(name: { eq: "about1" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+      }
+    }
+    massageImage1: file(name: { eq: "massage1" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+      }
+    }
+    massageImage2: file(name: { eq: "massage2" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+      }
+    }
+    massageImage3: file(name: { eq: "massage3" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+      }
+    }
+    massageImage4: file(name: { eq: "massage4" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+      }
+    }
+    gallImage1: file(name: { eq: "gallery1" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+      }
+    }
+    gallImage2: file(name: { eq: "gallery2" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+      }
+    }
+    gallImage3: file(name: { eq: "gallery3" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+      }
+    }
+    gallImage4: file(name: { eq: "gallery4" }) {
       childImageSharp {
         gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
       }
@@ -191,7 +249,7 @@ const Wrapper = styled.section`
   }
   .gallery-center {
     background: var(--smoke-color);
-    padding-top: 50px;
+    padding: 50px 0;
     @media (min-width: 768px) {
       padding: 100px 0;
     }
@@ -202,7 +260,9 @@ const Wrapper = styled.section`
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       grid-auto-rows: 270px;
       .card {
+        cursor: pointer;
         border: none;
+        outline: none;
         background: #353535;
         display: flex;
         flex-direction: column;
@@ -212,29 +272,31 @@ const Wrapper = styled.section`
         color: #fff;
         box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem,
           rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
-
         height: 100%;
         width: 100%;
         border-radius: 4px;
         transition: all 500ms;
         overflow: hidden;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
         &:hover {
           box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em,
             rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
           transform: translateY(-3px) scale(1.1);
+        }
+        .img {
+          width: 100%;
+          height: 100%;
         }
       }
     }
   }
 
   .portfolio-lightbox {
+    z-index: 3;
     position: fixed;
     top: 0;
     left: 0;
     padding: 2em;
+    padding-top: 4rem;
     background: rgba(0, 0, 0, 0.5);
     /*box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.25);*/
     width: 100vw;
@@ -249,7 +311,7 @@ const Wrapper = styled.section`
 
     .portfolio-lighthbox_content {
       width: 75%;
-      height: 75%;
+      height: 85%;
       background: black;
       padding: 1em;
       position: relative;
@@ -260,10 +322,11 @@ const Wrapper = styled.section`
         margin-bottom: 1em;
       }
       .close {
+        cursor: pointer;
         position: absolute;
-        width: 2em;
-        height: 2em;
-        background: seagreen;
+        width: 4em;
+        height: 4em;
+        background: var(--theme-color);
         top: -1em;
         right: -1em;
         border-radius: 50%;
@@ -271,6 +334,7 @@ const Wrapper = styled.section`
         align-items: center;
         justify-content: center;
         border: 1px solid whitesmoke;
+        z-index: 4;
         &::after {
           content: "X";
           color: aliceblue;
