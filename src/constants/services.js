@@ -24,14 +24,14 @@ const services = [
   {
     id: 3,
     icon: image3,
-    title: "Vaksiranje",
+    title: "Vosak Depilacija",
     body: "Primenjujući i tradicionalni strip vosak i tehnike vrućeg voska sa najboljim proizvodima za depilaciju, ostavljajući vas slobodnim od svakodnevnog brijanja.",
   },
   {
     id: 4,
     icon: image4,
     title: "Lijekovita Bilja",
-    body: "Holistički tretman liječenja koji koristi prirodne biljne ekstrakte za promovisanje zdravlja i blagostanja",
+    body: "Holistički tretman liječenja koji koristi prirodne biljne ekstrakte za promovisanje zdravlja i blagostanja.",
   },
   {
     id: 5,
