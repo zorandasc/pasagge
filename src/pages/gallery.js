@@ -325,7 +325,6 @@ const Wrapper = styled.section`
     top: 0;
     left: 0;
     padding: 2em;
-    padding-top: 4rem;
     background: rgba(0, 0, 0, 0.5);
     /*box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.25);*/
     width: 100vw;
@@ -339,7 +338,8 @@ const Wrapper = styled.section`
     transition: transform 500ms ease-in-out;
 
     .portfolio-lighthbox_content {
-    width: 75%;
+      width: 95%;
+      max-width: 700px;
       background: black;
       padding: 1em;
       position: relative;

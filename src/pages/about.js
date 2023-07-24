@@ -150,9 +150,9 @@ const about = ({ data }) => {
             height="560"
             src="https://www.youtube.com/embed/heLOYh2irBQ"
             title="Salon Ljepote Pasagge"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
         </div>
       </Wrapper>
