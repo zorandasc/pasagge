@@ -7,6 +7,100 @@ import Bounce from "react-reveal/Bounce";
 
 import services from "../../constants/services";
 
+const GlassCard = ({ icon, title, body }) => {
+  return (
+    <CardWrapper>
+      <div className="card-inner">
+        <div className="card-front">
+          <img src={icon} className="service-icon" alt="icon" />
+          <div className="service-body">
+            <h3>{title}</h3>
+          </div>
+        </div>
+        <div className="card-back">
+          <h3>{title}</h3>
+          <p>{body}</p>
+        </div>
+      </div>
+    </CardWrapper>
+  );
+};
+
+const CardWrapper = styled.div`
+  perspective: 1000px;
+  cursor: pointer;
+  min-height: 200px;
+  max-width: 500px;
+  height: 320px;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+
+    .card-front,
+    .card-back {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden; /* Safari */
+      backface-visibility: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 20px;
+      background-color: rgba(223, 73, 124, 0.45);
+      backdrop-filter: blur(15px);
+      //box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+      box-shadow: var(--darkShadow);
+      .service-icon {
+        width: 200px;
+        height: 150px;
+        filter: brightness(0) saturate(100%) invert(34%) sepia(0%)
+          saturate(827%) hue-rotate(148deg) brightness(93%) contrast(89%);
+        margin: 0 auto;
+      }
+      .service-body {
+        color: var(--body-color);
+        text-align: center;
+        width: 100%;
+        padding: 0 10px;
+        h3 {
+          font-size: 30px;
+        }
+        p {
+          max-width: 225px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+    }
+    .card-front {
+    }
+
+    .card-back {
+      text-align: center;
+      padding: 20px;
+      transform: rotateY(180deg);
+      background-color: rgba(223, 73, 124, 0.85);
+      color: white;
+      h3 {
+        font-size: 30px;
+      }
+    }
+  }
+  &:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+`;
+
 const Services = ({ className, image, setref }) => {
   const bgImage = convertToBgImage(getImage(image));
 
@@ -36,15 +130,7 @@ const Services = ({ className, image, setref }) => {
           const { id, icon, title, body } = service;
           return (
             <Bounce key={id}>
-              <div className="service">
-                <div className="service-img">
-                  <img src={icon} className="service-icon" alt="icon" />
-                </div>
-                <div className="service-body">
-                  <h3>{title}</h3>
-                  <p>{body}</p>
-                </div>
-              </div>
+              <GlassCard icon={icon} title={title} body={body}></GlassCard>
             </Bounce>
           );
         })}
