@@ -139,6 +139,7 @@ const contact = ({ data }) => {
               name="contact"
               className="form-group"
               method="post"
+              netlify
               data-netlify="true"
               data-netlify-honeypot="bot-field"
             >
